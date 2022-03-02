@@ -629,7 +629,7 @@ margin-bottom: var(--mb-0-5);
 .contact_container{
     row-gap: 3rem;
 }
-.contatc_information{
+.contact_information{
     display: flex;
     margin-bottom: var(--mb-2)
 }
@@ -982,3 +982,4 @@ font-size: var(--small-font-size);
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
