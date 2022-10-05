@@ -237,7 +237,7 @@ img{
 
 .home_blob{
     width: 200px;
-    fill: var(--first-color);
+    fill: #9ccdf9;
 }
 .home_blob-img{
     width: 180px;
@@ -430,34 +430,43 @@ margin-bottom: var(--mb-0-5);
     width: 60%;
 }
 .skills_javascript{
-    width: 70%;
+    width: 75%;
+}
+.skills_typescript{
+    width: 50%;
 }
 .skills_react{
-    width: 70%;
+    width: 80%;
 }
 .skills_next{
     width: 70%;
 }
 .skills_php{
+    width: 70%;
+}
+.skills_laravel{
     width: 60%;
 }
 .skills_node{
-    width: 10%;
-}
-.skills_mysql{
-    width: 50%;
-}
-.skills_firebase{
-    width: 10%;
+    width: 60%;
 }
 .skills_python{
-    width: 50%;
+    width: 65%;
 }
 .skills_java{
-    width: 40%;
+    width: 50%;
 }
 .skills_csharp{
-    width: 40%;
+    width: 60%;
+}
+.skills_mysql {
+    width: 60%;
+}
+.skills_mongodb {
+    width: 60%;
+}
+.skills_firebase {
+    width: 30%;
 }
 .skills_cpp{
     width: 50%;
@@ -466,7 +475,10 @@ margin-bottom: var(--mb-0-5);
     width: 40%;
 }
 .skills_figma{
-    width: 15%;
+    width: 50%;
+}
+.skills_photoshop{
+    width: 30%;
 }
 
 .skills_close .skills_list{
@@ -568,6 +580,23 @@ margin-bottom: var(--mb-0-5);
     font-size: var(--h3-font-size);
     margin-bottom: var(--mb-0-5);
 }
+.portfolio_difficulty{
+    display: flex;
+    font-size: .9rem;
+    color: var(--title-color)
+}
+.portfolio_difficulty span{
+    margin-right: 5px;
+}
+.portfolio_difficulty .hard{
+    color: #FF1E1E;
+}
+.portfolio_difficulty .medium{
+    color: #2192FF;
+}
+.portfolio_difficulty .easy{
+    color: #3CCF4E;
+}
 .portfolio_description{
     margin-bottom: var(--mb-0-75);
 }
@@ -585,12 +614,12 @@ margin-bottom: var(--mb-0-5);
 }
 .swiper-button-prev{
     left: -.5rem;
-        top: 6rem;
+    top: 9rem;
 }
 
 .swiper-button-next{
     right: -.5rem;
-    top: 6rem;
+    top: 9rem;
 }
 .swiper-horizontal > .swiper-pagination-bullets{
     bottom: -2.5rem;
