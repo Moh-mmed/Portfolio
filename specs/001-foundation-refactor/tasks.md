@@ -201,7 +201,7 @@ considered complete.
 - [ ] T075 Run production build and resolve build or content validation failures in `lib/content.ts`
 - [ ] T076 Run Playwright e2e suite and resolve failures in `tests/e2e/responsive.spec.ts`
 - [ ] T077 Run accessibility suite and resolve failures in `tests/accessibility/a11y.spec.ts`
-- [ ] T078 Run Lighthouse audits and resolve threshold failures in `tests/performance/lighthouse.config.cjs`
+- [ ] T078 Run Lighthouse audits and resolve failures below 95 Performance, 95 Accessibility, 95 Best Practices, or 100 SEO in `tests/performance/lighthouse.config.cjs`
 - [ ] T079 Verify no incomplete implementation markers, hardcoded portfolio copy, or tutorial project references remain in `app/page.tsx`
 - [ ] T080 Verify `/speckit.analyze` passes after implementation updates in `specs/001-foundation-refactor/tasks.md`
 

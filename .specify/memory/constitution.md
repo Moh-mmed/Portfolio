@@ -1,31 +1,18 @@
 <!--
 Sync Impact Report
-Version change: template -> 1.0.0
+Version change: 1.0.0 -> 1.1.0
 Modified principles:
-- [PRINCIPLE_1_NAME] -> I. Spec-Driven Discipline (NON-NEGOTIABLE)
-- [PRINCIPLE_2_NAME] -> II. Separation of Concerns in Documentation (NON-NEGOTIABLE)
-- [PRINCIPLE_3_NAME] -> III. Type Safety End-to-End (NON-NEGOTIABLE)
-- [PRINCIPLE_4_NAME] -> IV. No Stubs, No TODOs, No Placeholder Code (NON-NEGOTIABLE)
-- [PRINCIPLE_5_NAME] -> V. Content-First Architecture (NON-NEGOTIABLE)
-- Added VI. Professional Quality Bar (NON-NEGOTIABLE)
-- Added VII. Performance & Accessibility Baseline (NON-NEGOTIABLE)
-- Added VIII. Local-First, No External CMS (NON-NEGOTIABLE)
-- Added IX. Deployment Flexibility (NON-NEGOTIABLE)
-- Added X. Image Optimization (NON-NEGOTIABLE)
-- Added XI. Explicit Over Clever (NON-NEGOTIABLE)
-- Added XII. SEO & Metadata Completeness (NON-NEGOTIABLE)
-- Added XIII. Phased Delivery (NON-NEGOTIABLE)
-- Added XIV. Versioning and Amendments (NON-NEGOTIABLE)
+- VI. Professional Quality Bar: clarified project detail expectations by active
+  phase so the foundation phase can ship minimal polished pages while the
+  high-level projects phase owns full case studies.
 Added sections:
-- Implementation Standards
-- Delivery Workflow
+- None
 Removed sections:
 - None
-Templates requiring updates:
-- ✅ updated .specify/templates/plan-template.md
-- ✅ updated .specify/templates/spec-template.md
-- ✅ updated .specify/templates/tasks-template.md
-- ⚠ pending .specify/templates/commands/*.md (directory not present in this repository)
+Templates/docs requiring updates:
+- Updated specs/001-foundation-refactor/spec.md performance targets
+- Updated specs/001-foundation-refactor/tasks.md Lighthouse verification task
+- No template changes required
 Follow-up TODOs:
 - None
 -->
@@ -108,9 +95,11 @@ AI integration work, not to dilute the signal with entry-level filler.
 - Only high-level professional projects may be showcased on the site.
 - Entry-level tutorial projects, including Natours, basic weather apps, color
   generators, and similar work, are explicitly deprecated and MUST NOT appear.
-- Featured projects including lakeSai, tutorio, and kidooz MUST have detailed
-  pages covering the problem statement, solution, tech stack, architecture,
-  impact metrics, and media.
+- Featured projects including lakeSai, tutorio, and kidooz MUST have professional
+  project pages appropriate to the active phase. Foundation-phase pages may be
+  minimal but polished; detailed pages covering problem statement, solution,
+  tech stack, architecture, impact metrics, and media are required in the
+  high-level projects phase.
 - Work experience entries MUST highlight concrete technical contributions rather
   than generic responsibilities.
 - Skills MUST be categorized and curated to reflect genuine professional
@@ -253,4 +242,4 @@ over time.
 - Reviewers and implementers share responsibility for enforcement; compliance is
   not optional and cannot be waived informally.
 
-**Version**: 1.0.0 | **Ratified**: 2026-05-17 | **Last Amended**: 2026-05-17
+**Version**: 1.1.0 | **Ratified**: 2026-05-17 | **Last Amended**: 2026-05-17

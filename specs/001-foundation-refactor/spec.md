@@ -94,7 +94,7 @@ As the portfolio owner, I can follow clear deployment documentation for the supp
 - **FR-006**: The about, experience, skills, homepage, and projects experiences MUST derive their displayed text from the editable content sources.
 - **FR-007**: The site MUST provide a professional fallback when optional content such as project descriptions, links, or media is not yet available.
 - **FR-008**: The visitor experience MUST remain usable and visually coherent on mobile and desktop viewport sizes.
-- **FR-009**: The site MUST meet a minimum performance quality score of 90 in the agreed page quality audit for the primary public pages.
+- **FR-009**: The site MUST meet Lighthouse scores of at least 95 Performance, 95 Accessibility, 95 Best Practices, and 100 SEO for the primary public pages.
 - **FR-010**: The site MUST complete a browser quality pass with no console errors or warnings caused by the portfolio experience.
 - **FR-011**: All public images MUST be presented in an optimized, responsive manner with stable sizing and meaningful alternative text when the image conveys content.
 - **FR-012**: Deployment documentation MUST cover each owner-supported hosting approach with prerequisites, configuration values, build steps, publishing steps, and verification checks.
@@ -116,7 +116,7 @@ As the portfolio owner, I can follow clear deployment documentation for the supp
 - **SC-001**: The owner can update one project, one experience item, one skill group, and one about section edit in under 15 minutes using the documented content sources.
 - **SC-002**: 100% of public project listings show only lakeSai, tutorio, and kidooz at phase completion, with no visible tutorial or learning project entries.
 - **SC-003**: 100% of featured homepage project entries correspond to projects explicitly marked as featured in the editable content.
-- **SC-004**: Primary public pages achieve a minimum performance quality score of 90 during the phase completion audit.
+- **SC-004**: Primary public pages achieve Lighthouse scores of at least 95 Performance, 95 Accessibility, 95 Best Practices, and 100 SEO during the phase completion audit.
 - **SC-005**: Mobile and desktop viewport checks pass for all primary public pages with no overlapping text, horizontal scrolling caused by layout defects, or broken navigation.
 - **SC-006**: Browser diagnostics report zero portfolio-caused console errors or warnings during a complete browse of the primary public pages.
 - **SC-007**: Deployment documentation enables the owner to identify the correct deployment steps and required configuration values for all supported hosting approaches in under 10 minutes.
