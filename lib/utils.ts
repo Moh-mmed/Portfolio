@@ -23,13 +23,17 @@ export function formatDateRange(startDate: string, endDate?: string | null): str
 }
 
 export function resolveProjectImage(project: Project, imageName?: string): string {
-  const image = imageName ?? project.images[0];
+  const image = (imageName ?? project.images[0])?.trim();
 
   if (!image || image === "placeholder.jpg") {
     return "/images/placeholder.jpg";
   }
 
   return `/images/projects/${project.slug}/${image}`;
+}
+
+export function resolveProjectImages(project: Project): string[] {
+  return project.images.map((imageName) => resolveProjectImage(project, imageName));
 }
 
 export function buildAbsoluteUrl(pathname: string): string {

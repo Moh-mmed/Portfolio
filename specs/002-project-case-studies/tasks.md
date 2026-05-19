@@ -9,9 +9,8 @@
 `plan.md`, and `tasks.md` before `/speckit.implement` or manual implementation
 begins.
 
-**Tests**: Include test tasks whenever the feature specification or plan requires
-them. Performance, accessibility, SEO, and content-validation work are not
-optional when the change affects those areas.
+**Verification**: This phase uses schema validation plus build/type checks and
+route-level review to confirm project pages render correctly.
 
 **Organization**: Tasks are grouped by user story to enable independent
 implementation and testing of each story.
@@ -25,8 +24,8 @@ implementation and testing of each story.
 
 ## Path Conventions
 
-- **Portfolio app**: `app/`, `components/`, `content/`, `lib/`, `public/`,
-  `docs/`, `tests/` at repository root
+- **Portfolio app**: `app/`, `components/`, `content/`, `lib/`, `public/` at
+  repository root
 - Adjust paths to the structure selected in `plan.md`
 
 ## Phase 1: Setup (Shared Infrastructure)
@@ -34,7 +33,7 @@ implementation and testing of each story.
 **Purpose**: Prepare the local asset and verification surface for detailed
 project pages
 
-- [ ] T001 Create and track project image folders in `public/images/projects/lakesai/`, `public/images/projects/tutorio/`, and `public/images/projects/kidooz/`
+- [X] T001 Create and track project image folders in `public/images/projects/lakesai/`, `public/images/projects/tutorio/`, and `public/images/projects/kidooz/`
 
 ---
 
@@ -45,10 +44,10 @@ before user story implementation begins
 
 **CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T002 Update the `Project` and `ProjectLinks` interfaces in `lib/types.ts` for required `problem` and `solution`, optional `architecture` and `impact`, and the Phase 1 link contract
-- [ ] T003 Update `projectSchema` and project loader validation in `lib/content.ts` for the extended case-study contract and build-blocking content errors
-- [ ] T004 [P] Extend `resolveProjectImage` and related helpers in `lib/utils.ts` for gallery image resolution and placeholder-safe fallbacks
-- [ ] T005 Update the project schema documentation and example entry in `content/README.md` for the Phase 1 content contract
+- [X] T002 Update the `Project` and `ProjectLinks` interfaces in `lib/types.ts` for required `problem` and `solution`, optional `architecture` and `impact`, and the Phase 1 link contract
+- [X] T003 Update `projectSchema` and project loader validation in `lib/content.ts` for the extended case-study contract and build-blocking content errors
+- [X] T004 [P] Extend `resolveProjectImage` and related helpers in `lib/utils.ts` for gallery image resolution and placeholder-safe fallbacks
+- [X] T005 Update the project schema documentation and example entry in `content/README.md` for the Phase 1 content contract
 
 **Checkpoint**: Foundation ready; user story implementation can now begin
 
@@ -65,15 +64,15 @@ project-specific metadata using only JSON-authored content
 
 ### Verification for User Story 1
 
-- [ ] T006 [US1] Verify `app/projects/[slug]/page.tsx`, `components/sections/ProjectDetail.tsx`, and `content/projects/lakesai.json` render the required title, tagline, tech stack, problem section, and solution section on the `lakesai` page
+- [X] T006 [US1] Verify `app/projects/[slug]/page.tsx`, `components/sections/ProjectDetail.tsx`, and `content/projects/lakesai.json` render the required title, tagline, tech stack, problem section, and solution section on the `lakesai` page
 
 ### Implementation for User Story 1
 
-- [ ] T007 [P] [US1] Replace placeholder case-study copy in `content/projects/lakesai.json` with sanitized long-form content, impact metrics, and image references
-- [ ] T008 [P] [US1] Add lakeSai gallery assets in `public/images/projects/lakesai/` and align the referenced filenames in `content/projects/lakesai.json`
-- [ ] T009 [P] [US1] Implement the reusable case-study layout and markdown section rendering in `components/sections/ProjectDetail.tsx`
-- [ ] T010 [P] [US1] Implement the client-side click-to-enlarge gallery in `components/ui/ImageGallery.tsx`
-- [ ] T011 [US1] Refactor `app/projects/[slug]/page.tsx` to render `ProjectDetail`, derive project metadata, and emit `CreativeWork` JSON-LD from project content
+- [X] T007 [P] [US1] Replace placeholder case-study copy in `content/projects/lakesai.json` with sanitized long-form content, impact metrics, and image references
+- [X] T008 [P] [US1] Add lakeSai gallery assets in `public/images/projects/lakesai/` and align the referenced filenames in `content/projects/lakesai.json`
+- [X] T009 [P] [US1] Implement the reusable case-study layout and markdown section rendering in `components/sections/ProjectDetail.tsx`
+- [X] T010 [P] [US1] Implement the client-side click-to-enlarge gallery in `components/ui/ImageGallery.tsx`
+- [X] T011 [US1] Refactor `app/projects/[slug]/page.tsx` to render `ProjectDetail`, derive project metadata, and emit `CreativeWork` JSON-LD from project content
 
 **Checkpoint**: User Story 1 is fully functional and independently testable
 
@@ -90,15 +89,15 @@ reflects the update without any component changes
 
 ### Verification for User Story 2
 
-- [ ] T012 [US2] Verify `content/projects/tutorio.json`, `content/projects/kidooz.json`, `components/sections/ProjectDetail.tsx`, and `app/projects/[slug]/page.tsx` support JSON-only content updates without React copy changes
+- [X] T012 [US2] Verify `content/projects/tutorio.json`, `content/projects/kidooz.json`, `components/sections/ProjectDetail.tsx`, and `app/projects/[slug]/page.tsx` support JSON-only content updates without React copy changes
 
 ### Implementation for User Story 2
 
-- [ ] T013 [P] [US2] Replace placeholder case-study copy in `content/projects/tutorio.json` with structured long-form content, impact metrics, and image references
-- [ ] T014 [P] [US2] Finalize the Phase 1 `kidooz` case-study record in `content/projects/kidooz.json` for the documented schema and link behavior
-- [ ] T015 [P] [US2] Add or normalize gallery assets in `public/images/projects/tutorio/` and `public/images/projects/kidooz/` for the referenced project images
-- [ ] T016 [US2] Refine the authoring guidance in `content/README.md` and the validation error handling in `lib/content.ts` so JSON-only edits stay predictable
-- [ ] T017 [US2] Update `components/sections/ProjectDetail.tsx` and `app/projects/[slug]/page.tsx` to omit optional architecture, impact, and link sections cleanly when content fields are absent
+- [X] T013 [P] [US2] Replace placeholder case-study copy in `content/projects/tutorio.json` with structured long-form content, impact metrics, and image references
+- [X] T014 [P] [US2] Finalize the Phase 1 `kidooz` case-study record in `content/projects/kidooz.json` for the documented schema and link behavior
+- [X] T015 [P] [US2] Add or normalize gallery assets in `public/images/projects/tutorio/` and `public/images/projects/kidooz/` for the referenced project images
+- [X] T016 [US2] Refine the authoring guidance in `content/README.md` and the validation error handling in `lib/content.ts` so JSON-only edits stay predictable
+- [X] T017 [US2] Update `components/sections/ProjectDetail.tsx` and `app/projects/[slug]/page.tsx` to omit optional architecture, impact, and link sections cleanly when content fields are absent
 
 **Checkpoint**: User Stories 1 and 2 both work independently
 
@@ -116,14 +115,14 @@ solution, architecture, and impact content
 
 ### Verification for User Story 3
 
-- [ ] T018 [US3] Verify `app/projects/[slug]/page.tsx`, `components/sections/ProjectDetail.tsx`, and `components/ui/ImageGallery.tsx` keep `lakesai`, `tutorio`, and `kidooz` structurally consistent and mobile-safe
-- [ ] T019 [US3] Verify `content/projects/lakesai.json`, `content/projects/tutorio.json`, and `content/projects/kidooz.json` each contain at least two entries in the `impact` array before phase completion
+- [X] T018 [US3] Verify `app/projects/[slug]/page.tsx`, `components/sections/ProjectDetail.tsx`, and `components/ui/ImageGallery.tsx` keep `lakesai`, `tutorio`, and `kidooz` structurally consistent and mobile-safe
+- [X] T019 [US3] Verify `content/projects/lakesai.json`, `content/projects/tutorio.json`, and `content/projects/kidooz.json` each contain at least two entries in the `impact` array before phase completion
 
 ### Implementation for User Story 3
 
-- [ ] T020 [P] [US3] Normalize cross-project section ordering, tech badge presentation, and link blocks in `components/sections/ProjectDetail.tsx` and `components/ui/ImageGallery.tsx`
-- [ ] T021 [P] [US3] Ensure `content/projects/lakesai.json`, `content/projects/tutorio.json`, and `content/projects/kidooz.json` follow the same narrative structure and impact conventions without placeholder copy
-- [ ] T022 [US3] Finalize cross-project metadata and route behavior in `app/projects/[slug]/page.tsx`
+- [X] T020 [P] [US3] Normalize cross-project section ordering, tech badge presentation, and link blocks in `components/sections/ProjectDetail.tsx` and `components/ui/ImageGallery.tsx`
+- [X] T021 [P] [US3] Ensure `content/projects/lakesai.json`, `content/projects/tutorio.json`, and `content/projects/kidooz.json` follow the same narrative structure and impact conventions without placeholder copy
+- [X] T022 [US3] Finalize cross-project metadata and route behavior in `app/projects/[slug]/page.tsx`
 
 **Checkpoint**: All planned user stories are independently functional
 
@@ -133,8 +132,8 @@ solution, architecture, and impact content
 
 **Purpose**: Final quality work that affects multiple user stories
 
-- [ ] T023 [P] Optimize image naming, referenced filenames, and fallback usage in `public/images/projects/` and `content/projects/lakesai.json`, `content/projects/tutorio.json`, and `content/projects/kidooz.json`
-- [ ] T024 Validate that no placeholder copy, TODOs, or broken media references remain in `content/projects/lakesai.json`, `content/projects/tutorio.json`, `content/projects/kidooz.json`, `components/sections/ProjectDetail.tsx`, and `components/ui/ImageGallery.tsx`
+- [X] T023 [P] Optimize image naming, referenced filenames, and fallback usage in `public/images/projects/` and `content/projects/lakesai.json`, `content/projects/tutorio.json`, and `content/projects/kidooz.json`
+- [X] T024 Validate that no placeholder copy, TODOs, or broken media references remain in `content/projects/lakesai.json`, `content/projects/tutorio.json`, `content/projects/kidooz.json`, `components/sections/ProjectDetail.tsx`, and `components/ui/ImageGallery.tsx`
 
 ---
 

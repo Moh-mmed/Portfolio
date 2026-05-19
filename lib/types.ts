@@ -18,9 +18,10 @@ export interface Project {
   company?: string;
   timeline: string;
   description: string;
-  problem?: string;
-  solution?: string;
-  impact?: string[];
+  problem: string;
+  solution: string;
+  architecture?: string;
+  impact: string[];
   images: string[];
   links?: ProjectLinks;
 }

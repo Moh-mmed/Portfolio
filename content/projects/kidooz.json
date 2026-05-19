@@ -5,10 +5,22 @@
   "featured": true,
   "order": 3,
   "category": "ecommerce",
-  "tech": ["Next.js", "TypeScript", "Node.js"],
+  "tech": ["SvelteKit", "TypeScript", "Fastify", "PostgreSQL", "Drizzle ORM", "Tailwind CSS"],
   "role": "Full-Stack Developer",
-  "timeline": "2024",
-  "description": "A commerce-focused product with an emphasis on dependable customer experience, clear merchandising, and production-minded implementation choices. The public summary keeps the focus on business value and execution quality.",
-  "images": ["placeholder.jpg"],
-  "links": {}
+  "company": "kidooz",
+  "timeline": "2023-2024",
+  "description": "Full-featured e-commerce platform built for an Algerian kids' clothing store, supporting customers across all 58 wilayas. Features include multi-language support (Arabic/French/English), local payment options, Algerian shipping providers, and an admin dashboard for inventory and order management.",
+  "problem": "The business had no online sales channel and relied on manual order handling. Customers also needed local payment and shipping options that matched Algerian reality, not generic international defaults.",
+  "solution": "I built a modern e-commerce experience with a fast customer-facing storefront and a production-minded backend. The platform supports trilingual content, multiple checkout options, and integrations with local delivery providers. An internal admin surface enables inventory, order processing, and operational workflows without relying on spreadsheets.",
+  "architecture": "TypeScript monorepo with a storefront application and a dedicated API service.\n\n- **Data**: PostgreSQL with type-safe queries.\n- **Integrations**: payment and shipping provider APIs.\n- **UI**: responsive layouts optimized for mobile shoppers.\n- **Operations**: admin workflows designed around real inventory and order handling.",
+  "impact": [
+    "Launched a live e-commerce platform for online sales",
+    "Supports delivery across 58 Algerian wilayas",
+    "Integrated multiple local shipping providers for reliable fulfilment",
+    "Trilingual support (Arabic, French, English) for a broader customer base"
+  ],
+  "images": ["kidooz-homepage.jpg", "kidooz-product-page.jpg", "kidooz-checkout.jpg"],
+  "links": {
+    "live": "https://kidooz.dz"
+  }
 }

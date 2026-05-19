@@ -5,10 +5,20 @@
   "featured": true,
   "order": 1,
   "category": "ai",
-  "tech": ["Next.js", "TypeScript", "Node.js"],
-  "role": "Full-Stack Developer",
+  "tech": ["Python", "LangChain", "FastAPI", "PostgreSQL"],
+  "role": "Back-End Developer",
+  "company": "Professional Client",
   "timeline": "2024",
-  "description": "A private professional engagement centered on shipping polished AI-assisted workflows and internal product tooling. The public portfolio keeps the framing concise while protecting confidential implementation detail.",
-  "images": ["placeholder.jpg"],
+  "description": "A professional engagement focused on shipping reliable AI-assisted workflows for internal teams. The public case study highlights constraints, design decisions, and measurable outcomes while avoiding proprietary details.",
+  "problem": "Internal teams needed faster, more consistent access to operational knowledge, but the existing process relied on manual lookup and tribal context. The result was slow turnaround, uneven quality, and difficult-to-audit decision trails.",
+  "solution": "I built an AI-assisted workflow that turns common operational questions into structured requests, retrieves the right context, and produces responses that are easy to review and correct. The system emphasizes guardrails, clear sources, and predictable behavior over flashy outputs. It also supports iterative improvement by capturing feedback signals and surfacing the most frequent failure modes.",
+  "architecture": "The service follows a clear separation between **ingestion**, **retrieval**, and **response generation**.\n\n- **Ingestion**: curated inputs are normalized and stored with stable identifiers.\n- **Retrieval**: relevant context is selected deterministically with a bias toward precision.\n- **Response generation**: outputs are produced with explicit structure and safe defaults.\n- **Observability**: logging and tracing focus on debuggability and auditability.",
+  "impact": [
+    "Reduced manual back-and-forth by standardizing request intake and response structure",
+    "Improved response consistency by anchoring answers to retrieved context instead of free-form generation",
+    "Shortened time-to-resolution for recurring operational questions",
+    "Created an audit-friendly workflow that supports review and iterative refinement"
+  ],
+  "images": ["lakesai-overview.jpg", "lakesai-workflow.jpg"],
   "links": {}
 }

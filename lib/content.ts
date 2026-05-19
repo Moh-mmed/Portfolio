@@ -28,9 +28,10 @@ export const projectSchema: z.ZodType<Project> = z.object({
   company: z.string().min(1).optional(),
   timeline: z.string().min(1),
   description: z.string().min(1),
-  problem: z.string().min(1).optional(),
-  solution: z.string().min(1).optional(),
-  impact: z.array(z.string().min(1)).optional(),
+  problem: z.string().min(1),
+  solution: z.string().min(1),
+  architecture: z.string().min(1).optional(),
+  impact: z.array(z.string().min(1)).min(2),
   images: z.array(z.string().min(1)).min(1),
   links: projectLinksSchema
 });

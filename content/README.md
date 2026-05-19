@@ -23,15 +23,16 @@ Required fields:
 - `tech`
 - `role`
 - `timeline`
-- `description`
+- `description` (Markdown)
+- `problem` (Markdown)
+- `solution` (Markdown)
+- `impact` (string array, minimum 2 items)
 - `images`
 
 Optional fields:
 
 - `company`
-- `problem`
-- `solution`
-- `impact`
+- `architecture` (Markdown)
 - `links.live`
 - `links.github`
 - `links.caseStudy`
@@ -49,7 +50,10 @@ Example:
   "tech": ["Next.js", "TypeScript", "Node.js"],
   "role": "Full-Stack Developer",
   "timeline": "2024",
-  "description": "A private professional engagement focused on shipping polished internal tooling.",
+  "description": "Long-form project overview written in Markdown.",
+  "problem": "Problem statement written in Markdown.",
+  "solution": "Solution narrative written in Markdown.",
+  "impact": ["Outcome 1", "Outcome 2"],
   "images": ["placeholder.jpg"]
 }
 ```

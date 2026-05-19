@@ -4,11 +4,20 @@
   "tagline": "Company product work focused on clear user flows and maintainable delivery.",
   "featured": true,
   "order": 2,
-  "category": "saas",
-  "tech": ["React", "TypeScript", "Node.js"],
-  "role": "Software Engineer",
+  "category": "web",
+  "tech": ["Next.js", "TypeScript", "Node.js", "MongoDB"],
+  "role": "Full-Stack Developer",
+  "company": "Professional Client",
   "timeline": "2024",
-  "description": "A professional product engagement that balanced user-facing clarity with implementation discipline. The public summary emphasizes scope, role, and technical direction without exposing confidential delivery detail.",
-  "images": ["placeholder.jpg"],
+  "description": "A professional product engagement centered on building clear user journeys and maintainable delivery patterns. The public case study focuses on decision-making, tradeoffs, and outcomes without exposing internal business specifics.",
+  "problem": "Users struggled to complete core workflows due to unclear navigation and inconsistent states across the product. This increased support burden and made new feature delivery riskier because small changes could introduce regressions.",
+  "solution": "I improved the product by clarifying key flows, tightening state handling, and making the UI behavior more predictable for common user paths. Delivery focused on small, reviewable increments with attention to error states and edge cases. The result was a cleaner experience for users and a safer surface for ongoing development.",
+  "architecture": "The implementation emphasized a **single source of truth** for core UI state and a consistent approach to data boundaries.\n\n- Shared primitives reduced duplication and inconsistency.\n- Clear contracts made it easier to add features without reworking existing pages.\n- Error handling prioritized user clarity and predictable recovery.",
+  "impact": [
+    "Improved task completion by reducing ambiguous states and clarifying primary user flows",
+    "Reduced regression risk by standardizing shared UI patterns and state handling",
+    "Lowered support friction by addressing common failure and error states"
+  ],
+  "images": ["tutorio-dashboard.jpg", "tutorio-flow.jpg"],
   "links": {}
 }
