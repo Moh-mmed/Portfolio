@@ -1,0 +1,14 @@
+{
+  "slug": "kidooz",
+  "title": "kidooz",
+  "tagline": "An Algerian e-commerce platform built around practical retail delivery.",
+  "featured": true,
+  "order": 3,
+  "category": "ecommerce",
+  "tech": ["Next.js", "TypeScript", "Node.js"],
+  "role": "Full-Stack Developer",
+  "timeline": "2024",
+  "description": "A commerce-focused product with an emphasis on dependable customer experience, clear merchandising, and production-minded implementation choices. The public summary keeps the focus on business value and execution quality.",
+  "images": ["placeholder.jpg"],
+  "links": {}
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "tutorio",
+  "title": "tutorio",
+  "tagline": "Company product work focused on clear user flows and maintainable delivery.",
+  "featured": true,
+  "order": 2,
+  "category": "saas",
+  "tech": ["React", "TypeScript", "Node.js"],
+  "role": "Software Engineer",
+  "timeline": "2024",
+  "description": "A professional product engagement that balanced user-facing clarity with implementation discipline. The public summary emphasizes scope, role, and technical direction without exposing confidential delivery detail.",
+  "images": ["placeholder.jpg"],
+  "links": {}
+}

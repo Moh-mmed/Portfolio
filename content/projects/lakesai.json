@@ -1,0 +1,14 @@
+{
+  "slug": "lakesai",
+  "title": "lakeSai",
+  "tagline": "Operational AI tooling for a private product environment.",
+  "featured": true,
+  "order": 1,
+  "category": "ai",
+  "tech": ["Next.js", "TypeScript", "Node.js"],
+  "role": "Full-Stack Developer",
+  "timeline": "2024",
+  "description": "A private professional engagement centered on shipping polished AI-assisted workflows and internal product tooling. The public portfolio keeps the framing concise while protecting confidential implementation detail.",
+  "images": ["placeholder.jpg"],
+  "links": {}
+}

@@ -28,16 +28,16 @@ implementation and testing of each story.
 **Purpose**: Initialize the Next.js 15 App Router project, shared tooling, and
 baseline directories needed by every story.
 
-- [ ] T001 Create Next.js project manifest with pnpm scripts and dependencies in `package.json`
-- [ ] T002 Configure TypeScript strict mode and path aliases in `tsconfig.json`
-- [ ] T003 Configure Next.js application settings in `next.config.ts`
-- [ ] T004 [P] Configure ESLint for Next.js and TypeScript in `eslint.config.mjs`
-- [ ] T005 [P] Configure Prettier formatting rules in `.prettierrc.json`
-- [ ] T006 [P] Configure Tailwind CSS with neutral palette and `blue-600` accent in `tailwind.config.ts`
-- [ ] T007 Configure PostCSS for Tailwind processing in `postcss.config.mjs`
-- [ ] T008 Create application global stylesheet with base typography and responsive defaults in `app/globals.css`
-- [ ] T009 Create environment variable example file with commented Phase 0 values in `.env.example`
-- [ ] T010 Create required directory sentinel files in `app/.gitkeep`, `components/.gitkeep`, `content/.gitkeep`, `public/images/.gitkeep`, and `tests/.gitkeep`
+[X] T001 Create Next.js project manifest with pnpm scripts and dependencies in `package.json`
+[X] T002 Configure TypeScript strict mode and path aliases in `tsconfig.json`
+[X] T003 Configure Next.js application settings in `next.config.ts`
+[X] T004 [P] Configure ESLint for Next.js and TypeScript in `eslint.config.mjs`
+[X] T005 [P] Configure Prettier formatting rules in `.prettierrc.json`
+[X] T006 [P] Configure Tailwind CSS with neutral palette and `blue-600` accent in `tailwind.config.ts`
+[X] T007 Configure PostCSS for Tailwind processing in `postcss.config.mjs`
+[X] T008 Create application global stylesheet with base typography and responsive defaults in `app/globals.css`
+[X] T009 Create environment variable example file with commented Phase 0 values in `.env.example`
+[X] T010 Create required directory sentinel files in `app/.gitkeep`, `components/.gitkeep`, `content/.gitkeep`, `public/images/.gitkeep`, and `tests/.gitkeep`
 
 ---
 
@@ -48,21 +48,21 @@ test harnesses that all user stories depend on.
 
 **CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T011 Define Project, Experience, Skills, and About TypeScript types in `lib/types.ts`
-- [ ] T012 Implement zod schemas and typed local content loader functions in `lib/content.ts`
-- [ ] T013 [P] Implement shared class-name and formatting helpers in `lib/utils.ts`
-- [ ] T014 [P] Implement base Button component variants in `components/ui/Button.tsx`
-- [ ] T015 [P] Implement base Card component in `components/ui/Card.tsx`
-- [ ] T016 [P] Implement base Badge component in `components/ui/Badge.tsx`
-- [ ] T017 [P] Implement base Container component in `components/ui/Container.tsx`
-- [ ] T018 [P] Implement base Section component in `components/ui/Section.tsx`
-- [ ] T019 Implement responsive Navigation component with desktop links and mobile drawer in `components/layout/Navigation.tsx`
-- [ ] T020 Implement sticky Header component using the navigation contract in `components/layout/Header.tsx`
-- [ ] T021 Implement Footer component with social links and last-updated display in `components/layout/Footer.tsx`
-- [ ] T022 Implement root layout with metadata defaults, header, footer, and global styles in `app/layout.tsx`
-- [ ] T023 [P] Configure Playwright browser test project in `playwright.config.ts`
-- [ ] T024 [P] Configure accessibility test setup in `tests/accessibility/a11y.spec.ts`
-- [ ] T025 [P] Configure Lighthouse audit script and thresholds in `tests/performance/lighthouse.config.cjs`
+[X] T011 Define Project, Experience, Skills, and About TypeScript types in `lib/types.ts`
+[X] T012 Implement zod schemas and typed local content loader functions in `lib/content.ts`
+[X] T013 [P] Implement shared class-name and formatting helpers in `lib/utils.ts`
+[X] T014 [P] Implement base Button component variants in `components/ui/Button.tsx`
+[X] T015 [P] Implement base Card component in `components/ui/Card.tsx`
+[X] T016 [P] Implement base Badge component in `components/ui/Badge.tsx`
+[X] T017 [P] Implement base Container component in `components/ui/Container.tsx`
+[X] T018 [P] Implement base Section component in `components/ui/Section.tsx`
+[X] T019 Implement responsive Navigation component with desktop links and mobile drawer in `components/layout/Navigation.tsx`
+[X] T020 Implement sticky Header component using the navigation contract in `components/layout/Header.tsx`
+[X] T021 Implement Footer component with social links and last-updated display in `components/layout/Footer.tsx`
+[X] T022 Implement root layout with metadata defaults, header, footer, and global styles in `app/layout.tsx`
+[X] T023 [P] Configure Playwright browser test project in `playwright.config.ts`
+[X] T024 [P] Configure accessibility test setup in `tests/accessibility/a11y.spec.ts`
+[X] T025 [P] Configure Lighthouse audit script and thresholds in `tests/performance/lighthouse.config.cjs`
 
 **Checkpoint**: Foundation ready; user story implementation can now begin.
 
@@ -79,20 +79,20 @@ without modifying React components.
 
 ### Verification for User Story 1
 
-- [ ] T026 [P] [US1] Add content loader validation tests for malformed and valid content in `tests/e2e/content-loaders.spec.ts`
-- [ ] T027 [P] [US1] Add content editing smoke test for project, experience, skills, and about rendering in `tests/e2e/content-editing.spec.ts`
+[X] T026 [P] [US1] Add content loader validation tests for malformed and valid content in `tests/e2e/content-loaders.spec.ts`
+[X] T027 [P] [US1] Add content editing smoke test for project, experience, skills, and about rendering in `tests/e2e/content-editing.spec.ts`
 
 ### Implementation for User Story 1
 
-- [ ] T028 [P] [US1] Create documented project schema examples and editing guidance in `content/README.md`
-- [ ] T029 [P] [US1] Create about Markdown content with frontmatter from current owner context in `content/about.md`
-- [ ] T030 [P] [US1] Create experience records for Vitafluence.ai, Upwork, Extramus, and Prodexo in `content/experience.json`
-- [ ] T031 [P] [US1] Create skills categories for Languages, Frameworks, AI/ML, and Tools in `content/skills.json`
-- [ ] T032 [US1] Implement AboutSection Markdown renderer in `components/sections/AboutSection.tsx`
-- [ ] T033 [US1] Implement ExperienceTimeline content renderer in `components/sections/ExperienceTimeline.tsx`
-- [ ] T034 [US1] Implement SkillsGrid content renderer with proficiency indicators in `components/sections/SkillsGrid.tsx`
-- [ ] T035 [US1] Implement about page using local about, experience, and skills loaders in `app/about/page.tsx`
-- [ ] T036 [US1] Verify all user-facing about, experience, and skills copy is sourced from `content/` in `app/about/page.tsx`
+[X] T028 [P] [US1] Create documented project schema examples and editing guidance in `content/README.md`
+[X] T029 [P] [US1] Create about Markdown content with frontmatter from current owner context in `content/about.md`
+[X] T030 [P] [US1] Create experience records for Vitafluence.ai, Upwork, Extramus, and Prodexo in `content/experience.json`
+[X] T031 [P] [US1] Create skills categories for Languages, Frameworks, AI/ML, and Tools in `content/skills.json`
+[X] T032 [US1] Implement AboutSection Markdown renderer in `components/sections/AboutSection.tsx`
+[X] T033 [US1] Implement ExperienceTimeline content renderer in `components/sections/ExperienceTimeline.tsx`
+[X] T034 [US1] Implement SkillsGrid content renderer with proficiency indicators in `components/sections/SkillsGrid.tsx`
+[X] T035 [US1] Implement about page using local about, experience, and skills loaders in `app/about/page.tsx`
+[X] T036 [US1] Verify all user-facing about, experience, and skills copy is sourced from `content/` in `app/about/page.tsx`
 
 **Checkpoint**: User Story 1 is fully functional and independently testable.
 
@@ -109,22 +109,22 @@ the three professional project entries are visible, homepage entries respect the
 
 ### Verification for User Story 2
 
-- [ ] T037 [P] [US2] Add project listing and featured filtering tests in `tests/e2e/projects.spec.ts`
-- [ ] T038 [P] [US2] Add legacy tutorial exclusion assertions in `tests/e2e/project-exclusions.spec.ts`
+[X] T037 [P] [US2] Add project listing and featured filtering tests in `tests/e2e/projects.spec.ts`
+[X] T038 [P] [US2] Add legacy tutorial exclusion assertions in `tests/e2e/project-exclusions.spec.ts`
 
 ### Implementation for User Story 2
 
-- [ ] T039 [P] [US2] Create lakeSai professional project content in `content/projects/lakesai.json`
-- [ ] T040 [P] [US2] Create tutorio professional project content in `content/projects/tutorio.json`
-- [ ] T041 [P] [US2] Create kidooz professional project content in `content/projects/kidooz.json`
-- [ ] T042 [P] [US2] Add project fallback image asset in `public/images/placeholder.jpg`
-- [ ] T043 [US2] Implement ProjectCard with Next.js Image, tech badges, fallback image handling, and accessible links in `components/sections/ProjectCard.tsx`
-- [ ] T044 [US2] Implement ProjectGrid with featured filtering support and polished empty state in `components/sections/ProjectGrid.tsx`
-- [ ] T045 [US2] Implement Hero section with owner positioning and project CTA in `components/sections/Hero.tsx`
-- [ ] T046 [US2] Implement homepage rendering hero and featured projects from local content in `app/page.tsx`
-- [ ] T047 [US2] Implement all-projects listing from local content in `app/projects/page.tsx`
-- [ ] T048 [US2] Implement minimal project detail route with unknown slug 404 handling in `app/projects/[slug]/page.tsx`
-- [ ] T049 [US2] Verify legacy tutorial project names are absent from public route rendering in `app/projects/page.tsx`
+[X] T039 [P] [US2] Create lakeSai professional project content in `content/projects/lakesai.json`
+[X] T040 [P] [US2] Create tutorio professional project content in `content/projects/tutorio.json`
+[X] T041 [P] [US2] Create kidooz professional project content in `content/projects/kidooz.json`
+[X] T042 [P] [US2] Add project fallback image asset in `public/images/placeholder.jpg`
+[X] T043 [US2] Implement ProjectCard with Next.js Image, tech badges, fallback image handling, and accessible links in `components/sections/ProjectCard.tsx`
+[X] T044 [US2] Implement ProjectGrid with featured filtering support and polished empty state in `components/sections/ProjectGrid.tsx`
+[X] T045 [US2] Implement Hero section with owner positioning and project CTA in `components/sections/Hero.tsx`
+[X] T046 [US2] Implement homepage rendering hero and featured projects from local content in `app/page.tsx`
+[X] T047 [US2] Implement all-projects listing from local content in `app/projects/page.tsx`
+[X] T048 [US2] Implement minimal project detail route with unknown slug 404 handling in `app/projects/[slug]/page.tsx`
+[X] T049 [US2] Verify legacy tutorial project names are absent from public route rendering in `app/projects/page.tsx`
 
 **Checkpoint**: User Stories 1 and 2 both work independently.
 
@@ -141,26 +141,26 @@ images render with stable sizing, and run browser diagnostics and Lighthouse.
 
 ### Verification for User Story 3
 
-- [ ] T050 [P] [US3] Add mobile and desktop responsive route smoke tests in `tests/e2e/responsive.spec.ts`
-- [ ] T051 [P] [US3] Add console error and warning diagnostics test in `tests/e2e/browser-diagnostics.spec.ts`
-- [ ] T052 [P] [US3] Add accessibility assertions for landmarks, headings, focus states, and mobile navigation in `tests/accessibility/a11y.spec.ts`
-- [ ] T053 [P] [US3] Add Lighthouse verification command coverage for primary pages in `tests/performance/lighthouse.config.cjs`
+[X] T050 [P] [US3] Add mobile and desktop responsive route smoke tests in `tests/e2e/responsive.spec.ts`
+[X] T051 [P] [US3] Add console error and warning diagnostics test in `tests/e2e/browser-diagnostics.spec.ts`
+[X] T052 [P] [US3] Add accessibility assertions for landmarks, headings, focus states, and mobile navigation in `tests/accessibility/a11y.spec.ts`
+[X] T053 [P] [US3] Add Lighthouse verification command coverage for primary pages in `tests/performance/lighthouse.config.cjs`
 
 ### Implementation for User Story 3
 
-- [ ] T054 [US3] Implement contact page without submission logic and with accessible contact options in `app/contact/page.tsx`
-- [ ] T055 [US3] Implement shared metadata defaults for all public routes in `app/layout.tsx`
-- [ ] T056 [US3] Implement about route metadata and canonical URL in `app/about/page.tsx`
-- [ ] T057 [US3] Implement projects route metadata and canonical URL in `app/projects/page.tsx`
-- [ ] T058 [US3] Implement project detail metadata, canonical URL, and CreativeWork structured data in `app/projects/[slug]/page.tsx`
-- [ ] T059 [US3] Implement contact route metadata and canonical URL in `app/contact/page.tsx`
-- [ ] T060 [US3] Implement Person and WebSite structured data on the homepage in `app/page.tsx`
-- [ ] T061 [US3] Implement sitemap generation for public routes in `app/sitemap.ts`
-- [ ] T062 [US3] Implement robots policy for public crawling in `app/robots.ts`
-- [ ] T063 [US3] Add responsive headshot image asset in `public/images/headshot.jpg`
-- [ ] T064 [US3] Add OpenGraph image asset in `public/images/og-image.jpg`
-- [ ] T065 [US3] Verify every production image uses Next.js Image with explicit sizing in `components/sections/ProjectCard.tsx`
-- [ ] T066 [US3] Verify mobile navigation, text wrapping, and footer stacking styles in `app/globals.css`
+[X] T054 [US3] Implement contact page without submission logic and with accessible contact options in `app/contact/page.tsx`
+[X] T055 [US3] Implement shared metadata defaults for all public routes in `app/layout.tsx`
+[X] T056 [US3] Implement about route metadata and canonical URL in `app/about/page.tsx`
+[X] T057 [US3] Implement projects route metadata and canonical URL in `app/projects/page.tsx`
+[X] T058 [US3] Implement project detail metadata, canonical URL, and CreativeWork structured data in `app/projects/[slug]/page.tsx`
+[X] T059 [US3] Implement contact route metadata and canonical URL in `app/contact/page.tsx`
+[X] T060 [US3] Implement Person and WebSite structured data on the homepage in `app/page.tsx`
+[X] T061 [US3] Implement sitemap generation for public routes in `app/sitemap.ts`
+[X] T062 [US3] Implement robots policy for public crawling in `app/robots.ts`
+[X] T063 [US3] Add responsive headshot image asset in `public/images/headshot.jpg`
+[X] T064 [US3] Add OpenGraph image asset in `public/images/og-image.jpg`
+[X] T065 [US3] Verify every production image uses Next.js Image with explicit sizing in `components/sections/ProjectCard.tsx`
+[X] T066 [US3] Verify mobile navigation, text wrapping, and footer stacking styles in `app/globals.css`
 
 **Checkpoint**: User Stories 1, 2, and 3 are independently functional.
 
@@ -177,15 +177,15 @@ for every supported hosting option in under 10 minutes.
 
 ### Verification for User Story 4
 
-- [ ] T067 [P] [US4] Add documentation completeness check for deployment sections and environment variables in `tests/e2e/deployment-docs.spec.ts`
+[X] T067 [P] [US4] Add documentation completeness check for deployment sections and environment variables in `tests/e2e/deployment-docs.spec.ts`
 
 ### Implementation for User Story 4
 
-- [ ] T068 [US4] Document Vercel, Netlify, Cloudflare Pages, and VPS deployment steps in `docs/DEPLOYMENT.md`
-- [ ] T069 [US4] Document environment variable names, purposes, and optional status in `.env.example`
-- [ ] T070 [US4] Add Docker deployment artifact for VPS hosting in `Dockerfile`
-- [ ] T071 [US4] Add Docker ignore rules for production image builds in `.dockerignore`
-- [ ] T072 [US4] Verify deployment documentation build commands match `package.json` scripts in `docs/DEPLOYMENT.md`
+[X] T068 [US4] Document Vercel, Netlify, Cloudflare Pages, and VPS deployment steps in `docs/DEPLOYMENT.md`
+[X] T069 [US4] Document environment variable names, purposes, and optional status in `.env.example`
+[X] T070 [US4] Add Docker deployment artifact for VPS hosting in `Dockerfile`
+[X] T071 [US4] Add Docker ignore rules for production image builds in `.dockerignore`
+[X] T072 [US4] Verify deployment documentation build commands match `package.json` scripts in `docs/DEPLOYMENT.md`
 
 **Checkpoint**: All planned user stories are independently functional.
 
@@ -196,13 +196,13 @@ for every supported hosting option in under 10 minutes.
 **Purpose**: Final quality checks across stories before implementation is
 considered complete.
 
-- [ ] T073 Run linting and resolve reported issues in `package.json`
-- [ ] T074 Run TypeScript typecheck and resolve reported issues in `tsconfig.json`
-- [ ] T075 Run production build and resolve build or content validation failures in `lib/content.ts`
+[X] T073 Run linting and resolve reported issues in `package.json`
+[X] T074 Run TypeScript typecheck and resolve reported issues in `tsconfig.json`
+[X] T075 Run production build and resolve build or content validation failures in `lib/content.ts`
 - [ ] T076 Run Playwright e2e suite and resolve failures in `tests/e2e/responsive.spec.ts`
 - [ ] T077 Run accessibility suite and resolve failures in `tests/accessibility/a11y.spec.ts`
 - [ ] T078 Run Lighthouse audits and resolve failures below 95 Performance, 95 Accessibility, 95 Best Practices, or 100 SEO in `tests/performance/lighthouse.config.cjs`
-- [ ] T079 Verify no incomplete implementation markers, hardcoded portfolio copy, or tutorial project references remain in `app/page.tsx`
+[X] T079 Verify no incomplete implementation markers, hardcoded portfolio copy, or tutorial project references remain in `app/page.tsx`
 - [ ] T080 Verify `/speckit.analyze` passes after implementation updates in `specs/001-foundation-refactor/tasks.md`
 
 ---
