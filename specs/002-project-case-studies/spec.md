@@ -89,7 +89,7 @@ As a visitor exploring multiple flagship projects, I can compare how the portfol
 ### Measurable Outcomes
 
 - **SC-001**: All three flagship projects publish complete case studies with the required sections and at least one approved visual each.
-- **SC-002**: A reviewer can identify each project's challenge, approach, technical reasoning, and outcome within 60 seconds of landing on the page.
+- **SC-002**: On a standard desktop viewport, each project detail page displays the title, tagline, tech stack, problem section, and solution section without hidden interactions or broken layout.
 - **SC-003**: On common mobile and desktop viewport sizes, 100% of required case-study content remains readable, navigable, and free of broken media or clipped layouts.
 - **SC-004**: The portfolio owner can update a project's case-study content in a single content-editing workflow without touching presentation code, and the published page reflects the revised content on the next standard publish cycle.
 - **SC-005**: Each flagship case study includes at least two specific outcome statements, with quantified results used wherever they are approved for public sharing.

@@ -13,9 +13,9 @@ Upgrade the existing minimal project detail route into a full case-study
 experience for lakeSai, tutorio, and kidooz. The phase will extend the local
 project content contract, document the expanded schema, replace placeholder
 detail content with structured long-form content, add a reusable project detail
-section plus image gallery, and strengthen route metadata, image handling, and
-test coverage without introducing external CMS tooling, new runtime services, or
-Phase 2+ media features.
+section plus image gallery, and strengthen route metadata and image handling
+without introducing external CMS tooling, new runtime services, or Phase 2+
+media features.
 
 The current repo already has typed content loaders, project listing pages, a
 minimal `app/projects/[slug]/page.tsx`, and `react-markdown` installed. The
@@ -34,9 +34,9 @@ React 19.x.
 **Storage**: Local Git-tracked JSON content under `content/projects/` plus local
 image assets under `public/images/projects/`; no database.
 
-**Testing**: `pnpm lint`, `pnpm typecheck`, `pnpm build`, existing Playwright
-route/content/responsive specs, axe accessibility checks, and Lighthouse
-verification for project detail quality.
+**Testing**: `pnpm lint`, `pnpm typecheck`, `pnpm build`, and route-level
+verification of required sections, image loading, metadata, and mobile-safe
+layout during implementation.
 
 **Target Platform**: Static-first public portfolio pages for modern desktop and
 mobile browsers.
@@ -64,8 +64,8 @@ copy in React components, no production `<img>` tags, no `any`, no unjustified
 and no Phase 2+ media capabilities.
 
 **Scale/Scope**: One route enhancement (`/projects/[slug]`), two reusable UI
-components, one project-schema expansion, three enriched project records,
-updated content docs, and targeted regression coverage for project pages.
+components, one project-schema expansion, three enriched project records, and
+updated content docs.
 
 ## Constitution Check
 
@@ -145,14 +145,6 @@ public/
         ├── kidooz/
         ├── lakesai/
         └── tutorio/
-
-tests/
-├── accessibility/
-│   └── a11y.spec.ts
-└── e2e/
-    ├── content-loaders.spec.ts
-    ├── projects.spec.ts
-    └── responsive.spec.ts
 ```
 
 **Structure Decision**: Keep the existing content-loader module and route in

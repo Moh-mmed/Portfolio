@@ -35,7 +35,6 @@ implementation and testing of each story.
 project pages
 
 - [ ] T001 Create and track project image folders in `public/images/projects/lakesai/`, `public/images/projects/tutorio/`, and `public/images/projects/kidooz/`
-- [ ] T002 [P] Update shared route targets in `tests/e2e/browser-diagnostics.spec.ts` and `tests/performance/lighthouse.config.cjs` for the expanded project detail surface
 
 ---
 
@@ -46,11 +45,10 @@ before user story implementation begins
 
 **CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T003 Update the `Project` and `ProjectLinks` interfaces in `lib/types.ts` for required `problem` and `solution`, optional `architecture` and `impact`, and the Phase 1 link contract
-- [ ] T004 Update `projectSchema` and project loader validation in `lib/content.ts` for the extended case-study contract and build-blocking content errors
-- [ ] T005 [P] Extend `resolveProjectImage` and related helpers in `lib/utils.ts` for gallery image resolution and placeholder-safe fallbacks
-- [ ] T006 [P] Expand schema regression coverage in `tests/e2e/content-loaders.spec.ts` for the extended project fields and malformed project records
-- [ ] T007 Update the project schema documentation and example entry in `content/README.md` for the Phase 1 content contract
+- [ ] T002 Update the `Project` and `ProjectLinks` interfaces in `lib/types.ts` for required `problem` and `solution`, optional `architecture` and `impact`, and the Phase 1 link contract
+- [ ] T003 Update `projectSchema` and project loader validation in `lib/content.ts` for the extended case-study contract and build-blocking content errors
+- [ ] T004 [P] Extend `resolveProjectImage` and related helpers in `lib/utils.ts` for gallery image resolution and placeholder-safe fallbacks
+- [ ] T005 Update the project schema documentation and example entry in `content/README.md` for the Phase 1 content contract
 
 **Checkpoint**: Foundation ready; user story implementation can now begin
 
@@ -67,17 +65,15 @@ project-specific metadata using only JSON-authored content
 
 ### Verification for User Story 1
 
-- [ ] T008 [P] [US1] Extend route assertions in `tests/e2e/projects.spec.ts` for the `lakesai` detail page sections, impact list, and project actions
-- [ ] T009 [P] [US1] Extend route accessibility and mobile checks in `tests/accessibility/a11y.spec.ts` and `tests/e2e/responsive.spec.ts` for `/projects/lakesai`
+- [ ] T006 [US1] Verify `app/projects/[slug]/page.tsx`, `components/sections/ProjectDetail.tsx`, and `content/projects/lakesai.json` render the required title, tagline, tech stack, problem section, and solution section on the `lakesai` page
 
 ### Implementation for User Story 1
 
-- [ ] T010 [P] [US1] Replace placeholder case-study copy in `content/projects/lakesai.json` with sanitized long-form content, impact metrics, and image references
-- [ ] T011 [P] [US1] Add lakeSai gallery assets in `public/images/projects/lakesai/` and align the referenced filenames in `content/projects/lakesai.json`
-- [ ] T012 [P] [US1] Implement the reusable case-study layout and markdown section rendering in `components/sections/ProjectDetail.tsx`
-- [ ] T013 [P] [US1] Implement the client-side click-to-enlarge gallery in `components/ui/ImageGallery.tsx`
-- [ ] T014 [US1] Refactor `app/projects/[slug]/page.tsx` to render `ProjectDetail`, derive project metadata, and emit `CreativeWork` JSON-LD from project content
-- [ ] T015 [US1] Update `components/sections/ProjectCard.tsx` to keep project previews consistent with the new detail-image and summary contract
+- [ ] T007 [P] [US1] Replace placeholder case-study copy in `content/projects/lakesai.json` with sanitized long-form content, impact metrics, and image references
+- [ ] T008 [P] [US1] Add lakeSai gallery assets in `public/images/projects/lakesai/` and align the referenced filenames in `content/projects/lakesai.json`
+- [ ] T009 [P] [US1] Implement the reusable case-study layout and markdown section rendering in `components/sections/ProjectDetail.tsx`
+- [ ] T010 [P] [US1] Implement the client-side click-to-enlarge gallery in `components/ui/ImageGallery.tsx`
+- [ ] T011 [US1] Refactor `app/projects/[slug]/page.tsx` to render `ProjectDetail`, derive project metadata, and emit `CreativeWork` JSON-LD from project content
 
 **Checkpoint**: User Story 1 is fully functional and independently testable
 
@@ -94,16 +90,15 @@ reflects the update without any component changes
 
 ### Verification for User Story 2
 
-- [ ] T016 [P] [US2] Update `tests/e2e/content-editing.spec.ts` to assert project detail copy is sourced from `content/projects/*.json`
-- [ ] T017 [P] [US2] Add an editability regression in `tests/e2e/projects.spec.ts` for optional sections and empty link states on project detail pages
+- [ ] T012 [US2] Verify `content/projects/tutorio.json`, `content/projects/kidooz.json`, `components/sections/ProjectDetail.tsx`, and `app/projects/[slug]/page.tsx` support JSON-only content updates without React copy changes
 
 ### Implementation for User Story 2
 
-- [ ] T018 [P] [US2] Replace placeholder case-study copy in `content/projects/tutorio.json` with structured long-form content, impact metrics, and image references
-- [ ] T019 [P] [US2] Finalize the Phase 1 `kidooz` case-study record in `content/projects/kidooz.json` for the documented schema and link behavior
-- [ ] T020 [P] [US2] Add or normalize gallery assets in `public/images/projects/tutorio/` and `public/images/projects/kidooz/` for the referenced project images
-- [ ] T021 [US2] Refine the authoring guidance in `content/README.md` and the validation error handling in `lib/content.ts` so JSON-only edits stay predictable
-- [ ] T022 [US2] Update `components/sections/ProjectDetail.tsx` and `app/projects/[slug]/page.tsx` to omit optional architecture, impact, and link sections cleanly when content fields are absent
+- [ ] T013 [P] [US2] Replace placeholder case-study copy in `content/projects/tutorio.json` with structured long-form content, impact metrics, and image references
+- [ ] T014 [P] [US2] Finalize the Phase 1 `kidooz` case-study record in `content/projects/kidooz.json` for the documented schema and link behavior
+- [ ] T015 [P] [US2] Add or normalize gallery assets in `public/images/projects/tutorio/` and `public/images/projects/kidooz/` for the referenced project images
+- [ ] T016 [US2] Refine the authoring guidance in `content/README.md` and the validation error handling in `lib/content.ts` so JSON-only edits stay predictable
+- [ ] T017 [US2] Update `components/sections/ProjectDetail.tsx` and `app/projects/[slug]/page.tsx` to omit optional architecture, impact, and link sections cleanly when content fields are absent
 
 **Checkpoint**: User Stories 1 and 2 both work independently
 
@@ -121,14 +116,14 @@ solution, architecture, and impact content
 
 ### Verification for User Story 3
 
-- [ ] T023 [P] [US3] Expand multi-route coverage in `tests/e2e/responsive.spec.ts` and `tests/e2e/browser-diagnostics.spec.ts` for `/projects/tutorio` and `/projects/kidooz`
-- [ ] T024 [P] [US3] Expand accessibility and performance coverage in `tests/accessibility/a11y.spec.ts` and `tests/performance/lighthouse.config.cjs` for all three project detail routes
+- [ ] T018 [US3] Verify `app/projects/[slug]/page.tsx`, `components/sections/ProjectDetail.tsx`, and `components/ui/ImageGallery.tsx` keep `lakesai`, `tutorio`, and `kidooz` structurally consistent and mobile-safe
+- [ ] T019 [US3] Verify `content/projects/lakesai.json`, `content/projects/tutorio.json`, and `content/projects/kidooz.json` each contain at least two entries in the `impact` array before phase completion
 
 ### Implementation for User Story 3
 
-- [ ] T025 [P] [US3] Normalize cross-project section ordering, tech badge presentation, and link blocks in `components/sections/ProjectDetail.tsx` and `components/ui/ImageGallery.tsx`
-- [ ] T026 [P] [US3] Ensure `content/projects/lakesai.json`, `content/projects/tutorio.json`, and `content/projects/kidooz.json` follow the same narrative structure and impact conventions without placeholder copy
-- [ ] T027 [US3] Verify static route enumeration and share metadata coverage across project pages in `app/projects/[slug]/page.tsx` and `app/sitemap.ts`
+- [ ] T020 [P] [US3] Normalize cross-project section ordering, tech badge presentation, and link blocks in `components/sections/ProjectDetail.tsx` and `components/ui/ImageGallery.tsx`
+- [ ] T021 [P] [US3] Ensure `content/projects/lakesai.json`, `content/projects/tutorio.json`, and `content/projects/kidooz.json` follow the same narrative structure and impact conventions without placeholder copy
+- [ ] T022 [US3] Finalize cross-project metadata and route behavior in `app/projects/[slug]/page.tsx`
 
 **Checkpoint**: All planned user stories are independently functional
 
@@ -138,9 +133,8 @@ solution, architecture, and impact content
 
 **Purpose**: Final quality work that affects multiple user stories
 
-- [ ] T028 [P] Finalize cross-route verification guidance in `specs/002-project-case-studies/quickstart.md` and confirm `docs/DEPLOYMENT.md` needs no new environment or hosting changes for local project images
-- [ ] T029 Optimize image naming, referenced filenames, and fallback usage in `public/images/projects/` and `content/projects/lakesai.json`, `content/projects/tutorio.json`, and `content/projects/kidooz.json`
-- [ ] T030 Validate that no placeholder copy, TODOs, or broken media references remain in `content/projects/lakesai.json`, `content/projects/tutorio.json`, `content/projects/kidooz.json`, `components/sections/ProjectDetail.tsx`, and `components/ui/ImageGallery.tsx`
+- [ ] T023 [P] Optimize image naming, referenced filenames, and fallback usage in `public/images/projects/` and `content/projects/lakesai.json`, `content/projects/tutorio.json`, and `content/projects/kidooz.json`
+- [ ] T024 Validate that no placeholder copy, TODOs, or broken media references remain in `content/projects/lakesai.json`, `content/projects/tutorio.json`, `content/projects/kidooz.json`, `components/sections/ProjectDetail.tsx`, and `components/ui/ImageGallery.tsx`
 
 ---
 
@@ -181,13 +175,12 @@ solution, architecture, and impact content
 
 ### Parallel Opportunities
 
-- T002, T005, T006, and T007 can proceed in parallel after T001/T003/T004 are
-  coordinated
-- In User Story 1, T010, T011, T012, and T013 can proceed in parallel before
-  T014 integrates the content and UI
-- In User Story 2, T018, T019, and T020 can proceed in parallel while T016 and
-  T017 update regression coverage
-- In User Story 3, T023 and T024 can run in parallel with T025 and T026 once
+- T004 and T005 can proceed in parallel after T002 and T003 are coordinated
+- In User Story 1, T007, T008, T009, and T010 can proceed in parallel before
+  T011 integrates the content and UI
+- In User Story 2, T013, T014, and T015 can proceed in parallel while T012
+  confirms the JSON-only authoring flow
+- In User Story 3, T018 and T019 can run in parallel with T020 and T021 once
   the prior stories are stable
 
 ---
@@ -207,14 +200,14 @@ Task: "Implement the client-side click-to-enlarge gallery in components/ui/Image
 Task: "Replace placeholder case-study copy in content/projects/tutorio.json with structured long-form content, impact metrics, and image references"
 Task: "Finalize the Phase 1 kidooz case-study record in content/projects/kidooz.json for the documented schema and link behavior"
 Task: "Add or normalize gallery assets in public/images/projects/tutorio/ and public/images/projects/kidooz/ for the referenced project images"
-Task: "Update tests/e2e/content-editing.spec.ts to assert project detail copy is sourced from content/projects/*.json"
+Task: "Verify content/projects/tutorio.json, content/projects/kidooz.json, components/sections/ProjectDetail.tsx, and app/projects/[slug]/page.tsx support JSON-only content updates without React copy changes"
 ```
 
 ## Parallel Example: User Story 3
 
 ```text
-Task: "Expand multi-route coverage in tests/e2e/responsive.spec.ts and tests/e2e/browser-diagnostics.spec.ts for /projects/tutorio and /projects/kidooz"
-Task: "Expand accessibility and performance coverage in tests/accessibility/a11y.spec.ts and tests/performance/lighthouse.config.cjs for all three project detail routes"
+Task: "Verify app/projects/[slug]/page.tsx, components/sections/ProjectDetail.tsx, and components/ui/ImageGallery.tsx keep lakesai, tutorio, and kidooz structurally consistent and mobile-safe"
+Task: "Verify content/projects/lakesai.json, content/projects/tutorio.json, and content/projects/kidooz.json each contain at least two entries in the impact array before phase completion"
 Task: "Normalize cross-project section ordering, tech badge presentation, and link blocks in components/sections/ProjectDetail.tsx and components/ui/ImageGallery.tsx"
 Task: "Ensure content/projects/lakesai.json, content/projects/tutorio.json, and content/projects/kidooz.json follow the same narrative structure and impact conventions without placeholder copy"
 ```
