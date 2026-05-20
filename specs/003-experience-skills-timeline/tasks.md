@@ -14,7 +14,7 @@
 
 **Purpose**: Project initialization and baseline quality tooling
 
-- [ ] T001 [P] Create placeholder company logos (`vitafluence.png`, `upwork.png`, `extramus.png`, `prodexo.png`) in `public/images/companies/`
+- [x] T001 [P] Create placeholder company logos (`vitafluence.png`, `upwork.png`, `extramus.png`, `prodexo.png`) in `public/images/companies/`
 
 ---
 
@@ -22,8 +22,8 @@
 
 **Purpose**: Core infrastructure that MUST be complete before any user story implementation begins
 
-- [ ] T002 Verify content schemas in `lib/content.ts` align with the entities defined in `data-model.md`
-- [ ] T003 [P] Update `content/README.md` to ensure experience and skills schemas are fully documented according to the data model
+- [x] T002 Verify content schemas in `lib/content.ts` align with the entities defined in `data-model.md`
+- [x] T003 [P] Update `content/README.md` to ensure experience and skills schemas are fully documented according to the data model
 
 **Checkpoint**: Foundation ready; user story implementation can now begin
 
@@ -37,17 +37,17 @@
 
 ### Verification for User Story 1
 
-- [ ] T004 [P] [US1] Add end-to-end test in `tests/e2e/about.spec.ts` to verify the timeline renders the 4 specific roles and their details correctly
-- [ ] T005 [P] [US1] Ensure accessibility checks are included for the timeline in `tests/accessibility/about.spec.ts` (if applicable)
+- [x] T004 [P] [US1] Add end-to-end test in `tests/e2e/about.spec.ts` to verify the timeline renders the 4 specific roles and their details correctly
+- [x] T005 [P] [US1] Ensure accessibility checks are included for the timeline in `tests/accessibility/about.spec.ts` (if applicable)
 
 ### Implementation for User Story 1
 
-- [ ] T006 [P] [US1] Update `content/experience.json` with the 4 specified roles (Vitafluence.ai, Upwork, Extramus, Prodexo)
-- [ ] T007 [US1] Refactor `components/sections/ExperienceTimeline.tsx` to render a vertical timeline layout with a left-aligned connecting line and absolute positioned logos. Use Next.js Image component with width, height, and alt attributes for all company logos. No standard `<img>` tags allowed.
-- [ ] T008 [US1] Implement fallback display for missing/broken company logos in `components/sections/ExperienceTimeline.tsx`. If logo fails to load, show company initials in a colored circle instead.
-- [ ] T009 [US1] Implement markdown rendering for description bullets using `react-markdown` in `components/sections/ExperienceTimeline.tsx`
-- [ ] T010 [US1] Add logic to display a "Present" badge for the current role (where `endDate` is null) in `components/sections/ExperienceTimeline.tsx`
-- [ ] T011 [US1] Verify the timeline is responsive and stacks horizontally/vertically as needed on mobile viewports in `app/about/page.tsx`
+- [x] T006 [P] [US1] Update `content/experience.json` with the 4 specified roles (Vitafluence.ai, Upwork, Extramus, Prodexo)
+- [x] T007 [US1] Refactor `components/sections/ExperienceTimeline.tsx` to render a vertical timeline layout with a left-aligned connecting line and absolute positioned logos. Use Next.js Image component with width, height, and alt attributes for all company logos. No standard `<img>` tags allowed.
+- [x] T008 [US1] Implement fallback display for missing/broken company logos in `components/sections/ExperienceTimeline.tsx`. If logo fails to load, show company initials in a colored circle instead.
+- [x] T009 [US1] Implement markdown rendering for description bullets using `react-markdown` in `components/sections/ExperienceTimeline.tsx`
+- [x] T010 [US1] Add logic to display a "Present" badge for the current role (where `endDate` is null) in `components/sections/ExperienceTimeline.tsx`
+- [x] T011 [US1] Verify the timeline is responsive and stacks horizontally/vertically as needed on mobile viewports in `app/about/page.tsx`
 
 **Checkpoint**: User Story 1 is fully functional and independently testable
 
@@ -61,14 +61,14 @@
 
 ### Verification for User Story 2
 
-- [ ] T012 [P] [US2] Add end-to-end test in `tests/e2e/about.spec.ts` to verify skills are displayed in categories with appropriate proficiency visual indicators
+- [x] T012 [P] [US2] Add end-to-end test in `tests/e2e/about.spec.ts` to verify skills are displayed in categories with appropriate proficiency visual indicators
 
 ### Implementation for User Story 2
 
-- [ ] T013 [P] [US2] Update `content/skills.json` with the categorized skills and proficiency levels from the specification
-- [ ] T014 [US2] Refactor `components/sections/SkillsGrid.tsx` to display skills grouped by category with headers
-- [ ] T015 [US2] Implement proficiency level visual indicators (expert: darker/bolder, advanced: medium, intermediate: lighter) in `components/sections/SkillsGrid.tsx`
-- [ ] T016 [US2] Ensure the skills grid layout is responsive (grid on desktop, stacks on mobile) in `app/about/page.tsx`
+- [x] T013 [P] [US2] Update `content/skills.json` with the categorized skills and proficiency levels from the specification
+- [x] T014 [US2] Refactor `components/sections/SkillsGrid.tsx` to display skills grouped by category with headers
+- [x] T015 [US2] Implement proficiency level visual indicators (expert: darker/bolder, advanced: medium, intermediate: lighter) in `components/sections/SkillsGrid.tsx`
+- [x] T016 [US2] Ensure the skills grid layout is responsive (grid on desktop, stacks on mobile) in `app/about/page.tsx`
 
 **Checkpoint**: User Stories 1 and 2 both work independently
 
@@ -82,8 +82,8 @@
 
 ### Verification for User Story 3
 
-- [ ] T017 [P] [US3] Verify `lib/content.ts` robustly parses and validates the JSON content using Zod schemas
-- [ ] T018 [US3] Manually test hot-reloading by modifying `content/experience.json` and verifying the changes reflect immediately in the browser at `app/about/page.tsx`
+- [x] T017 [P] [US3] Verify `lib/content.ts` robustly parses and validates the JSON content using Zod schemas
+- [x] T018 [US3] Manually test hot-reloading by modifying `content/experience.json` and verifying the changes reflect immediately in the browser at `app/about/page.tsx`
 
 **Checkpoint**: All planned user stories are independently functional
 
@@ -93,11 +93,11 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T019 [P] Finalize shared documentation updates in `content/README.md`
-- [ ] T020 Run accessibility checks (`pnpm test:a11y`) and fix any contrast or ARIA issues in `components/sections/ExperienceTimeline.tsx` and `components/sections/SkillsGrid.tsx`
-- [ ] T021 Run Lighthouse audit (`pnpm lighthouse`) and ensure performance > 95 for `app/about/page.tsx`
-- [ ] T022 Confirm deployment guidance and environment-variable documentation in `docs/DEPLOYMENT.md` remain accurate
-- [ ] T023 Run `pnpm build` to verify production build succeeds with no errors.
+- [x] T019 [P] Finalize shared documentation updates in `content/README.md`
+- [x] T020 Run accessibility checks (`pnpm test:a11y`) and fix any contrast or ARIA issues in `components/sections/ExperienceTimeline.tsx` and `components/sections/SkillsGrid.tsx`
+- [x] T021 Run Lighthouse audit (`pnpm lighthouse`) and ensure performance > 95 for `app/about/page.tsx`
+- [x] T022 Confirm deployment guidance and environment-variable documentation in `docs/DEPLOYMENT.md` remain accurate
+- [x] T023 Run `pnpm build` to verify production build succeeds with no errors.
 
 ---
 

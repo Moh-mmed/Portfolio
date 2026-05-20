@@ -3,44 +3,49 @@
     {
       "name": "Languages",
       "skills": [
-        { "name": "JavaScript", "level": "expert", "yearsOfExperience": 4 },
-        { "name": "TypeScript", "level": "advanced", "yearsOfExperience": 3 },
-        { "name": "Python", "level": "advanced", "yearsOfExperience": 3 },
-        { "name": "PHP", "level": "advanced", "yearsOfExperience": 3 },
+        { "name": "JavaScript", "level": "expert" },
+        { "name": "TypeScript", "level": "expert" },
+        { "name": "Python", "level": "advanced" },
+        { "name": "PHP", "level": "advanced" },
+        { "name": "Java", "level": "intermediate" },
         { "name": "C++", "level": "intermediate" },
-        { "name": "C#", "level": "intermediate" },
-        { "name": "Java", "level": "intermediate" }
+        { "name": "C#", "level": "intermediate" }
       ]
     },
     {
-      "name": "Frameworks",
+      "name": "Frameworks & Libraries",
       "skills": [
-        { "name": "React", "level": "expert", "yearsOfExperience": 4 },
-        { "name": "Next.js", "level": "advanced", "yearsOfExperience": 3 },
-        { "name": "Node.js", "level": "advanced", "yearsOfExperience": 3 },
-        { "name": "Express", "level": "advanced", "yearsOfExperience": 2 },
-        { "name": "Django", "level": "intermediate" },
-        { "name": "Laravel", "level": "advanced", "yearsOfExperience": 2 }
+        { "name": "React.js", "level": "expert" },
+        { "name": "Next.js", "level": "expert" },
+        { "name": "Node.js", "level": "expert" },
+        { "name": "Express.js", "level": "expert" },
+        { "name": "Tailwind CSS", "level": "expert" },
+        { "name": "Django", "level": "advanced" },
+        { "name": "Laravel", "level": "advanced" },
+        { "name": "SvelteKit", "level": "advanced" },
+        { "name": "Fastify", "level": "advanced" }
       ]
     },
     {
-      "name": "AI/ML",
+      "name": "AI & Machine Learning",
       "skills": [
         { "name": "LangChain", "level": "advanced" },
-        { "name": "Pandas", "level": "advanced" },
-        { "name": "NumPy", "level": "advanced" },
+        { "name": "Pandas", "level": "intermediate" },
+        { "name": "NumPy", "level": "intermediate" },
         { "name": "Matplotlib", "level": "intermediate" }
       ]
     },
     {
-      "name": "Tools",
+      "name": "Databases & Tools",
       "skills": [
-        { "name": "Git", "level": "expert", "yearsOfExperience": 4 },
+        { "name": "PostgreSQL", "level": "expert" },
+        { "name": "MongoDB", "level": "expert" },
+        { "name": "MySQL", "level": "expert" },
+        { "name": "Git", "level": "expert" },
         { "name": "Docker", "level": "advanced" },
-        { "name": "PostgreSQL", "level": "advanced" },
-        { "name": "MongoDB", "level": "advanced" },
-        { "name": "MySQL", "level": "advanced" },
-        { "name": "AWS", "level": "intermediate" }
+        { "name": "AWS", "level": "intermediate" },
+        { "name": "Drizzle ORM", "level": "advanced" },
+        { "name": "Prisma", "level": "advanced" }
       ]
     }
   ]

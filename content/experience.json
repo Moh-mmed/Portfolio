@@ -1,57 +1,58 @@
 [
   {
     "company": "Vitafluence.ai",
-    "role": "Back-end Developer",
+    "role": "Back-End Developer",
     "location": "Remote (Frankfurt, Germany)",
-    "type": "full-time",
+    "type": "part-time",
     "startDate": "2024-01",
     "endDate": null,
     "description": [
-      "Builds backend services and product foundations that support iterative AI-focused delivery.",
-      "Works across application logic, data flows, and integration points to keep product teams moving with confidence.",
-      "Contributes to maintainable engineering workflows with an emphasis on reliability and practical implementation."
+      "Building and integrating AI-powered back-end features using Python, LangChain, and RESTful APIs, focused on ethical and empathetic solutions to enhance human quality of life.",
+      "Conducting ongoing research and data analysis to create responsible AI applications; collaborating with cross-functional teams across time zones in an agile remote environment."
     ],
-    "tech": ["Node.js", "TypeScript", "APIs", "Product Integrations"]
+    "tech": ["Python", "LangChain", "FastAPI", "RESTful APIs"],
+    "logo": "vitafluence.png"
   },
   {
     "company": "Upwork",
-    "role": "Full-Stack Developer",
+    "role": "Freelance Full-Stack Developer",
     "location": "Remote",
     "type": "freelance",
-    "startDate": "2021-10",
+    "startDate": "2022-06",
     "endDate": null,
     "description": [
-      "Delivered websites, features, and custom small projects for clients using modern JavaScript and PHP stacks.",
-      "Worked directly with client requirements, translating rough requests into usable interfaces and backend workflows.",
-      "Used freelance delivery to deepen practical experience with production constraints, iteration speed, and communication."
+      "Developed full-stack web applications for international clients using React.js, Next.js, Node.js, Express.js, MongoDB, and MySQL.",
+      "Built projects including a full-featured tour booking platform (Node.js/Express/MongoDB), a PHP e-commerce system, and multiple React applications."
     ],
-    "tech": ["HTML", "CSS", "JavaScript", "React", "Next.js", "Node.js", "PHP", "Laravel", "MongoDB", "MySQL"]
+    "tech": ["React.js", "Next.js", "Node.js", "Express.js", "MongoDB", "MySQL", "PHP"],
+    "logo": "upwork.png"
   },
   {
     "company": "Extramus",
-    "role": "Software Engineering Intern",
-    "location": "Remote",
+    "role": "Full-Stack Developer Intern",
+    "location": "Remote (Italy)",
     "type": "contract",
     "startDate": "2023-06",
     "endDate": "2023-09",
     "description": [
-      "Supported product engineering work in a professional team environment while expanding hands-on delivery experience.",
-      "Contributed to implementation tasks that reinforced modern web development and team-based execution discipline."
+      "Developed and maintained full-stack features for production web applications.",
+      "Collaborated with the engineering team on feature planning and implementation."
     ],
-    "tech": ["JavaScript", "React", "Node.js", "Team Delivery"]
+    "tech": ["React.js", "Node.js", "JavaScript"],
+    "logo": "extramus.png"
   },
   {
     "company": "Prodexo",
-    "role": "Back-end Developer",
-    "location": "Tunis, Tunisia",
-    "type": "full-time",
-    "startDate": "2022-07",
-    "endDate": "2022-09",
+    "role": "Back-End Developer Intern",
+    "location": "Remote (Tunisia)",
+    "type": "contract",
+    "startDate": "2023-03",
+    "endDate": "2023-05",
     "description": [
-      "Developed backend services for the Opomise application using Laravel 9 in a production company context.",
-      "Worked with Facebook APIs and the Facebook SDK for PHP to support campaign and sponsorship workflows.",
-      "Designed and developed MySQL databases with Eloquent and enabled application features for business promotion."
+      "Built back-end features and APIs for web applications.",
+      "Worked with the development team on database design and optimization."
     ],
-    "tech": ["Laravel", "PHP", "MySQL", "Facebook APIs", "Eloquent ORM"]
+    "tech": ["Node.js", "Express.js", "MongoDB"],
+    "logo": "prodexo.png"
   }
 ]
