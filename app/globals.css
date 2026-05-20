@@ -4,13 +4,26 @@
 
 :root {
   color-scheme: light;
-  --background: #f8fbff;
-  --foreground: #0f172a;
-  --muted: #5b6b83;
-  --panel: rgba(255, 255, 255, 0.88);
-  --line: #d9e2f2;
-  --accent: #2563eb;
-  --accent-deep: #1d4ed8;
+  --color-bg: #f8fafc;
+  --color-bg-alt: #f1f5f9;
+  --color-bg-hover: #e2e8f0;
+  --color-text: #0f172a;
+  --color-text-muted: #475569;
+  --color-accent: #0d9488;
+  --color-accent-hover: #0f766e;
+  --color-border: #e2e8f0;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #0f172a;
+  --color-bg-alt: #1e293b;
+  --color-bg-hover: #334155;
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-accent: #2dd4bf;
+  --color-accent-hover: #5eead4;
+  --color-border: #1e293b;
 }
 
 html {
@@ -19,30 +32,16 @@ html {
 
 body {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, rgba(37, 99, 235, 0.14), transparent 24%),
-    radial-gradient(circle at 85% 10%, rgba(14, 165, 233, 0.1), transparent 22%),
-    linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
-  color: var(--foreground);
-  font-family:
-    "Avenir Next", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
-    sans-serif;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image:
-    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 85%);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition:
+    background-color 0.3s ease,
+    color 0.2s ease;
 }
 
 ::selection {
-  background: rgba(37, 99, 235, 0.18);
+  background: color-mix(in srgb, var(--color-accent) 28%, transparent);
+  color: var(--color-text);
 }
 
 a,
@@ -51,11 +50,12 @@ input,
 textarea,
 summary {
   transition:
-    color 180ms ease,
-    background-color 180ms ease,
-    border-color 180ms ease,
-    transform 180ms ease,
-    opacity 180ms ease;
+    color 0.2s ease,
+    background-color 0.3s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 a:focus-visible,
@@ -63,18 +63,18 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 summary:focus-visible {
-  outline: 3px solid rgba(37, 99, 235, 0.25);
+  outline: 3px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
   outline-offset: 3px;
 }
 
 .prose-copy {
-  @apply text-base leading-7 text-slate-700;
+  @apply text-base leading-7 text-muted;
 }
 
 .prose-copy h1,
 .prose-copy h2,
 .prose-copy h3 {
-  @apply font-semibold tracking-tight text-slate-950;
+  @apply font-semibold tracking-tight text-text;
 }
 
 .prose-copy h1 {
@@ -94,5 +94,19 @@ summary:focus-visible {
 }
 
 .surface {
-  @apply rounded-panel border border-white/70 bg-white/80 shadow-panel backdrop-blur;
+  @apply rounded-panel border border-border bg-bg-alt shadow-panel backdrop-blur;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

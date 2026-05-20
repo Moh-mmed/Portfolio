@@ -1,142 +1,113 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { sendContactEmail } from '@/app/contact/actions';
-import { contactSchema } from '@/lib/email/provider';
+import { useState } from "react";
+import { sendContactEmail } from "@/app/contact/actions";
+import { contactSchema } from "@/lib/email/provider";
 
 export function ContactForm() {
   const [isPending, setIsPending] = useState(false);
-  const [successMessage, setSuccessMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-  
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsPending(true);
-    setSuccessMessage('');
-    setErrorMessage('');
-    
+    setSuccessMessage("");
+    setErrorMessage("");
+
     const formData = new FormData(e.currentTarget);
     const rawData = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      subject: formData.get('subject') as string,
-      message: formData.get('message') as string,
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      subject: formData.get("subject") as string,
+      message: formData.get("message") as string
     };
-    
-    // Client-side validation
+
     const result = contactSchema.safeParse(rawData);
     if (!result.success) {
       setErrorMessage(result.error.errors[0].message);
       setIsPending(false);
       return;
     }
-    
-    // Server action
+
     const response = await sendContactEmail(formData);
-    
+
     if (response.success) {
-      setSuccessMessage('Message sent!');
+      setSuccessMessage("Message sent!");
       (e.target as HTMLFormElement).reset();
     } else {
-      setErrorMessage(response.error || 'Something went wrong.');
+      setErrorMessage(response.error || "Something went wrong.");
     }
-    
+
     setIsPending(false);
   };
 
+  const inputClass =
+    "w-full rounded-lg border border-border bg-bg px-4 py-2 text-text focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30";
+
   return (
-    <div className="w-full max-w-2xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+    <div className="mx-auto w-full max-w-2xl rounded-xl border border-border bg-bg-alt p-6 shadow-panel">
       {successMessage ? (
-        <div className="p-4 mb-6 bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-400 rounded-lg text-center" role="alert">
-          <p className="font-medium text-lg">{successMessage}</p>
-          <p className="text-sm mt-2 opacity-80">We'll get back to you shortly.</p>
-          <button 
-            onClick={() => setSuccessMessage('')}
-            className="mt-4 px-4 py-2 bg-green-100 dark:bg-green-800/50 rounded-md text-sm hover:bg-green-200 dark:hover:bg-green-800 transition-colors"
+        <div className="rounded-lg bg-accent/10 p-4 text-center text-accent" role="alert">
+          <p className="text-lg font-medium">{successMessage}</p>
+          <p className="mt-2 text-sm opacity-80">We&apos;ll get back to you shortly.</p>
+          <button
+            className="mt-4 rounded-md border border-border px-4 py-2 text-sm transition-colors hover:bg-bg-hover"
+            onClick={() => setSuccessMessage("")}
+            type="button"
           >
             Send another message
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-          {errorMessage && (
-            <div className="p-3 bg-red-50 text-red-700 dark:bg-red-900/30 dark:text-red-400 rounded-lg text-sm" role="alert">
+        <form className="space-y-5" noValidate onSubmit={handleSubmit}>
+          {errorMessage ? (
+            <div className="rounded-lg bg-red-500/10 p-3 text-sm text-red-400" role="alert">
               {errorMessage}
             </div>
-          )}
-          
+          ) : null}
+
           <div className="space-y-2">
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label className="block text-sm font-medium text-muted" htmlFor="name">
               Name
             </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-transparent dark:text-white"
-              disabled={isPending}
-            />
+            <input className={inputClass} disabled={isPending} id="name" name="name" required type="text" />
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label className="block text-sm font-medium text-muted" htmlFor="email">
               Email
             </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-transparent dark:text-white"
-              disabled={isPending}
-            />
+            <input className={inputClass} disabled={isPending} id="email" name="email" required type="email" />
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label className="block text-sm font-medium text-muted" htmlFor="subject">
               Subject
             </label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              required
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-transparent dark:text-white"
-              disabled={isPending}
-            />
+            <input className={inputClass} disabled={isPending} id="subject" name="subject" required type="text" />
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label className="block text-sm font-medium text-muted" htmlFor="message">
               Message
             </label>
             <textarea
+              className={`${inputClass} resize-y`}
+              disabled={isPending}
               id="message"
               name="message"
-              rows={5}
               required
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-transparent dark:text-white resize-y"
-              disabled={isPending}
+              rows={5}
             />
           </div>
 
           <button
-            type="submit"
+            className="flex w-full items-center justify-center rounded-lg bg-accent px-4 py-3 font-medium text-bg transition-colors hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-70"
             disabled={isPending}
-            className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center"
+            type="submit"
           >
-            {isPending ? (
-              <>
-                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                Sending...
-              </>
-            ) : (
-              'Send Message'
-            )}
+            {isPending ? "Sending..." : "Send Message"}
           </button>
         </form>
       )}

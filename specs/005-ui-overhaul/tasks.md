@@ -28,10 +28,10 @@
 
 **Purpose**: Project initialization, dependency installation, and baseline theme configuration
 
-- [ ] T001 Install `framer-motion` dependency in `package.json`
-- [ ] T002 Create the design tokens file containing core colors for dark and light modes in `lib/design-tokens.ts`
-- [ ] T003 Update Tailwind configuration to extend theme colors with CSS variables, define Inter font, and declare keyframe animations in `tailwind.config.ts`
-- [ ] T004 Update global styles with theme variable custom properties under `:root` and `[data-theme="dark"]`, define selection overrides, and declare default transitions in `app/globals.css`
+- [X] T001 Install `framer-motion` dependency in `package.json`
+- [X] T002 Create the design tokens file containing core colors for dark and light modes in `lib/design-tokens.ts`
+- [X] T003 Update Tailwind configuration to extend theme colors with CSS variables, define Inter font, and declare keyframe animations in `tailwind.config.ts`
+- [X] T004 Update global styles with theme variable custom properties under `:root` and `[data-theme="dark"]`, define selection overrides, and declare default transitions in `app/globals.css`
 
 ---
 
@@ -41,10 +41,10 @@
 
 **CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T005 Implement the custom theme client utility hook `useTheme` managing the `data-theme` attribute on the `<html>` root inside `lib/theme.ts`
-- [ ] T006 [P] Implement the dynamic `useScrollSpy` hook targeting custom element viewports inside `lib/use-scroll-spy.ts`
-- [ ] T007 [P] Implement the reusable entrance animation wrapper `AnimateIn` featuring viewport detection and reduced-motion fallbacks inside `components/ui/AnimateIn.tsx`
-- [ ] T008 Update the root document layout to embed the Inter font variable, configuration properties, and default `data-theme="dark"` attribute in `app/layout.tsx`
+- [X] T005 Implement the custom theme client utility hook `useTheme` managing the `data-theme` attribute on the `<html>` root inside `lib/theme.ts`
+- [X] T006 [P] Implement the dynamic `useScrollSpy` hook targeting custom element viewports inside `lib/use-scroll-spy.ts`
+- [X] T007 [P] Implement the reusable entrance animation wrapper `AnimateIn` featuring viewport detection and reduced-motion fallbacks inside `components/ui/AnimateIn.tsx`
+- [X] T008 Update the root document layout to embed the Inter font variable, configuration properties, and default `data-theme="dark"` attribute in `app/layout.tsx`
 
 **Checkpoint**: Foundation ready; user story implementation can now begin
 
@@ -58,15 +58,15 @@
 
 ### Verification for User Story 1
 
-- [ ] T009 [P] [US1] Create dynamic mock tests or verify standard navigation link scrolling functionality in browser developer console
+- [X] T009 [P] [US1] Create dynamic mock tests or verify standard navigation link scrolling functionality in browser developer console
 
 ### Implementation for User Story 1
 
-- [ ] T010 [US1] Re-architect the homepage layout structure to split into a fixed left section (40% width) and a scrollable right section (60% width) above 1024px in `app/page.tsx`
-- [ ] T011 [US1] Implement left sidebar elements displaying biography taglines, navigation link lists, and social icons in `app/page.tsx`
-- [ ] T012 [US1] Implement interactive nav line highlights that expand on active scroll-spy section match or hover in `app/page.tsx`
-- [ ] T013 [US1] Wire up the `useScrollSpy` hook to track scroll positions of right column sections and update sidebar active indicators in `app/page.tsx`
-- [ ] T014 [US1] Verify that no stub comments or placeholder elements remain on the newly configured desktop layout page
+- [X] T010 [US1] Re-architect the homepage layout structure to split into a fixed left section (40% width) and a scrollable right section (60% width) above 1024px in `app/page.tsx`
+- [X] T011 [US1] Implement left sidebar elements displaying biography taglines, navigation link lists, and social icons in `app/page.tsx`
+- [X] T012 [US1] Implement interactive nav line highlights that expand on active scroll-spy section match or hover in `app/page.tsx`
+- [X] T013 [US1] Wire up the `useScrollSpy` hook to track scroll positions of right column sections and update sidebar active indicators in `app/page.tsx`
+- [X] T014 [US1] Verify that no stub comments or placeholder elements remain on the newly configured desktop layout page
 
 **Checkpoint**: User Story 1 is fully functional and independently testable on desktop screens
 
@@ -80,13 +80,13 @@
 
 ### Verification for User Story 3
 
-- [ ] T015 [P] [US3] Verify correct responsive viewport media queries hide desktop sidebars and display mobile headers correctly on widths under 1024px
+- [X] T015 [P] [US3] Verify correct responsive viewport media queries hide desktop sidebars and display mobile headers correctly on widths under 1024px
 
 ### Implementation for User Story 3
 
-- [ ] T016 [US3] Create the mobile navigation header, hamburger menu button, sliding drawer layout, and dark backdrop overlay in `components/layout/MobileNav.tsx`
-- [ ] T017 [US3] Integrate `MobileNav` sticky header and drawer controls into the mobile-responsive branch of the homepage in `app/page.tsx`
-- [ ] T018 [US3] Ensure drawer closes automatically when links are clicked or the dark background backdrop is tapped in `components/layout/MobileNav.tsx`
+- [X] T016 [US3] Create the mobile navigation header, hamburger menu button, sliding drawer layout, and dark backdrop overlay in `components/layout/MobileNav.tsx`
+- [X] T017 [US3] Integrate `MobileNav` sticky header and drawer controls into the mobile-responsive branch of the homepage in `app/page.tsx`
+- [X] T018 [US3] Ensure drawer closes automatically when links are clicked or the dark background backdrop is tapped in `components/layout/MobileNav.tsx`
 
 **Checkpoint**: User Story 3 is fully functional and mobile layouts scale beautifully across viewports
 
@@ -100,12 +100,12 @@
 
 ### Implementation for User Story 2
 
-- [ ] T019 [P] [US2] Implement the interactive radial spotlight spotlight follow script using Framer Motion's `useSpring` and pointer tracking in `components/ui/CursorGlow.tsx`
-- [ ] T020 [US2] Inject the `CursorGlow` component into the root application page wrapping to activate the desktop background cursor glow in `app/layout.tsx`
-- [ ] T021 [US2] Wrap key bio paragraphs, titles, experience blocks, and grids in `AnimateIn` wrappers to activate scroll entrance transitions in `app/page.tsx`
-- [ ] T022 [US2] Refactor projects display card components to lift vertically and scale dynamically on hover inside `components/sections/ProjectCard.tsx`
-- [ ] T023 [US2] Integrate cursor hover glowing shadows on skill cards in `components/sections/SkillsGrid.tsx`
-- [ ] T024 [US2] Verify that turning on prefers-reduced-motion in browser/OS settings simplifies or disables transitions immediately
+- [X] T019 [P] [US2] Implement the interactive radial spotlight spotlight follow script using Framer Motion's `useSpring` and pointer tracking in `components/ui/CursorGlow.tsx`
+- [X] T020 [US2] Inject the `CursorGlow` component into the root application page wrapping to activate the desktop background cursor glow in `app/layout.tsx`
+- [X] T021 [US2] Wrap key bio paragraphs, titles, experience blocks, and grids in `AnimateIn` wrappers to activate scroll entrance transitions in `app/page.tsx`
+- [X] T022 [US2] Refactor projects display card components to lift vertically and scale dynamically on hover inside `components/sections/ProjectCard.tsx`
+- [X] T023 [US2] Integrate cursor hover glowing shadows on skill cards in `components/sections/SkillsGrid.tsx`
+- [X] T024 [US2] Verify that turning on prefers-reduced-motion in browser/OS settings simplifies or disables transitions immediately
 
 **Checkpoint**: User Story 2 is fully functional, delivering premium interactive depth
 
@@ -119,10 +119,10 @@
 
 ### Implementation for User Story 4
 
-- [ ] T025 [P] [US4] Create the theme toggle button featuring smooth icon rotation transitions via Framer Motion's `AnimatePresence` in `components/ui/ThemeToggle.tsx`
-- [ ] T026 [US4] Embed the `ThemeToggle` component into the bottom section of the sticky desktop sidebar menu inside `app/page.tsx`
-- [ ] T027 [US4] Embed the `ThemeToggle` component inside the mobile navigation menu drawer inside `components/layout/MobileNav.tsx`
-- [ ] T028 [US4] Ensure all styled components utilize variables rather than hardcoded hex properties so styling adjusts dynamically on theme changes
+- [X] T025 [P] [US4] Create the theme toggle button featuring smooth icon rotation transitions via Framer Motion's `AnimatePresence` in `components/ui/ThemeToggle.tsx`
+- [X] T026 [US4] Embed the `ThemeToggle` component into the bottom section of the sticky desktop sidebar menu inside `app/page.tsx`
+- [X] T027 [US4] Embed the `ThemeToggle` component inside the mobile navigation menu drawer inside `components/layout/MobileNav.tsx`
+- [X] T028 [US4] Ensure all styled components utilize variables rather than hardcoded hex properties so styling adjusts dynamically on theme changes
 
 **Checkpoint**: User Story 4 is fully functional and persists preferences cleanly
 
@@ -136,10 +136,10 @@
 
 ### Implementation for User Story 5
 
-- [ ] T029 [P] [US5] Verify that all project visual assets below the fold are configured to lazy-load and have explicit alt attributes inside `components/sections/ProjectCard.tsx`
-- [ ] T030 [P] [US5] Declare proper meta header objects (theme-color) inside the root document structure in `app/layout.tsx`
-- [ ] T031 [US5] Re-align project detail view colors, back navigation triggers, and image lightboxes with the dynamic dark/light custom system variables in `app/projects/[slug]/page.tsx`
-- [ ] T032 [US5] Audit homepage and project details locally to ensure Lighthouse Performance, Accessibility, and Best Practices score 95+ and SEO scores 100
+- [X] T029 [P] [US5] Verify that all project visual assets below the fold are configured to lazy-load and have explicit alt attributes inside `components/sections/ProjectCard.tsx`
+- [X] T030 [P] [US5] Declare proper meta header objects (theme-color) inside the root document structure in `app/layout.tsx`
+- [X] T031 [US5] Re-align project detail view colors, back navigation triggers, and image lightboxes with the dynamic dark/light custom system variables in `app/projects/[slug]/page.tsx`
+- [X] T032 [US5] Audit homepage and project details locally to ensure Lighthouse Performance, Accessibility, and Best Practices score 95+ and SEO scores 100
 
 **Checkpoint**: User Story 5 is fully functional and delivers a highly performant experience
 
@@ -149,9 +149,9 @@
 
 **Purpose**: High-fidelity refinement across visual components and user experiences
 
-- [ ] T033 Verify robust screen-reader accessibility by validating ARIA controls on hamburger drawer actions and theme toggle hooks
-- [ ] T034 Confirm sitemap configuration, robots endpoints, and structured metadata remain fully compliant with SEO principles
-- [ ] T035 [P] Remove all temporary comments, debug prints, stubs, and TODO placeholders from the entire workspace
+- [X] T033 Verify robust screen-reader accessibility by validating ARIA controls on hamburger drawer actions and theme toggle hooks
+- [X] T034 Confirm sitemap configuration, robots endpoints, and structured metadata remain fully compliant with SEO principles
+- [X] T035 [P] Remove all temporary comments, debug prints, stubs, and TODO placeholders from the entire workspace
 
 ---
 

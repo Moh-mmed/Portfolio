@@ -13,7 +13,7 @@ interface ProjectDetailProps {
 
 function sectionHeading(id: string, title: string) {
   return (
-    <h2 className="text-xl font-semibold tracking-tight text-slate-950" id={id}>
+    <h2 className="text-xl font-semibold tracking-tight text-text" id={id}>
       {title}
     </h2>
   );
@@ -28,7 +28,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
   return (
     <div className="space-y-10">
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-        <Card className="overflow-hidden rounded-[24px]">
+        <Card className="overflow-hidden rounded-[24px] border-border bg-bg-alt">
           <div className="relative aspect-[16/11]">
             <Image
               alt={`${project.title} preview`}
@@ -44,24 +44,24 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         <div className="space-y-6">
           <div className="space-y-4">
             <Badge>{project.category}</Badge>
-            <h1 className="text-4xl font-semibold tracking-tight text-slate-950">{project.title}</h1>
-            <p className="text-lg leading-8 text-slate-600">{project.tagline}</p>
+            <h1 className="text-4xl font-semibold tracking-tight text-text">{project.title}</h1>
+            <p className="text-lg leading-8 text-muted">{project.tagline}</p>
           </div>
 
-          <Card className="rounded-[24px] p-6">
-            <dl className="grid gap-4 text-sm text-slate-600">
+          <Card className="rounded-[24px] border-border bg-bg-alt p-6">
+            <dl className="grid gap-4 text-sm text-muted">
               <div>
-                <dt className="font-semibold uppercase tracking-[0.18em] text-slate-500">Role</dt>
-                <dd className="mt-1 text-base text-slate-900">{project.role}</dd>
+                <dt className="font-semibold uppercase tracking-[0.18em] text-muted">Role</dt>
+                <dd className="mt-1 text-base text-text">{project.role}</dd>
               </div>
               <div>
-                <dt className="font-semibold uppercase tracking-[0.18em] text-slate-500">Timeline</dt>
-                <dd className="mt-1 text-base text-slate-900">{project.timeline}</dd>
+                <dt className="font-semibold uppercase tracking-[0.18em] text-muted">Timeline</dt>
+                <dd className="mt-1 text-base text-text">{project.timeline}</dd>
               </div>
               {project.company ? (
                 <div>
-                  <dt className="font-semibold uppercase tracking-[0.18em] text-slate-500">Company</dt>
-                  <dd className="mt-1 text-base text-slate-900">{project.company}</dd>
+                  <dt className="font-semibold uppercase tracking-[0.18em] text-muted">Company</dt>
+                  <dd className="mt-1 text-base text-text">{project.company}</dd>
                 </div>
               ) : null}
             </dl>
@@ -71,7 +71,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
             {sectionHeading("project-tech", "Tech stack")}
             <ul aria-labelledby="project-tech" className="mt-3 flex flex-wrap gap-2">
               {project.tech.map((item) => (
-                <li className="rounded-full border border-slate-200 px-3 py-1 text-sm text-slate-600" key={item}>
+                <li className="rounded-full border border-border px-3 py-1 text-sm text-muted" key={item}>
                   {item}
                 </li>
               ))}
@@ -79,7 +79,10 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <Button href="/projects" variant="outline">
+            <Button className="group" href="/projects" variant="outline">
+              <span aria-hidden="true" className="transition-transform group-hover:-translate-x-1">
+                ←
+              </span>
               Back to projects
             </Button>
             {project.links?.live ? <Button href={project.links.live}>Live</Button> : null}
@@ -135,7 +138,10 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
             {sectionHeading("project-impact", "Impact")}
             <ul aria-labelledby="project-impact" className="mt-4 space-y-3">
               {project.impact.map((item) => (
-                <li className="flex gap-3 rounded-[18px] border border-slate-200 bg-white/70 p-4 text-sm text-slate-700" key={item}>
+                <li
+                  className="flex gap-3 rounded-[18px] border border-border bg-bg-alt p-4 text-sm text-muted"
+                  key={item}
+                >
                   <span aria-hidden="true" className="mt-0.5 h-2.5 w-2.5 flex-none rounded-full bg-accent" />
                   <span className="leading-6">{item}</span>
                 </li>

@@ -9,25 +9,37 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        bg: "var(--color-bg)",
+        "bg-alt": "var(--color-bg-alt)",
+        "bg-hover": "var(--color-bg-hover)",
+        text: "var(--color-text)",
+        muted: "var(--color-text-muted)",
+        accent: "var(--color-accent)",
+        "accent-hover": "var(--color-accent-hover)",
+        border: "var(--color-border)",
         ink: "#0f172a",
         mist: "#eef4ff",
         stone: "#64748b",
-        line: "#d9e2f2",
-        accent: {
-          DEFAULT: "#2563eb",
-          soft: "#dbeafe",
-          deep: "#1d4ed8"
-        }
+        line: "#d9e2f2"
+      },
+      fontFamily: {
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"]
       },
       boxShadow: {
-        panel: "0 18px 50px rgba(15, 23, 42, 0.08)"
+        panel: "0 18px 50px rgba(15, 23, 42, 0.08)",
+        glow: "0 0 24px color-mix(in srgb, var(--color-accent) 35%, transparent)"
       },
       borderRadius: {
         panel: "0.75rem"
       },
-      backgroundImage: {
-        "mesh-gradient":
-          "radial-gradient(circle at top, rgba(37, 99, 235, 0.18), transparent 36%), radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.12), transparent 28%)"
+      keyframes: {
+        "fade-up": {
+          "0%": { opacity: "0", transform: "translateY(16px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
+        }
+      },
+      animation: {
+        "fade-up": "fade-up 0.5s ease-out forwards"
       }
     }
   },

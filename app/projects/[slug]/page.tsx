@@ -63,7 +63,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   };
 
   return (
-    <Section className="pt-14 md:pt-20">
+    <Section className="bg-bg pt-14 md:pt-20">
       <ProjectDetail project={project} />
       <script
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

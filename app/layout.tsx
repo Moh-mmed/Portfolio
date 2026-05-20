@@ -1,9 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
-import { Footer } from "@/components/layout/Footer";
-import { Header } from "@/components/layout/Header";
+import { AppChrome } from "@/components/layout/AppChrome";
+import { CursorGlow } from "@/components/ui/CursorGlow";
+import { colors } from "@/lib/design-tokens";
 import { buildAbsoluteUrl } from "@/lib/utils";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap"
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://benaoumeur.vercel.app"),
@@ -38,13 +46,24 @@ export const metadata: Metadata = {
   }
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: colors.light.bg },
+    { media: "(prefers-color-scheme: dark)", color: colors.dark.bg }
+  ]
+};
+
+const themeInitScript = `(function(){try{var t=localStorage.getItem('portfolio-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);return;}if(window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.setAttribute('data-theme','dark');}else{document.documentElement.setAttribute('data-theme','dark');}}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
+
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en">
-      <body className="text-slate-950 antialiased">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+    <html className={inter.variable} data-theme="dark" lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className="bg-bg font-sans text-text antialiased">
+        <CursorGlow />
+        <AppChrome>{children}</AppChrome>
       </body>
     </html>
   );

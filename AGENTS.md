@@ -4,5 +4,5 @@ This repository uses Spec Kit for feature planning and implementation. The
 active plan reference is maintained between the markers below.
 
 <!-- SPECKIT START -->
-Current implementation plan: `specs/004-contact-resume/plan.md`
+Current implementation plan: `specs/005-ui-overhaul/plan.md`
 <!-- SPECKIT END -->

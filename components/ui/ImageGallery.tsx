@@ -19,15 +19,15 @@ export function ImageGallery({ images }: ImageGalleryProps) {
 
   return (
     <div className="space-y-5">
-      <h2 className="text-xl font-semibold tracking-tight text-slate-950" id={titleId}>
+      <h2 className="text-xl font-semibold tracking-tight text-text" id={titleId}>
         Gallery
       </h2>
       <div aria-labelledby={titleId} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {images.map((image, index) => (
           <button
             className={cn(
-              "group relative aspect-[16/10] overflow-hidden rounded-[20px] border border-slate-200 bg-white/70 text-left shadow-sm",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+              "group relative aspect-[16/10] overflow-hidden rounded-[20px] border border-border bg-bg-alt text-left shadow-sm",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
             )}
             key={image.src}
             onClick={() => setActiveIndex(index)}
@@ -37,6 +37,7 @@ export function ImageGallery({ images }: ImageGalleryProps) {
               alt={image.alt}
               className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
               fill
+              loading="lazy"
               sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 100vw"
               src={image.src}
             />
@@ -47,15 +48,15 @@ export function ImageGallery({ images }: ImageGalleryProps) {
       {activeImage ? (
         <div
           aria-modal="true"
-          className="fixed inset-0 z-50 grid place-items-center bg-slate-950/70 p-4"
+          className="fixed inset-0 z-50 grid place-items-center bg-bg/80 p-4 backdrop-blur-sm"
           onClick={() => setActiveIndex(null)}
           role="dialog"
         >
           <div
-            className="relative w-full max-w-5xl overflow-hidden rounded-[24px] bg-white shadow-2xl"
+            className="relative w-full max-w-5xl overflow-hidden rounded-[24px] border border-border bg-bg-alt shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="relative aspect-[16/10] bg-slate-100">
+            <div className="relative aspect-[16/10] bg-bg-hover">
               <Image
                 alt={activeImage.alt}
                 className="h-full w-full object-contain"
@@ -65,12 +66,12 @@ export function ImageGallery({ images }: ImageGalleryProps) {
                 src={activeImage.src}
               />
             </div>
-            <div className="flex items-center justify-between gap-4 border-t border-slate-200 px-5 py-4">
-              <p className="text-sm text-slate-600">{activeImage.alt}</p>
+            <div className="flex items-center justify-between gap-4 border-t border-border px-5 py-4">
+              <p className="text-sm text-muted">{activeImage.alt}</p>
               <button
                 className={cn(
-                  "rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm",
-                  "hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                  "rounded-full border border-border bg-bg px-4 py-2 text-sm font-semibold text-text shadow-sm",
+                  "hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
                 )}
                 onClick={() => setActiveIndex(null)}
                 type="button"
@@ -84,4 +85,3 @@ export function ImageGallery({ images }: ImageGalleryProps) {
     </div>
   );
 }
-

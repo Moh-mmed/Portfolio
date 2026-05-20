@@ -1,11 +1,15 @@
-import { Hero } from "@/components/sections/Hero";
-import { ProjectGrid } from "@/components/sections/ProjectGrid";
-import { Section } from "@/components/ui/Section";
-import { getFeaturedProjects } from "@/lib/content";
+import { PortfolioHome } from "@/components/sections/PortfolioHome";
+import { getAbout, getExperience, getFeaturedProjects, getSkills } from "@/lib/content";
 import { buildAbsoluteUrl } from "@/lib/utils";
 
 export default async function HomePage() {
-  const projects = await getFeaturedProjects();
+  const [about, experience, skills, projects] = await Promise.all([
+    getAbout(),
+    getExperience(),
+    getSkills(),
+    getFeaturedProjects()
+  ]);
+
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -34,20 +38,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <Section className="pt-14 md:pt-20">
-        <Hero />
-      </Section>
-      <Section id="featured-projects" className="pt-6">
-        <div className="mb-8 flex flex-col gap-2">
-          <p className="text-sm font-medium uppercase tracking-[0.22em] text-slate-500">
-            Featured projects
-          </p>
-          <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
-            Professional work selected for signal, clarity, and delivery quality
-          </h2>
-        </div>
-        <ProjectGrid projects={projects} />
-      </Section>
+      <PortfolioHome about={about} experience={experience} projects={projects} skills={skills} />
       <script
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         type="application/ld+json"

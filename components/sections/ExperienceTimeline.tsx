@@ -17,7 +17,7 @@ function CompanyLogo({ logo, companyName }: { logo?: string | null; companyName:
 
   if (!logo || hasError) {
     return (
-      <div className="flex h-full w-full items-center justify-center bg-slate-100 text-sm font-bold text-slate-500">
+      <div className="flex h-full w-full items-center justify-center bg-bg-hover text-sm font-bold text-muted">
         {initials}
       </div>
     );
@@ -39,43 +39,43 @@ export function ExperienceTimeline({ experience }: ExperienceTimelineProps) {
   return (
     <div className="space-y-8">
       <div className="space-y-2">
-        <p className="text-sm font-medium uppercase tracking-[0.22em] text-slate-500">Experience</p>
-        <h2 className="text-3xl font-semibold tracking-tight text-slate-950">Recent roles and delivery context</h2>
+        <p className="text-sm font-medium uppercase tracking-[0.22em] text-muted">Experience</p>
+        <h2 className="text-3xl font-semibold tracking-tight text-text">Recent roles and delivery context</h2>
       </div>
-      
-      <div className="relative border-l-2 border-slate-200 ml-4 md:ml-6 pl-8 md:pl-12 space-y-12">
+
+      <div className="relative ml-4 space-y-12 border-l-2 border-border pl-8 md:ml-6 md:pl-12">
         {experience.map((entry) => (
           <div key={`${entry.company}-${entry.startDate}`} className="relative">
-            <div className="absolute -left-[33px] md:-left-[49px] -translate-x-1/2 top-0 flex h-12 w-12 items-center justify-center rounded-full border-2 border-slate-200 bg-white shadow-sm overflow-hidden z-10">
+            <div className="absolute -left-[33px] top-0 z-10 flex h-12 w-12 -translate-x-1/2 items-center justify-center overflow-hidden rounded-full border-2 border-border bg-bg-alt shadow-sm md:-left-[49px]">
               <CompanyLogo logo={entry.logo} companyName={entry.company} />
             </div>
 
-            <Card className="rounded-[24px] p-6 md:p-7">
+            <Card className="rounded-[24px] border-border bg-bg-alt p-6 md:p-7">
               <div className="flex flex-col gap-4 md:flex-row md:justify-between">
                 <div className="space-y-3">
                   <div>
-                    <p className="text-sm font-medium uppercase tracking-[0.18em] text-slate-500">{entry.company}</p>
-                    <h3 className="mt-2 text-2xl font-semibold tracking-tight text-slate-950">{entry.role}</h3>
+                    <p className="text-sm font-medium uppercase tracking-[0.18em] text-muted">{entry.company}</p>
+                    <h3 className="mt-2 text-2xl font-semibold tracking-tight text-text">{entry.role}</h3>
                   </div>
-                  <p className="text-sm text-slate-500">
+                  <p className="text-sm text-muted">
                     {entry.location} · {entry.type.replace("-", " ")}
                   </p>
                 </div>
-                
-                <div className="text-sm font-medium text-slate-500 whitespace-nowrap">
+
+                <div className="whitespace-nowrap text-sm font-medium text-muted">
                   {entry.endDate ? (
                     formatDateRange(entry.startDate, entry.endDate)
                   ) : (
                     <div className="flex items-center gap-2">
                       <span>{formatMonthYear(entry.startDate)} - </span>
-                      <span className="inline-flex items-center rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent-deep">
+                      <span className="inline-flex items-center rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">
                         Present
                       </span>
                     </div>
                   )}
                 </div>
               </div>
-              <ul className="mt-5 list-disc space-y-2 pl-5 text-slate-600">
+              <ul className="mt-5 list-disc space-y-2 pl-5 text-muted">
                 {entry.description.map((item) => (
                   <li key={item}>
                     <ReactMarkdown components={{ p: ({ node, ...props }) => <span {...props} /> }}>
@@ -86,7 +86,7 @@ export function ExperienceTimeline({ experience }: ExperienceTimelineProps) {
               </ul>
               <div className="mt-5 flex flex-wrap gap-2">
                 {entry.tech.map((tech) => (
-                  <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600" key={tech}>
+                  <span className="rounded-full bg-bg-hover px-3 py-1 text-xs font-medium text-muted" key={tech}>
                     {tech}
                   </span>
                 ))}
