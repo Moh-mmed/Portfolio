@@ -39,7 +39,8 @@
 
 | Name | Purpose | Required |
 |------|---------|----------|
-| `CONTACT_EMAIL` | Reserved for Phase 3 contact form delivery | No |
+| `CONTACT_EMAIL` | Target email address for contact form submissions | Yes (for contact form) |
+| `RESEND_API_KEY` | Resend API key for delivering contact form emails | Yes (for contact form) |
 | `NEXT_PUBLIC_ANALYTICS_ID` | Reserved for Phase 5 analytics integration | No |
 | `ADMIN_PASSWORD_HASH` | Reserved for optional Phase 4 admin authentication | No |
 
