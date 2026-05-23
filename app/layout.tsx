@@ -16,7 +16,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://benaoumeur.vercel.app"),
   title: {
-    default: "Mohammed Ben Aoumeur | Full-Stack Engineer and AI Integration Specialist",
+    default:
+      "Mohammed Ben Aoumeur | Full-Stack Engineer and AI Integration Specialist",
     template: "%s | Mohammed Ben Aoumeur"
   },
   description:
@@ -55,13 +56,18 @@ export const viewport: Viewport = {
 
 const themeInitScript = `(function(){try{var t=localStorage.getItem('portfolio-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);return;}if(window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.setAttribute('data-theme','dark');}else{document.documentElement.setAttribute('data-theme','dark');}}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default function RootLayout({
+  children
+}: Readonly<{ children: ReactNode }>) {
   return (
-    <html className={inter.variable} data-theme="dark" lang="en" suppressHydrationWarning>
+    <html className={inter.variable} lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className="bg-bg font-sans text-text antialiased">
+      <body
+        className="bg-bg font-sans text-text antialiased"
+        suppressHydrationWarning
+      >
         <CursorGlow />
         <AppChrome>{children}</AppChrome>
       </body>

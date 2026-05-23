@@ -1,7 +1,7 @@
 'use server';
 
 import { headers } from 'next/headers';
-import { contactSchema } from '@/lib/email/provider';
+import { contactSchema } from '@/lib/email/contact-schema';
 import { getEmailProvider } from '@/lib/email/provider';
 import { checkRateLimit } from '@/lib/rate-limit';
 

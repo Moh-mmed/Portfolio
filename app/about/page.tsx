@@ -32,7 +32,7 @@ export default async function AboutPage() {
   return (
     <>
       <Section className="pt-14 md:pt-20">
-        <AboutSection content={about.content} description={about.description} title={about.title} />
+        <AboutSection content={about.content} description={about.description} />
       </Section>
       <Section className="pt-0">
         <ExperienceTimeline experience={experience} />

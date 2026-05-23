@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { sendContactEmail } from "@/app/contact/actions";
-import { contactSchema } from "@/lib/email/provider";
+import { contactSchema } from "@/lib/email/contact-schema";
 
 export function ContactForm() {
   const [isPending, setIsPending] = useState(false);

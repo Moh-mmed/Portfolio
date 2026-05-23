@@ -26,7 +26,12 @@ export interface Project {
   links?: ProjectLinks;
 }
 
-export type ExperienceType = "full-time" | "part-time" | "contract" | "freelance";
+export type ExperienceType =
+  | "full-time"
+  | "part-time"
+  | "contract"
+  | "freelance"
+  | "internship";
 
 export interface Experience {
   company: string;
@@ -56,7 +61,6 @@ export interface Skills {
 }
 
 export interface AboutContent {
-  title: string;
   description: string;
   content: string;
 }

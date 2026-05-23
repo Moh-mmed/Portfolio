@@ -25,7 +25,10 @@ const navLinks = [
 
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/Moh-mmed" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/mohammed-benaoumeur/" }
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/mohammed-benaoumeur/"
+  }
 ];
 
 interface PortfolioHomeProps {
@@ -35,7 +38,12 @@ interface PortfolioHomeProps {
   projects: Project[];
 }
 
-export function PortfolioHome({ about, experience, skills, projects }: PortfolioHomeProps) {
+export function PortfolioHome({
+  about,
+  experience,
+  skills,
+  projects
+}: PortfolioHomeProps) {
   const activeSection = useScrollSpy({ sectionIds });
 
   return (
@@ -46,13 +54,15 @@ export function PortfolioHome({ about, experience, skills, projects }: Portfolio
         <aside className="hidden lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[40%] lg:max-w-xl lg:flex-col lg:justify-between lg:px-12 lg:py-16 xl:px-16">
           <div className="space-y-8">
             <div className="space-y-4">
-              <p className="text-sm font-medium text-accent">Full-Stack Engineer & AI Integration</p>
+              <p className="text-sm font-medium text-accent">
+                Software Engineer
+              </p>
               <h1 className="text-4xl font-semibold tracking-tight text-text xl:text-5xl">
                 Mohammed Ben Aoumeur
               </h1>
               <p className="max-w-sm text-base leading-7 text-muted">
-                Building reliable product foundations for teams that need fast iteration and clean
-                delivery.
+                Building reliable product foundations for teams that need fast
+                iteration and clean delivery.
               </p>
             </div>
 
@@ -101,7 +111,11 @@ export function PortfolioHome({ about, experience, skills, projects }: Portfolio
                 </li>
               ))}
               <li>
-                <a className="transition-colors hover:text-accent" href="/resume.pdf" download="Mohammed_Ben_Aoumeur_Resume.pdf">
+                <a
+                  className="transition-colors hover:text-accent"
+                  href="/resume.pdf"
+                  download="Mohammed_Ben_Aoumeur_Resume.pdf"
+                >
                   Resume
                 </a>
               </li>
@@ -114,7 +128,10 @@ export function PortfolioHome({ about, experience, skills, projects }: Portfolio
           <div className="space-y-24 px-5 py-10 lg:px-12 lg:py-16 xl:px-16">
             <AnimateIn>
               <section className="scroll-mt-24" id="about">
-                <AboutSection content={about.content} description={about.description} title={about.title} />
+                <AboutSection
+                  content={about.content}
+                  description={about.description}
+                />
               </section>
             </AnimateIn>
 
@@ -127,7 +144,9 @@ export function PortfolioHome({ about, experience, skills, projects }: Portfolio
             <AnimateIn delay={0.1}>
               <section className="scroll-mt-24" id="projects">
                 <div className="mb-8 space-y-2">
-                  <p className="text-sm font-medium uppercase tracking-[0.22em] text-muted">Projects</p>
+                  <p className="text-sm font-medium uppercase tracking-[0.22em] text-muted">
+                    Projects
+                  </p>
                   <h2 className="text-3xl font-semibold tracking-tight text-text">
                     Professional work selected for signal and delivery quality
                   </h2>
@@ -145,12 +164,16 @@ export function PortfolioHome({ about, experience, skills, projects }: Portfolio
             <AnimateIn delay={0.2}>
               <section className="scroll-mt-24" id="contact">
                 <div className="mb-8 space-y-2">
-                  <p className="text-sm font-medium uppercase tracking-[0.22em] text-muted">Contact</p>
+                  <p className="text-sm font-medium uppercase tracking-[0.22em] text-muted">
+                    Contact
+                  </p>
                   <h2 className="text-3xl font-semibold tracking-tight text-text">
-                    Start a conversation about product, engineering, or collaboration
+                    Start a conversation about product, engineering, or
+                    collaboration
                   </h2>
                   <p className="max-w-2xl text-base leading-7 text-muted">
-                    Send a message through the form below or connect directly via GitHub and LinkedIn.
+                    Send a message through the form below or connect directly
+                    via GitHub and LinkedIn.
                   </p>
                 </div>
                 <ContactForm />

@@ -40,9 +40,19 @@ export const experienceSchema: z.ZodType<Experience> = z.object({
   company: z.string().min(1),
   role: z.string().min(1),
   location: z.string().min(1),
-  type: z.enum(["full-time", "part-time", "contract", "freelance"]),
+  type: z.enum([
+    "full-time",
+    "part-time",
+    "contract",
+    "freelance",
+    "internship"
+  ]),
   startDate: z.string().regex(/^\d{4}-\d{2}$/),
-  endDate: z.string().regex(/^\d{4}-\d{2}$/).nullable().optional(),
+  endDate: z
+    .string()
+    .regex(/^\d{4}-\d{2}$/)
+    .nullable()
+    .optional(),
   description: z.array(z.string().min(1)).min(1),
   tech: z.array(z.string().min(1)).min(1),
   logo: z.string().min(1).optional()
@@ -68,7 +78,6 @@ export const skillsSchema: z.ZodType<Skills> = z.object({
 });
 
 const aboutSchema = z.object({
-  title: z.string().min(1),
   description: z.string().min(1)
 });
 
@@ -80,7 +89,9 @@ async function readJsonFile(filePath: string): Promise<unknown> {
 function formatZodError(filePath: string, error: z.ZodError): Error {
   const issue = error.issues[0];
   const fieldPath = issue?.path.join(".") || "root";
-  return new Error(`Invalid content in ${filePath} at ${fieldPath}: ${issue?.message}`);
+  return new Error(
+    `Invalid content in ${filePath} at ${fieldPath}: ${issue?.message}`
+  );
 }
 
 async function parseProjectFile(fileName: string): Promise<Project> {
@@ -108,8 +119,12 @@ async function parseProjectFile(fileName: string): Promise<Project> {
 }
 
 export const getAllProjects = cache(async (): Promise<Project[]> => {
-  const files = (await fs.readdir(projectsDir)).filter((file) => file.endsWith(".json"));
-  const projects = await Promise.all(files.map((file) => parseProjectFile(file)));
+  const files = (await fs.readdir(projectsDir)).filter((file) =>
+    file.endsWith(".json")
+  );
+  const projects = await Promise.all(
+    files.map((file) => parseProjectFile(file))
+  );
 
   return projects.sort((left, right) => {
     if (left.order === right.order) {
@@ -125,10 +140,12 @@ export const getFeaturedProjects = cache(async (): Promise<Project[]> => {
   return projects.filter((project) => project.featured);
 });
 
-export const getProjectBySlug = cache(async (slug: string): Promise<Project | null> => {
-  const projects = await getAllProjects();
-  return projects.find((project) => project.slug === slug) ?? null;
-});
+export const getProjectBySlug = cache(
+  async (slug: string): Promise<Project | null> => {
+    const projects = await getAllProjects();
+    return projects.find((project) => project.slug === slug) ?? null;
+  }
+);
 
 export const getExperience = cache(async (): Promise<Experience[]> => {
   const filePath = path.join(contentDir, "experience.json");
@@ -169,11 +186,12 @@ export const getAbout = cache(async (): Promise<AboutContent> => {
     const frontmatter = aboutSchema.parse(parsed.data);
 
     if (!parsed.content.trim()) {
-      throw new Error(`Invalid content in ${filePath} at content: body must not be empty`);
+      throw new Error(
+        `Invalid content in ${filePath} at content: body must not be empty`
+      );
     }
 
     return {
-      title: frontmatter.title,
       description: frontmatter.description,
       content: parsed.content.trim()
     };

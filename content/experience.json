@@ -1,58 +1,101 @@
 [
   {
     "company": "Vitafluence.ai",
-    "role": "Back-End Developer",
-    "location": "Remote (Frankfurt, Germany)",
-    "type": "part-time",
-    "startDate": "2024-01",
+    "role": "Software engineer",
+    "location": "Remote/onsite (Frankfurt, Germany)",
+    "type": "full-time",
+    "startDate": "2023-10",
     "endDate": null,
     "description": [
-      "Building and integrating AI-powered back-end features using Python, LangChain, and RESTful APIs, focused on ethical and empathetic solutions to enhance human quality of life.",
-      "Conducting ongoing research and data analysis to create responsible AI applications; collaborating with cross-functional teams across time zones in an agile remote environment."
+      "Designing and developing AI-powered full-stack applications using Python (Django), LangChain, REST APIs, and modern React-based front-end frameworks.",
+      "Building scalable features integrating LLM workflows, data processing pipelines, and responsive user interfaces focused on delivering impactful and human-centered AI solutions.",
+      "Collaborating with cross-functional remote teams across multiple time zones, contributing to architecture decisions, research initiatives, and product development."
     ],
-    "tech": ["Python", "LangChain", "FastAPI", "RESTful APIs"],
+    "tech": [
+      "Python",
+      "Django",
+      "FastAPI",
+      "LangChain",
+      "REST APIs",
+      "MongoDB",
+      "React.js",
+      "TypeScript",
+      "Node.js",
+      "Tailwind CSS",
+      "CSS3"
+    ],
     "logo": "vitafluence.png"
   },
   {
-    "company": "Upwork",
-    "role": "Freelance Full-Stack Developer",
-    "location": "Remote",
-    "type": "freelance",
-    "startDate": "2022-06",
-    "endDate": null,
-    "description": [
-      "Developed full-stack web applications for international clients using React.js, Next.js, Node.js, Express.js, MongoDB, and MySQL.",
-      "Built projects including a full-featured tour booking platform (Node.js/Express/MongoDB), a PHP e-commerce system, and multiple React applications."
-    ],
-    "tech": ["React.js", "Next.js", "Node.js", "Express.js", "MongoDB", "MySQL", "PHP"],
-    "logo": "upwork.png"
-  },
-  {
     "company": "Extramus",
-    "role": "Full-Stack Developer Intern",
-    "location": "Remote (Italy)",
-    "type": "contract",
-    "startDate": "2023-06",
-    "endDate": "2023-09",
+    "role": "Full-Stack Developer",
+    "location": "Cosenza, Calabria, Italy",
+    "type": "internship",
+    "startDate": "2023-07",
+    "endDate": "2023-10",
     "description": [
       "Developed and maintained full-stack features for production web applications.",
       "Collaborated with the engineering team on feature planning and implementation."
     ],
-    "tech": ["React.js", "Node.js", "JavaScript"],
+    "tech": [
+      "React.js",
+      "Node.js",
+      "JavaScript",
+      "MongoDB",
+      "MySQL",
+      "PHP"
+    ],
     "logo": "extramus.png"
   },
   {
-    "company": "Prodexo",
-    "role": "Back-End Developer Intern",
-    "location": "Remote (Tunisia)",
-    "type": "contract",
-    "startDate": "2023-03",
-    "endDate": "2023-05",
+    "company": "Upwork",
+    "role": "Full-Stack Developer",
+    "location": "Istanbul, Türkiye",
+    "type": "freelance",
+    "startDate": "2021-10",
+    "endDate": "2023-07",
     "description": [
-      "Built back-end features and APIs for web applications.",
-      "Worked with the development team on database design and optimization."
+      "Developed full-stack web applications ",
+      "Worked on developing tasks, and small projects for international clients using React.js, Next.js, Node.js, Express.js, MongoDB, and MySQL. I implemented my knowledge and the technologies that I have learned so far."
     ],
-    "tech": ["Node.js", "Express.js", "MongoDB"],
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "MySQL",
+      "PHP",
+      "Laravel"
+    ],
+    "logo": "upwork.png"
+  },
+  {
+    "company": "Prodexo",
+    "role": "Back-End Developer",
+    "location": "Tunis, Tunisia",
+    "type": "internship",
+    "startDate": "2022-07",
+    "endDate": "2023-09",
+    "description": [
+      "I worked for Prodexo, a company that provides services in web development, server management, and content management. I was responsible for developing the back end for the Opomise application, a French start-up that helps people to sponsor their businesses efficiently and more easily.",
+      "The main tasks that I was responsible for were:\n-  Developing application Back-end using Laravel 9.\n-  Working with Facebook APIs and Facebook SDK for PHP.\n-  Designing and developing Databases using MySQL with Eloquent.\n-  Providing the user with the ability to create Ads and sponsor his or her business pages."
+    ],
+    "tech": [
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "Facebook APIs",
+      "Facebook SDK",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap"
+    ],
     "logo": "prodexo.png"
   }
 ]
