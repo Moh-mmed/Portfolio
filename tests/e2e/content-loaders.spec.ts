@@ -6,7 +6,7 @@ test("content loaders return the curated project set", async () => {
 
   expect(projects).toHaveLength(3);
   expect(projects.map((project) => project.slug)).toEqual(["lakesai", "tutorio", "kidooz"]);
-  expect(about.title).toContain("Mohammed");
+  expect(about.description).toContain("Mohammed");
 });
 
 test("content schemas reject malformed sample content", async () => {

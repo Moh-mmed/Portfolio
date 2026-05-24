@@ -55,11 +55,11 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     name: project.title,
-    description: project.tagline,
+    description: project.description,
     url: buildAbsoluteUrl(`/projects/${project.slug}`),
     image: buildAbsoluteUrl(resolveProjectImage(project)),
-    about: project.problem,
-    abstract: project.solution
+    genre: project.category,
+    keywords: project.tech.join(", ")
   };
 
   return (

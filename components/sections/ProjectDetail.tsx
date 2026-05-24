@@ -24,6 +24,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
     src: resolveProjectImage(project, imageName),
     alt: `${project.title} screenshot ${index + 1}`
   }));
+  const hasGallery = galleryImages.length > 1;
 
   return (
     <div className="space-y-10">
@@ -86,71 +87,19 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
               Back to projects
             </Button>
             {project.links?.live ? <Button href={project.links.live}>Live</Button> : null}
-            {project.links?.github ? (
-              <Button href={project.links.github} variant="outline">
-                GitHub
-              </Button>
-            ) : null}
-            {project.links?.caseStudy ? (
-              <Button href={project.links.caseStudy} variant="outline">
-                Case study
-              </Button>
-            ) : null}
           </div>
         </div>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-[1fr_0.85fr]">
-        <div className="space-y-10">
-          <div>
-            {sectionHeading("project-overview", "Overview")}
-            <div className="prose-copy mt-4 max-w-none">
-              <ReactMarkdown>{project.description}</ReactMarkdown>
-            </div>
+      <div className="space-y-10">
+        <div>
+          {sectionHeading("project-overview", "Overview")}
+          <div className="prose-copy mt-4 max-w-none">
+            <ReactMarkdown>{project.description}</ReactMarkdown>
           </div>
-
-          <div>
-            {sectionHeading("project-problem", "Problem")}
-            <div className="prose-copy mt-4 max-w-none">
-              <ReactMarkdown>{project.problem}</ReactMarkdown>
-            </div>
-          </div>
-
-          <div>
-            {sectionHeading("project-solution", "Solution")}
-            <div className="prose-copy mt-4 max-w-none">
-              <ReactMarkdown>{project.solution}</ReactMarkdown>
-            </div>
-          </div>
-
-          {project.architecture ? (
-            <div>
-              {sectionHeading("project-architecture", "Architecture")}
-              <div className="prose-copy mt-4 max-w-none">
-                <ReactMarkdown>{project.architecture}</ReactMarkdown>
-              </div>
-            </div>
-          ) : null}
         </div>
 
-        <div className="space-y-10">
-          <div>
-            {sectionHeading("project-impact", "Impact")}
-            <ul aria-labelledby="project-impact" className="mt-4 space-y-3">
-              {project.impact.map((item) => (
-                <li
-                  className="flex gap-3 rounded-[18px] border border-border bg-bg-alt p-4 text-sm text-muted"
-                  key={item}
-                >
-                  <span aria-hidden="true" className="mt-0.5 h-2.5 w-2.5 flex-none rounded-full bg-accent" />
-                  <span className="leading-6">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <ImageGallery images={galleryImages} />
-        </div>
+        {hasGallery ? <ImageGallery images={galleryImages} /> : null}
       </div>
     </div>
   );

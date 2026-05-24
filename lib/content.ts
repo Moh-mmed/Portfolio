@@ -10,16 +10,15 @@ const projectsDir = path.join(contentDir, "projects");
 
 const projectLinksSchema = z
   .object({
-    live: z.string().url().optional(),
-    github: z.string().url().optional(),
-    caseStudy: z.string().url().optional()
+    live: z.string().url().optional()
   })
   .optional();
 
-export const projectSchema: z.ZodType<Project> = z.object({
+export const projectSchema: z.ZodType<Project, z.ZodTypeDef, unknown> = z.object({
   slug: z.string().min(1),
   title: z.string().min(1),
   tagline: z.string().min(1),
+  visible: z.boolean().optional().default(true),
   featured: z.boolean(),
   order: z.number().int().nonnegative(),
   category: z.enum(["web", "mobile", "ai", "ecommerce", "saas"]),
@@ -28,10 +27,6 @@ export const projectSchema: z.ZodType<Project> = z.object({
   company: z.string().min(1).optional(),
   timeline: z.string().min(1),
   description: z.string().min(1),
-  problem: z.string().min(1),
-  solution: z.string().min(1),
-  architecture: z.string().min(1).optional(),
-  impact: z.array(z.string().min(1)).min(2),
   images: z.array(z.string().min(1)).min(1),
   links: projectLinksSchema
 });
@@ -126,7 +121,9 @@ export const getAllProjects = cache(async (): Promise<Project[]> => {
     files.map((file) => parseProjectFile(file))
   );
 
-  return projects.sort((left, right) => {
+  const visibleProjects = projects.filter((project) => project.visible);
+
+  return visibleProjects.sort((left, right) => {
     if (left.order === right.order) {
       return left.title.localeCompare(right.title);
     }

@@ -83,7 +83,7 @@
     "endDate": "2023-09",
     "description": [
       "I worked for Prodexo, a company that provides services in web development, server management, and content management. I was responsible for developing the back end for the Opomise application, a French start-up that helps people to sponsor their businesses efficiently and more easily.",
-      "The main tasks that I was responsible for were:\n-  Developing application Back-end using Laravel 9.\n-  Working with Facebook APIs and Facebook SDK for PHP.\n-  Designing and developing Databases using MySQL with Eloquent.\n-  Providing the user with the ability to create Ads and sponsor his or her business pages."
+      "The main tasks that I was responsible for were:\n Developing application Back-end using Laravel 9.\n Working with Facebook APIs and Facebook SDK for PHP.\n Designing and developing Databases using MySQL with Eloquent.\n Providing the user with the ability to create Ads and sponsor his or her business pages."
     ],
     "tech": [
       "PHP",
