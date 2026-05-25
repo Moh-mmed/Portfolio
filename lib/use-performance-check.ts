@@ -11,6 +11,19 @@ export interface PerformanceCheck {
   canUseSmoothScroll: boolean;
 }
 
+function checkWebGLSupport(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    const canvas = document.createElement("canvas");
+    return !!(
+      window.WebGLRenderingContext &&
+      (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
+    );
+  } catch (e) {
+    return false;
+  }
+}
+
 export function usePerformanceCheck(): PerformanceCheck {
   const [result, setResult] = useState<PerformanceCheck>({
     canRender3D: false,
@@ -39,12 +52,16 @@ export function usePerformanceCheck(): PerformanceCheck {
       // 4. Hardware concurrency check
       const hardwareConcurrency = navigator.hardwareConcurrency || 0;
 
+      // 5. WebGL availability check
+      const webglSupported = checkWebGLSupport();
+
       // canRender3D requires all of:
       // - prefers-reduced-motion: no-preference (i.e. prefersReducedMotion is false)
       // - hardwareConcurrency >= 4
       // - viewport is desktop-class (lg breakpoint)
       // - non-touch device (isTouchLike is false)
-      const canRender3D = !prefersReducedMotion && hardwareConcurrency >= 4 && isDesktop && !isTouchLike;
+      // - WebGL is supported and enabled in the browser
+      const canRender3D = !prefersReducedMotion && hardwareConcurrency >= 4 && isDesktop && !isTouchLike && webglSupported;
 
       // canUseTilt and canUseSmoothScroll require desktop, non-touch, and reduced motion off
       const canUseTilt = isDesktop && !isTouchLike && !prefersReducedMotion;
