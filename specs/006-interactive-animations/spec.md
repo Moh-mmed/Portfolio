@@ -93,8 +93,8 @@ The transition between major page sections is enhanced by subtle background shif
 - **FR-003**: The project cards MUST react to cursor hovers with dynamic 3D tilt effects, reflecting the cursor's coordinate offset from the card center, combined with subtle image scale and overlay reveals.
 - **FR-004**: Content sections MUST implement scroll-triggered entrance transitions, fading and translating into view smoothly when crossing a 20% viewport threshold.
 - **FR-005**: All animations and interactive sliders MUST fully respect system-level "reduced motion" media queries, replacing complex movement with immediate presentation or simple opacity transitions.
-- **FR-006**: The system MUST [NEEDS CLARIFICATION: Should the project slider serve as the primary layout for projects, replacing the grid, or should it be an optional layout toggle?]
-- **FR-007**: The system MUST [NEEDS CLARIFICATION: What level of 3D integration is preferred? A lightweight, elegant 3D card tilt effect or a full 3D interactive scene/canvas in the background?]
+- **FR-006**: The system MUST display the project showcase as a traditional grid layout on smaller screen viewports (mobile and tablet) and automatically switch to a smooth horizontal interactive slider layout exclusively on desktop screen sizes.
+- **FR-007**: The system MUST integrate both lightweight dynamic 3D hover tilt effects on project cards AND a subtle ambient 3D floating background mesh, while prioritizing performance: maintaining a consistent 60 FPS, automatically disabling the 3D background mesh on mobile and low-performance devices, and fully disabling all 3D effects when the user has enabled system-level "prefer reduced motion".
 
 ## Success Criteria *(mandatory)*
 
