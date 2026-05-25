@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ProjectGrid } from "@/components/sections/ProjectGrid";
+import { AnimateIn } from "@/components/ui/AnimateIn";
 import { Section } from "@/components/ui/Section";
 import { getAllProjects } from "@/lib/content";
 import { buildAbsoluteUrl } from "@/lib/utils";
@@ -29,17 +30,17 @@ export default async function ProjectsPage() {
 
   return (
     <Section className="pt-14 md:pt-20">
-      <div className="mb-8 space-y-2">
-        <p className="text-sm font-medium uppercase tracking-[0.22em] text-slate-500">Projects</p>
-        <h1 className="text-4xl font-semibold tracking-tight text-slate-950">
+      <AnimateIn className="mb-8 space-y-2" triggerMode="load" variant="fade-up">
+        <p className="text-sm font-medium uppercase tracking-[0.22em] text-muted">Projects</p>
+        <h1 className="text-4xl font-semibold tracking-tight text-text">
           Selected work built for real users and real teams
         </h1>
-        <p className="max-w-2xl text-lg leading-8 text-slate-600">
+        <p className="max-w-2xl text-lg leading-8 text-muted">
           This phase intentionally filters out tutorial work and keeps the public project list
           focused on professional delivery.
         </p>
-      </div>
-      <ProjectGrid projects={projects} />
+      </AnimateIn>
+      <ProjectGrid cardHeadingTag="h2" projects={projects} />
     </Section>
   );
 }

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
+import { AnimateIn } from "@/components/ui/AnimateIn";
 import { ImageGallery } from "@/components/ui/ImageGallery";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -29,20 +30,22 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
   return (
     <div className="space-y-10">
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-        <Card className="overflow-hidden rounded-[24px] border-border bg-bg-alt">
-          <div className="relative aspect-[16/11]">
-            <Image
-              alt={`${project.title} preview`}
-              className="h-full w-full object-cover"
-              fill
-              priority
-              sizes="(min-width: 1024px) 55vw, 100vw"
-              src={resolveProjectImage(project)}
-            />
-          </div>
-        </Card>
+        <AnimateIn variant="scale">
+          <Card className="overflow-hidden rounded-[24px] border-border bg-bg-alt">
+            <div className="relative aspect-[16/11]">
+              <Image
+                alt={`${project.title} preview`}
+                className="h-full w-full object-cover"
+                fill
+                priority
+                sizes="(min-width: 1024px) 55vw, 100vw"
+                src={resolveProjectImage(project)}
+              />
+            </div>
+          </Card>
+        </AnimateIn>
 
-        <div className="space-y-6">
+        <AnimateIn className="space-y-6" variant="fade-left">
           <div className="space-y-4">
             <Badge>{project.category}</Badge>
             <h1 className="text-4xl font-semibold tracking-tight text-text">{project.title}</h1>
@@ -88,10 +91,10 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
             </Button>
             {project.links?.live ? <Button href={project.links.live}>Live</Button> : null}
           </div>
-        </div>
+        </AnimateIn>
       </div>
 
-      <div className="space-y-10">
+      <AnimateIn className="space-y-10" variant="fade-up">
         <div>
           {sectionHeading("project-overview", "Overview")}
           <div className="prose-copy mt-4 max-w-none">
@@ -100,7 +103,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         </div>
 
         {hasGallery ? <ImageGallery images={galleryImages} /> : null}
-      </div>
+      </AnimateIn>
     </div>
   );
 }

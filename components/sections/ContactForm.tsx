@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { sendContactEmail } from "@/app/contact/actions";
+import { AnimateIn } from "@/components/ui/AnimateIn";
 import { contactSchema } from "@/lib/email/contact-schema";
 
 export function ContactForm() {
@@ -46,7 +47,8 @@ export function ContactForm() {
     "w-full rounded-lg border border-border bg-bg px-4 py-2 text-text focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30";
 
   return (
-    <div className="mx-auto w-full max-w-2xl rounded-xl border border-border bg-bg-alt p-6 shadow-panel">
+    <AnimateIn className="mx-auto w-full max-w-2xl" variant="scale">
+      <div className="w-full rounded-xl border border-border bg-bg-alt p-6 shadow-panel">
       {successMessage ? (
         <div className="rounded-lg bg-accent/10 p-4 text-center text-accent" role="alert">
           <p className="text-lg font-medium">{successMessage}</p>
@@ -111,6 +113,7 @@ export function ContactForm() {
           </button>
         </form>
       )}
-    </div>
+      </div>
+    </AnimateIn>
   );
 }

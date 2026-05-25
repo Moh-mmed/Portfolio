@@ -1,0 +1,12 @@
+"use client";
+
+import dynamic from "next/dynamic";
+
+const BackgroundScene = dynamic(
+  () => import("./BackgroundScene"),
+  { ssr: false }
+);
+
+export function ClientOnlyBackgroundScene() {
+  return <BackgroundScene />;
+}

@@ -10,7 +10,7 @@ export function AppChrome({ children }: { children: ReactNode }) {
   const isHome = pathname === "/";
 
   if (isHome) {
-    return <>{children}</>;
+    return <main>{children}</main>;
   }
 
   return (

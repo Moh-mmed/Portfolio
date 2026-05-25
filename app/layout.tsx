@@ -3,9 +3,12 @@ import { Inter } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
 import { AppChrome } from "@/components/layout/AppChrome";
+import { ClientOnlyBackgroundScene } from "@/components/ui/ClientOnlyBackgroundScene";
 import { CursorGlow } from "@/components/ui/CursorGlow";
+import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import { colors } from "@/lib/design-tokens";
 import { buildAbsoluteUrl } from "@/lib/utils";
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -65,10 +68,12 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body
-        className="bg-bg font-sans text-text antialiased"
+        className="bg-bg font-sans text-text antialiased relative overflow-x-hidden"
         suppressHydrationWarning
       >
+        <SmoothScroll />
         <CursorGlow />
+        <ClientOnlyBackgroundScene />
         <AppChrome>{children}</AppChrome>
       </body>
     </html>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Card } from "@/components/ui/Card";
+import { AnimateIn, AnimateInItem } from "@/components/ui/AnimateIn";
 import { Section } from "@/components/ui/Section";
+import { SectionDivider } from "@/components/ui/SectionDivider";
 import { buildAbsoluteUrl } from "@/lib/utils";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { getResumeLastUpdated } from "@/lib/resume";
@@ -49,8 +51,8 @@ export default async function ContactPage() {
   return (
     <Section className="pt-14 md:pt-20">
       <div className="space-y-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="space-y-2 max-w-2xl">
+        <AnimateIn className="flex flex-col justify-between gap-6 md:flex-row md:items-end" triggerMode="load" variant="fade-up">
+          <div className="max-w-2xl space-y-2">
             <p className="text-sm font-medium uppercase tracking-[0.22em] text-slate-500">Contact</p>
             <h1 className="text-4xl font-semibold tracking-tight text-slate-950 dark:text-slate-50">
               Start a conversation about product, engineering, or collaboration
@@ -60,9 +62,9 @@ export default async function ContactPage() {
             </p>
           </div>
 
-          <div className="flex-shrink-0 flex flex-col items-start md:items-end">
-            <a 
-              href="/resume.pdf" 
+          <div className="flex flex-shrink-0 flex-col items-start md:items-end">
+            <a
+              href="/resume.pdf"
               download="Mohammed_Ben_Aoumeur_Resume.pdf"
               className="inline-flex items-center justify-center rounded-lg bg-slate-950 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 shadow-sm"
             >
@@ -75,23 +77,27 @@ export default async function ContactPage() {
               Last updated: {lastUpdated}
             </p>
           </div>
-        </div>
+        </AnimateIn>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <SectionDivider />
+
+        <AnimateIn className="grid gap-5 md:grid-cols-3" variant="stagger-children">
           {contactMethods.map((method) => (
-            <Card className="rounded-[24px] p-6" key={method.label}>
-              <p className="text-sm font-medium uppercase tracking-[0.18em] text-slate-500">{method.label}</p>
-              <a
-                className="mt-4 block break-all text-lg font-semibold text-slate-950 dark:text-slate-50 hover:text-blue-600 transition-colors"
-                href={method.href}
-                rel="noreferrer"
-                target={method.href.startsWith("http") ? "_blank" : undefined}
-              >
-                {method.value}
-              </a>
-            </Card>
+            <AnimateInItem key={method.label}>
+              <Card className="rounded-[24px] p-6 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-glow">
+                <p className="text-sm font-medium uppercase tracking-[0.18em] text-slate-500">{method.label}</p>
+                <a
+                  className="mt-4 block break-all text-lg font-semibold text-slate-950 transition-colors hover:text-blue-600 dark:text-slate-50"
+                  href={method.href}
+                  rel="noreferrer"
+                  target={method.href.startsWith("http") ? "_blank" : undefined}
+                >
+                  {method.value}
+                </a>
+              </Card>
+            </AnimateInItem>
           ))}
-        </div>
+        </AnimateIn>
 
         <div className="mt-12 pt-8 border-t border-slate-100 dark:border-slate-800">
           <ContactForm />

@@ -110,3 +110,57 @@ summary:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Lenis smooth scrolling rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overflow-anchor: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* GPU acceleration for motion-heavy layers */
+.gpu-accelerated {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform, opacity;
+}
+
+/* Glare highlight accent for VanillaTilt cards */
+.tilt-glare-accent {
+  background: radial-gradient(circle at center, rgba(45, 212, 191, 0.15) 0%, transparent 80%);
+}
+
+/* Custom interactive overlays and glows */
+.glow-on-hover {
+  position: relative;
+}
+.glow-on-hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 0 30px 5px rgba(45, 212, 191, 0.2);
+  pointer-events: none;
+  z-index: -1;
+}
+.glow-on-hover:hover::after {
+  opacity: 1;
+}
+

@@ -34,14 +34,22 @@ async function run() {
   try {
     await waitForServer("http://127.0.0.1:3000");
     const chrome = await chromeLauncher.launch({ chromeFlags: ["--headless"] });
-    const routes = ["/", "/about", "/projects", "/projects/lakesai", "/contact"];
+    const interactionRoutes = ["/", "/about", "/projects", "/projects/lakesai", "/contact"];
 
     try {
-      for (const route of routes) {
+      for (const route of interactionRoutes) {
         const result = await lighthouse(`http://127.0.0.1:3000${route}`, {
           port: chrome.port,
           output: "json",
           logLevel: "error",
+          formFactor: "desktop",
+          screenEmulation: {
+            mobile: false,
+            width: 1350,
+            height: 940,
+            deviceScaleFactor: 1,
+            disabled: false
+          },
           onlyCategories: ["performance", "accessibility", "best-practices", "seo"]
         });
 
