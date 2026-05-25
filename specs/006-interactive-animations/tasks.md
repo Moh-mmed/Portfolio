@@ -58,13 +58,14 @@
 
 - [ ] T007 [P] [US1] Add homepage entrance-sequence and immediate-click coverage in `tests/e2e/interactive-home.spec.ts`
 - [ ] T008 [P] [US1] Add reduced-motion and decorative-layer accessibility coverage in `tests/accessibility/interactive-motion.spec.ts`
+- [ ] T009 [US1] Measure page load plus intro completion in Chrome DevTools Performance with Fast 3G throttling and document the result in a comment in `components/ui/BackgroundScene.tsx`
 
 ### Implementation for User Story 1
 
-- [ ] T009 [P] [US1] Create the desktop-only ambient WebGL scene in `components/ui/BackgroundScene.tsx`
-- [ ] T010 [US1] Dynamically mount `BackgroundScene` with a null-fallback `Suspense` boundary in `app/layout.tsx`
-- [ ] T011 [US1] Orchestrate the one-time homepage intro sequence and sessionStorage guard in `components/sections/PortfolioHome.tsx`
-- [ ] T012 [US1] Update homepage hero, nav-line transform states, and social intro targets in `components/sections/PortfolioHome.tsx`
+- [ ] T010 [P] [US1] Create the desktop-only ambient WebGL scene in `components/ui/BackgroundScene.tsx`
+- [ ] T011 [US1] Dynamically mount `BackgroundScene` with a null-fallback `Suspense` boundary in `app/layout.tsx`
+- [ ] T012 [US1] Orchestrate the one-time homepage intro sequence and sessionStorage guard in `components/sections/PortfolioHome.tsx`
+- [ ] T013 [US1] Update homepage hero, nav-line transform states, and social intro targets in `components/sections/PortfolioHome.tsx`
 
 **Checkpoint**: User Story 1 is fully functional and independently testable
 
@@ -78,16 +79,16 @@
 
 ### Verification for User Story 2
 
-- [ ] T013 [P] [US2] Add carousel, arrow-key, and tilt interaction coverage in `tests/e2e/projects-interactions.spec.ts`
-- [ ] T014 [P] [US2] Extend touch-safe project browsing coverage in `tests/e2e/responsive.spec.ts`
+- [ ] T014 [P] [US2] Add carousel, arrow-key, and tilt interaction coverage in `tests/e2e/projects-interactions.spec.ts`
+- [ ] T015 [P] [US2] Extend touch-safe project browsing coverage in `tests/e2e/responsive.spec.ts`
 
 ### Implementation for User Story 2
 
-- [ ] T015 [P] [US2] Create the reusable tilt wrapper with cleanup and device gating in `components/ui/TiltCard.tsx`
-- [ ] T016 [P] [US2] Create the Embla-powered featured-project slider in `components/sections/ProjectSlider.tsx`
-- [ ] T017 [US2] Refactor hover overlays, badge transitions, and CTA arrow motion in `components/sections/ProjectCard.tsx`
-- [ ] T018 [US2] Update shared project listing composition and tilt integration in `components/sections/ProjectGrid.tsx` and `app/projects/page.tsx`
-- [ ] T019 [US2] Swap the homepage desktop featured-project area to `ProjectSlider` while preserving the mobile grid fallback in `components/sections/PortfolioHome.tsx`
+- [ ] T016 [P] [US2] Create the reusable tilt wrapper with cleanup and device gating in `components/ui/TiltCard.tsx`
+- [ ] T017 [P] [US2] Create the Embla-powered featured-project slider in `components/sections/ProjectSlider.tsx`
+- [ ] T018 [US2] Refactor hover overlays, badge transitions, and CTA arrow motion in `components/sections/ProjectCard.tsx`
+- [ ] T019 [US2] Update shared project listing composition and tilt integration in `components/sections/ProjectGrid.tsx` and `app/projects/page.tsx`
+- [ ] T020 [US2] Swap the homepage desktop featured-project area to `ProjectSlider` while preserving the mobile grid fallback in `components/sections/PortfolioHome.tsx`
 
 **Checkpoint**: User Story 2 is fully functional and independently testable
 
@@ -101,15 +102,17 @@
 
 ### Verification for User Story 3
 
-- [ ] T020 [P] [US3] Add viewport-reveal and reduced-motion coverage in `tests/e2e/scroll-motion.spec.ts`
-- [ ] T021 [P] [US3] Extend animated-route accessibility coverage in `tests/accessibility/a11y.spec.ts`
+- [ ] T021 [P] [US3] Add viewport-reveal and reduced-motion coverage in `tests/e2e/scroll-motion.spec.ts`
+- [ ] T022 [P] [US3] Verify the `0.2` reveal threshold in `components/ui/AnimateIn.tsx` by slow-scrolling and confirming triggers at 20% visibility
+- [ ] T023 [P] [US3] Extend animated-route accessibility coverage in `tests/accessibility/a11y.spec.ts`
 
 ### Implementation for User Story 3
 
-- [ ] T022 [US3] Rework the about section into text-and-headshot reveal columns in `components/sections/AboutSection.tsx`
-- [ ] T023 [US3] Apply staggered reveal behavior and hover-safe motion wrappers in `components/sections/ExperienceTimeline.tsx`
-- [ ] T024 [US3] Apply scale and staggered section reveals across `components/sections/PortfolioHome.tsx`, `components/sections/SkillsGrid.tsx`, and `components/sections/ContactForm.tsx`
-- [ ] T025 [US3] Apply compatible reveal motion to route-level sections in `app/contact/page.tsx` and `app/projects/[slug]/page.tsx`
+- [ ] T024 [US3] Set the IntersectionObserver threshold to `0.2` and apply the updated reveal logic in `components/ui/AnimateIn.tsx`
+- [ ] T025 [US3] Rework the about section into text-and-headshot reveal columns in `components/sections/AboutSection.tsx`
+- [ ] T026 [US3] Apply staggered reveal behavior and hover-safe motion wrappers in `components/sections/ExperienceTimeline.tsx`
+- [ ] T027 [US3] Apply scale and staggered section reveals across `components/sections/PortfolioHome.tsx`, `components/sections/SkillsGrid.tsx`, and `components/sections/ContactForm.tsx`
+- [ ] T028 [US3] Apply compatible reveal motion to route-level sections in `app/contact/page.tsx` and `app/projects/[slug]/page.tsx`
 
 **Checkpoint**: User Story 3 is fully functional and independently testable
 
@@ -123,16 +126,16 @@
 
 ### Verification for User Story 4
 
-- [ ] T026 [P] [US4] Add section-transition and smooth-scroll behavior coverage in `tests/e2e/section-transitions.spec.ts`
-- [ ] T027 [P] [US4] Update performance verification expectations for the interaction routes in `tests/performance/lighthouse.config.cjs`
+- [ ] T029 [P] [US4] Add section-divider and smooth-scroll behavior coverage in `tests/e2e/section-transitions.spec.ts`
+- [ ] T030 [P] [US4] Update performance verification expectations for the interaction routes in `tests/performance/lighthouse.config.cjs`
 
 ### Implementation for User Story 4
 
-- [ ] T028 [P] [US4] Create the animated divider component in `components/ui/SectionDivider.tsx`
-- [ ] T029 [P] [US4] Implement the gated Lenis wrapper in `components/ui/SmoothScroll.tsx`
-- [ ] T030 [US4] Mount smooth scrolling without breaking route chrome or reduced-motion behavior in `app/layout.tsx`
-- [ ] T031 [US4] Insert section dividers and upgrade nav/social hover choreography in `components/sections/PortfolioHome.tsx`
-- [ ] T032 [US4] Polish experience border/logo and skill badge hover transitions in `components/sections/ExperienceTimeline.tsx` and `components/sections/SkillsGrid.tsx`
+- [ ] T031 [P] [US4] Create the animated divider component in `components/ui/SectionDivider.tsx`
+- [ ] T032 [P] [US4] Implement the gated Lenis wrapper in `components/ui/SmoothScroll.tsx`
+- [ ] T033 [US4] Mount smooth scrolling without breaking route chrome or reduced-motion behavior in `app/layout.tsx`
+- [ ] T034 [US4] Insert divider-led section transitions and upgrade nav/social hover choreography in `components/sections/PortfolioHome.tsx`
+- [ ] T035 [US4] Polish experience border/logo and skill badge hover transitions in `components/sections/ExperienceTimeline.tsx` and `components/sections/SkillsGrid.tsx`
 
 **Checkpoint**: User Story 4 is fully functional and independently testable
 
@@ -142,11 +145,11 @@
 
 **Purpose**: Final verification, regression cleanup, and performance sign-off across all stories
 
-- [ ] T033 [P] Run and fix `pnpm lint`, `pnpm typecheck`, and `pnpm build` issues across `app/`, `components/`, `lib/`, and `tests/`
-- [ ] T034 Validate Playwright interaction and accessibility coverage in `tests/e2e/` and `tests/accessibility/`
-- [ ] T035 Validate Lighthouse thresholds and route stability in `tests/performance/lighthouse.config.cjs`
-- [ ] T036 Validate 4x CPU slowdown profiling, reduced-motion gating, and mobile disablement notes in `specs/006-interactive-animations/quickstart.md`
-- [ ] T037 [P] Confirm no autoplay, TODOs, placeholder motion stubs, or layout-thrashing animations remain in `app/`, `components/`, and `lib/`
+- [ ] T036 [P] Run and fix `pnpm lint`, `pnpm typecheck`, and `pnpm build` issues across `app/`, `components/`, `lib/`, and `tests/`
+- [ ] T037 Validate Playwright interaction and accessibility coverage in `tests/e2e/` and `tests/accessibility/`
+- [ ] T038 Validate Lighthouse thresholds and route stability in `tests/performance/lighthouse.config.cjs`
+- [ ] T039 Validate 4x CPU slowdown profiling, Fast 3G intro timing, reduced-motion gating, and mobile disablement notes in `specs/006-interactive-animations/quickstart.md`
+- [ ] T040 [P] Confirm no autoplay, TODOs, placeholder motion stubs, or layout-thrashing animations remain in `app/`, `components/`, and `lib/`
 
 ---
 
@@ -178,10 +181,10 @@
 
 - Setup task T003 can run in parallel with dependency installation once package updates begin
 - Foundational tasks T005 and T006 can run in parallel after T004 defines the shared capability contract
-- In User Story 1, tests T007 and T008 can run in parallel with scene component creation T009
-- In User Story 2, T015 and T016 can run in parallel before the shared project composition work
-- In User Story 3, T020 and T021 can run in parallel while section-specific component updates are split by file
-- In User Story 4, T028 and T029 can run in parallel before layout and homepage integration tasks
+- In User Story 1, tests T007 and T008 can run in parallel with scene component creation T010
+- In User Story 2, T016 and T017 can run in parallel before the shared project composition work
+- In User Story 3, T021 and T023 can run in parallel while section-specific component updates are split by file
+- In User Story 4, T031 and T032 can run in parallel before layout and homepage integration tasks
 
 ---
 
@@ -205,6 +208,7 @@ Task: "Add carousel, arrow-key, and tilt interaction coverage in tests/e2e/proje
 
 ```text
 Task: "Add viewport-reveal and reduced-motion coverage in tests/e2e/scroll-motion.spec.ts"
+Task: "Verify the 0.2 reveal threshold in components/ui/AnimateIn.tsx by slow-scrolling and confirming triggers at 20% visibility"
 Task: "Rework the about section into text-and-headshot reveal columns in components/sections/AboutSection.tsx"
 Task: "Apply staggered reveal behavior and hover-safe motion wrappers in components/sections/ExperienceTimeline.tsx"
 ```
@@ -214,7 +218,7 @@ Task: "Apply staggered reveal behavior and hover-safe motion wrappers in compone
 ```text
 Task: "Create the animated divider component in components/ui/SectionDivider.tsx"
 Task: "Implement the gated Lenis wrapper in components/ui/SmoothScroll.tsx"
-Task: "Add section-transition and smooth-scroll behavior coverage in tests/e2e/section-transitions.spec.ts"
+Task: "Add section-divider and smooth-scroll behavior coverage in tests/e2e/section-transitions.spec.ts"
 ```
 
 ---

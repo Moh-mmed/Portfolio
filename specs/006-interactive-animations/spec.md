@@ -36,16 +36,16 @@ Upon landing on the portfolio home page, visitors are greeted with elegant, stag
 
 ### User Story 2 - Interactive Project Slider & 3D Tilt Cards (Priority: P1)
 
-Visitors browsing the portfolio's project showcase can interact with project cards/elements using subtle tactile feedback (like 3D tilt depth effects, gentle scale shifts, and text overlays) or slide through the work items using a smooth, responsive slider interface.
+Visitors browsing the portfolio's project showcase can interact with project cards/elements using subtle tactile feedback (like 3D tilt depth effects, gentle scale shifts, and text overlays) or slide through the work items using a smooth, responsive slider interface on desktop. Desktop (lg+): interactive slider with keyboard navigation. Mobile (< lg): standard grid layout. No touch swipe required on the slider - mobile users see the grid instead.
 
 **Why this priority**: Interactive previews and fluid sliding mechanisms make exploring work enjoyable, keeping visitors engaged longer and encouraging them to explore project case studies.
 
-**Independent Test**: A visitor hovers their cursor over a project card. The card responds with an elegant 3D tilt and smooth zoom, revealing a hidden detailed overlay. The visitor drags or swipes the project list, and it slides horizontally with natural momentum.
+**Independent Test**: On a desktop-class session, a visitor hovers their cursor over a project card. The card responds with an elegant 3D tilt and smooth zoom, revealing a hidden detailed overlay. The visitor drags or uses keyboard navigation on the project slider, and it slides horizontally with natural momentum. On mobile and touch devices, the visitor sees the standard grid layout instead of a slider.
 
 **Acceptance Scenarios**:
 
 1. **Given** a visitor hovers over a project card, **When** they move their cursor across it, **Then** the card tilts dynamically in three dimensions, maintaining high frame rates and absolute responsiveness.
-2. **Given** a visitor is viewing the projects section, **When** they swipe or drag the slider, **Then** the items slide horizontally with fluid physics-based friction and come to a soft stop.
+2. **Given** a desktop-class visitor is viewing the projects section, **When** they drag or use keyboard navigation on the slider, **Then** the items slide horizontally with fluid momentum and come to a soft stop.
 
 ---
 
@@ -66,15 +66,15 @@ As a user scrolls down the page, content elements fade and slide in dynamically 
 
 ### User Story 4 - Fluid Section Transitions (Priority: P2)
 
-The transition between major page sections is enhanced by subtle background shifting or frame transformations, signaling clearly when the user has moved from one area of focus (e.g. Projects) to another (e.g. Experience or Contact).
+The transition between major page sections is enhanced through animated dividers and smooth scroll momentum, signaling clearly when the user has moved from one area of focus (e.g. Projects) to another (e.g. Experience or Contact).
 
 **Why this priority**: Solidifies the visual rhythm of the portfolio and provides a unified, continuous application feel rather than isolated blocks of content.
 
-**Independent Test**: A visitor scrolls or navigates between sections. The background color or element boundary shapes morph gracefully to match the theme or focus of the active section.
+**Independent Test**: A visitor scrolls or navigates between sections. Animated divider elements and smooth scroll momentum create a clear, polished transition rhythm between major content blocks.
 
 **Acceptance Scenarios**:
 
-1. **Given** a visitor moves from the Hero section to the Projects section, **When** the transition point is crossed, **Then** the background/ambient container updates its aesthetic seamlessly.
+1. **Given** a visitor moves from the Hero section to the Projects section, **When** the transition point is crossed, **Then** animated divider elements and smooth scroll behavior clearly communicate the section change without relying on explicit background color transitions.
 
 ---
 
@@ -82,18 +82,18 @@ The transition between major page sections is enhanced by subtle background shif
 
 - **Slow Connections**: On extremely slow network connections, if interactive scripts or large media elements take time to load, the portfolio layout must degrade gracefully and display static content instantly rather than showing a blank screen or broken animation states.
 - **Accessibility Options (Reduced Motion)**: Visitors with system-level "prefer reduced motion" enabled must see static versions of elements immediately or highly simplified fades, completely disabling 3D tilts, scaling, and fast slide animations.
-- **Touch Screen Interactions**: On touch-enabled devices (mobiles/tablets), 3D hover tilt effects must be disabled or converted into touch-safe triggers, and sliders must support standard multi-touch swipe/drag behaviors without interfering with vertical page scrolling.
+- **Touch Screen Interactions**: On touch-enabled devices (mobiles/tablets), 3D hover tilt effects must be disabled, the desktop slider must be replaced by the standard grid, and vertical page scrolling must remain uninterrupted.
 
 ## Requirements *(mandatory)*
 
 ### Functional Requirements
 
 - **FR-001**: The system MUST implement on-appear staged animations for the primary header, hero description, navigation menu, and social links on initial page load.
-- **FR-002**: The project showcase MUST be navigable via an interactive slider supporting drag, swipe, and navigation arrows with smooth inertial momentum.
+- **FR-002**: The project showcase MUST be navigable on desktop-class sessions via an interactive slider supporting drag and keyboard navigation with smooth inertial momentum.
 - **FR-003**: The project cards MUST react to cursor hovers with dynamic 3D tilt effects, reflecting the cursor's coordinate offset from the card center, combined with subtle image scale and overlay reveals.
 - **FR-004**: Content sections MUST implement scroll-triggered entrance transitions, fading and translating into view smoothly when crossing a 20% viewport threshold.
 - **FR-005**: All animations and interactive sliders MUST fully respect system-level "reduced motion" media queries, replacing complex movement with immediate presentation or simple opacity transitions.
-- **FR-006**: The system MUST display the project showcase as a traditional grid layout on smaller screen viewports (mobile and tablet) and automatically switch to a smooth horizontal interactive slider layout exclusively on desktop screen sizes.
+- **FR-006**: The system MUST display the project showcase as a traditional grid layout on smaller screen viewports (mobile and tablet) and automatically switch to a smooth horizontal interactive slider layout with keyboard navigation exclusively on desktop screen sizes.
 - **FR-007**: The system MUST integrate both lightweight dynamic 3D hover tilt effects on project cards AND a subtle ambient 3D floating background mesh, while prioritizing performance: maintaining a consistent 60 FPS, automatically disabling the 3D background mesh on mobile and low-performance devices, and fully disabling all 3D effects when the user has enabled system-level "prefer reduced motion".
 
 ## Success Criteria *(mandatory)*
@@ -101,9 +101,11 @@ The transition between major page sections is enhanced by subtle background shif
 ### Measurable Outcomes
 
 - **SC-001**: Page loads and initial animations complete within 1.5 seconds under standard network conditions, ensuring instant content availability.
-- **SC-002**: Hover effects, 3D tilts, and slider transitions maintain a consistent frame rate of 60 frames per second (fps) on mid-range mobile and desktop devices.
+- **SC-002**: On desktop-class sessions (non-touch, screen width lg+), hover effects, 3D tilts, and slider transitions maintain a consistent frame rate of 60 frames per second (fps).
 - **SC-003**: 100% compliance with accessibility standards for reduced motion: when "prefer reduced motion" is active, all translation and scale animations are fully disabled.
-- **SC-004**: Interactive elements (slider navigation, project cards, section links) must achieve a 100% success rate in touch-to-drag and swipe interactions on iOS and Android devices without vertical page scroll locks.
+- **SC-004**: On desktop-class sessions (non-touch, screen width lg+), interactive elements such as slider navigation, project cards, and section links must achieve a 100% success rate without blocked input or accidental scroll locks.
+
+Performance and accessibility criteria apply to all devices as follows: SC-001 and SC-003 apply to all devices. SC-002 and SC-004 apply only to desktop-class sessions (non-touch, screen width lg+). On mobile and touch devices, 3D tilt, slider, and cursor glow are intentionally disabled.
 
 ## Assumptions
 

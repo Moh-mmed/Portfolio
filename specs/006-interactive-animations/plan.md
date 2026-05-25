@@ -149,6 +149,10 @@ lib/
 - Scope the slider to the homepage featured-project section on `lg` and above:
   - mobile and tablet continue using the existing grid
   - `/projects` remains a grid on all breakpoints for dense browsing
+- Desktop interaction requirements are explicit:
+  - desktop (`lg+`) uses drag plus keyboard navigation
+  - mobile (`< lg`) uses the standard grid only
+  - no touch-swipe requirement exists for the slider because the slider does not render on touch/mobile layouts
 - Use one slide per view with centered alignment and a visual peek of the next card.
 - Navigation behavior:
   - previous/next buttons outside the draggable viewport
@@ -167,6 +171,7 @@ lib/
   - `scale`
   - `stagger-children`
   - load-time mode for hero/intro elements that should not wait for scroll
+- Set the reveal trigger threshold to `0.2` so sections animate once 20% of the element has entered the viewport.
 - Preserve the current reduced-motion short-circuit so users get immediate static content or opacity-only fallbacks.
 - Apply motion variants as follows:
   - homepage name/title/tagline/nav/socials: load-sequenced
@@ -208,6 +213,7 @@ lib/
 - Skills:
   - existing glow plus subtle scale
 - Add `components/ui/SectionDivider.tsx` between major homepage sections to create rhythm without introducing heavy layout shifts.
+- Use divider-led transitions plus optional Lenis scroll momentum as the section-change treatment instead of explicit background color transitions between sections.
 
 ### 8. Lenis Smooth Scrolling
 
@@ -242,6 +248,7 @@ lib/
 - Reduced motion:
   - verify 3D, tilt, Lenis, and directional translations are disabled or reduced to minimal opacity changes
 - Performance:
+  - measure page load plus intro animation completion in Chrome DevTools Performance with Fast 3G throttling; target all above-the-fold content visible and intro complete within 1.5s
   - record Chrome DevTools profile on the homepage with 4x CPU slowdown
   - confirm no animation uses layout-affecting properties
   - confirm Lighthouse stays at or above constitution thresholds after adding new dependencies
