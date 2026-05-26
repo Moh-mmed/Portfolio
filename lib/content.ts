@@ -14,22 +14,23 @@ const projectLinksSchema = z
   })
   .optional();
 
-export const projectSchema: z.ZodType<Project, z.ZodTypeDef, unknown> = z.object({
-  slug: z.string().min(1),
-  title: z.string().min(1),
-  tagline: z.string().min(1),
-  visible: z.boolean().optional().default(true),
-  featured: z.boolean(),
-  order: z.number().int().nonnegative(),
-  category: z.enum(["web", "mobile", "ai", "ecommerce", "saas"]),
-  tech: z.array(z.string().min(1)).min(1),
-  role: z.string().min(1),
-  company: z.string().min(1).optional(),
-  timeline: z.string().min(1),
-  description: z.string().min(1),
-  images: z.array(z.string().min(1)).min(1),
-  links: projectLinksSchema
-});
+export const projectSchema: z.ZodType<Project, z.ZodTypeDef, unknown> =
+  z.object({
+    slug: z.string().min(1),
+    title: z.string().min(1),
+    tagline: z.string().min(1),
+    visible: z.boolean().optional().default(true),
+    featured: z.boolean(),
+    order: z.number().int().nonnegative(),
+    category: z.enum(["web", "mobile", "ai", "ecommerce", "saas"]),
+    tech: z.array(z.string().min(1)).min(1),
+    role: z.string().min(1),
+    company: z.string().min(1).optional(),
+    timeline: z.string().min(1),
+    description: z.string().min(1),
+    images: z.array(z.string().min(1)).min(1),
+    links: projectLinksSchema
+  });
 
 export const experienceSchema: z.ZodType<Experience> = z.object({
   company: z.string().min(1),
@@ -62,7 +63,7 @@ export const skillsSchema: z.ZodType<Skills> = z.object({
           .array(
             z.object({
               name: z.string().min(1),
-              level: z.enum(["expert", "advanced", "intermediate"]),
+              level: z.enum(["expert", "advanced", "intermediate", "beginner"]),
               yearsOfExperience: z.number().positive().optional()
             })
           )

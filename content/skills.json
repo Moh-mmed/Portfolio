@@ -3,49 +3,129 @@
     {
       "name": "Languages",
       "skills": [
-        { "name": "JavaScript", "level": "expert" },
-        { "name": "TypeScript", "level": "expert" },
-        { "name": "Python", "level": "advanced" },
-        { "name": "PHP", "level": "advanced" },
-        { "name": "Java", "level": "intermediate" },
-        { "name": "C++", "level": "intermediate" },
-        { "name": "C#", "level": "intermediate" }
+        {
+          "name": "JavaScript",
+          "level": "expert"
+        },
+        {
+          "name": "TypeScript",
+          "level": "expert"
+        },
+        {
+          "name": "Python",
+          "level": "advanced"
+        },
+        {
+          "name": "PHP",
+          "level": "advanced"
+        },
+        {
+          "name": "Java",
+          "level": "intermediate"
+        },
+        {
+          "name": "C++",
+          "level": "intermediate"
+        },
+        {
+          "name": "C#",
+          "level": "intermediate"
+        }
       ]
     },
     {
       "name": "Frameworks & Libraries",
       "skills": [
-        { "name": "React.js", "level": "expert" },
-        { "name": "Next.js", "level": "expert" },
-        { "name": "Node.js", "level": "expert" },
-        { "name": "Express.js", "level": "expert" },
-        { "name": "Tailwind CSS", "level": "expert" },
-        { "name": "Django", "level": "advanced" },
-        { "name": "Laravel", "level": "advanced" },
-        { "name": "SvelteKit", "level": "advanced" },
-        { "name": "Fastify", "level": "advanced" }
+        {
+          "name": "React.js",
+          "level": "expert"
+        },
+        {
+          "name": "Next.js",
+          "level": "advanced"
+        },
+        {
+          "name": "Node.js(Express.js)",
+          "level": "advanced"
+        },
+        {
+          "name": "Tailwind CSS",
+          "level": "expert"
+        },
+        {
+          "name": "Django",
+          "level": "advanced"
+        },
+        {
+          "name": "Laravel",
+          "level": "advanced"
+        },
+        {
+          "name": "SvelteKit",
+          "level": "intermediate"
+        },
+        {
+          "name": "Fastify",
+          "level": "beginner"
+        }
       ]
     },
     {
       "name": "AI & Machine Learning",
       "skills": [
-        { "name": "LangChain", "level": "advanced" },
-        { "name": "Pandas", "level": "intermediate" },
-        { "name": "NumPy", "level": "intermediate" },
-        { "name": "Matplotlib", "level": "intermediate" }
+        {
+          "name": "LangChain",
+          "level": "intermediate"
+        },
+        {
+          "name": "Pandas",
+          "level": "intermediate"
+        },
+        {
+          "name": "NumPy",
+          "level": "intermediate"
+        },
+        {
+          "name": "Matplotlib",
+          "level": "intermediate"
+        }
       ]
     },
     {
       "name": "Databases & Tools",
       "skills": [
-        { "name": "PostgreSQL", "level": "expert" },
-        { "name": "MongoDB", "level": "expert" },
-        { "name": "MySQL", "level": "expert" },
-        { "name": "Git", "level": "expert" },
-        { "name": "Docker", "level": "advanced" },
-        { "name": "AWS", "level": "intermediate" },
-        { "name": "Drizzle ORM", "level": "advanced" },
-        { "name": "Prisma", "level": "advanced" }
+        {
+          "name": "PostgreSQL",
+          "level": "beginner"
+        },
+        {
+          "name": "MongoDB",
+          "level": "advanced"
+        },
+        {
+          "name": "MySQL",
+          "level": "intermediate"
+        },
+        {
+          "name": "Git",
+          "level": "advanced"
+        },
+        {
+          "name": "Docker",
+          "level": "beginner"
+        },
+        {
+          "name": "AWS",
+          "level": "intermediate"
+        },
+        {
+          "name": "Drizzle ORM",
+          "level": "beginner"
+        },
+        {
+          "name": "Prisma",
+          "level": "beginner"
+        }
       ]
     }
   ]

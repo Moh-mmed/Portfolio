@@ -4,14 +4,12 @@ import { useEffect, useState } from "react";
 
 interface UseScrollSpyOptions {
   sectionIds: string[];
-  threshold?: number;
-  rootMargin?: string;
+  offsetRatio?: number;
 }
 
 export function useScrollSpy({
   sectionIds,
-  threshold = 0.3,
-  rootMargin = "-20% 0px -55% 0px"
+  offsetRatio = 0.35
 }: UseScrollSpyOptions): string {
   const [activeId, setActiveId] = useState(sectionIds[0] ?? "");
 
@@ -28,23 +26,39 @@ export function useScrollSpy({
       return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((left, right) => right.intersectionRatio - left.intersectionRatio);
+    let frame = 0;
 
-        if (visible.length > 0) {
-          setActiveId(visible[0].target.id);
+    const updateActiveId = () => {
+      const triggerLine = window.innerHeight * offsetRatio;
+      let nextActiveId = elements[0].id;
+
+      for (const element of elements) {
+        if (element.getBoundingClientRect().top <= triggerLine) {
+          nextActiveId = element.id;
+          continue;
         }
-      },
-      { threshold, rootMargin }
-    );
 
-    elements.forEach((element) => observer.observe(element));
+        break;
+      }
 
-    return () => observer.disconnect();
-  }, [sectionIds, rootMargin, threshold]);
+      setActiveId((currentId) => (currentId === nextActiveId ? currentId : nextActiveId));
+    };
+
+    const queueUpdate = () => {
+      cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(updateActiveId);
+    };
+
+    queueUpdate();
+    window.addEventListener("scroll", queueUpdate, { passive: true });
+    window.addEventListener("resize", queueUpdate);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", queueUpdate);
+      window.removeEventListener("resize", queueUpdate);
+    };
+  }, [offsetRatio, sectionIds]);
 
   return activeId;
 }

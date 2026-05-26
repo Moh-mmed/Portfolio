@@ -42,7 +42,7 @@ export interface Experience {
 
 export interface Skill {
   name: string;
-  level: "expert" | "advanced" | "intermediate";
+  level: "expert" | "advanced" | "intermediate" | "beginner";
   yearsOfExperience?: number;
 }
 

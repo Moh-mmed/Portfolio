@@ -2,7 +2,17 @@
 
 import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
+import { GitHubIcon, LinkedInIcon } from "@/components/ui/SocialIcons";
 import { formatLastUpdated } from "@/lib/utils";
+
+const socialLinks = [
+  { label: "GitHub", href: "https://github.com/Moh-mmed", icon: GitHubIcon },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/mohammed-benaoumeur/",
+    icon: LinkedInIcon
+  }
+];
 
 export function Footer() {
   const [lastUpdated, setLastUpdated] = useState<string>("");
@@ -25,23 +35,19 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-3 text-sm text-muted md:items-end">
-          <div className="flex items-center gap-4">
-            <a
-              className="hover:text-accent"
-              href="https://github.com/Moh-mmed"
-              rel="noreferrer"
-              target="_blank"
-            >
-              GitHub
-            </a>
-            <a
-              className="hover:text-accent"
-              href="https://www.linkedin.com/in/mohammed-benaoumeur/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              LinkedIn
-            </a>
+          <div className="flex items-center gap-3">
+            {socialLinks.map((link) => (
+              <a
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-bg-alt text-muted shadow-sm transition-all duration-300 hover:border-accent/35 hover:text-accent hover:shadow-[0_12px_30px_-22px_rgba(13,148,136,0.95)]"
+                href={link.href}
+                key={link.href}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <span className="sr-only">{link.label}</span>
+                <link.icon className="h-5 w-5" />
+              </a>
+            ))}
           </div>
           <p>Last updated {lastUpdated || ""}</p>
         </div>
