@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: {
     default:
       "Mohammed Ben Aoumeur | Full-Stack Engineer and AI Integration Specialist",
-    template: "%s | Mohammed Ben Aoumeur"
+    template: "%s"
   },
   description:
     "Software engineer specializing in full-stack development, backend systems, and AI integration with TypeScript, Next.js, Node.js, and Python.",

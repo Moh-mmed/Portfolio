@@ -14,7 +14,9 @@ export async function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
 }
 
-export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params
+}: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
   const project = await getProjectBySlug(slug);
 
@@ -23,7 +25,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   }
 
   return {
-    title: `${project.title} | Mohammed Ben Aoumeur`,
+    title: `${project.title}`,
     description: project.tagline,
     alternates: {
       canonical: buildAbsoluteUrl(`/projects/${project.slug}`)
