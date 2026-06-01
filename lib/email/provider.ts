@@ -3,23 +3,22 @@ import { Resend } from "resend";
 export interface SendEmailPayload {
   to: string;
   from: string;
+  replyTo?: string;
   subject: string;
   text: string;
+  html?: string;
 }
 
 export interface EmailProvider {
-  sendEmail(payload: SendEmailPayload): Promise<{ success: boolean; error?: string }>;
+  sendEmail(
+    payload: SendEmailPayload
+  ): Promise<{ success: boolean; error?: string }>;
 }
 
 export class ConsoleEmailProvider implements EmailProvider {
-  async sendEmail(payload: SendEmailPayload): Promise<{ success: boolean; error?: string }> {
-    console.log("--- NEW EMAIL ---");
-    console.log(`To: ${payload.to}`);
-    console.log(`From: ${payload.from}`);
-    console.log(`Subject: ${payload.subject}`);
-    console.log(`Body: ${payload.text}`);
-    console.log("-----------------");
-
+  async sendEmail(
+    payload: SendEmailPayload
+  ): Promise<{ success: boolean; error?: string }> {
     // Simulate slight delay
     await new Promise((resolve) => setTimeout(resolve, 500));
 
@@ -34,13 +33,17 @@ export class ResendEmailProvider implements EmailProvider {
     this.resend = new Resend(process.env.RESEND_API_KEY);
   }
 
-  async sendEmail(payload: SendEmailPayload): Promise<{ success: boolean; error?: string }> {
+  async sendEmail(
+    payload: SendEmailPayload
+  ): Promise<{ success: boolean; error?: string }> {
     try {
       const { data, error } = await this.resend.emails.send({
         from: payload.from,
         to: payload.to,
+        replyTo: payload.replyTo,
         subject: payload.subject,
         text: payload.text,
+        html: payload.html
       });
 
       if (error) {
@@ -58,7 +61,7 @@ export class ResendEmailProvider implements EmailProvider {
 }
 
 export function getEmailProvider(): EmailProvider {
-  if (process.env.NODE_ENV === "production" && process.env.RESEND_API_KEY) {
+  if (process.env.RESEND_API_KEY) {
     return new ResendEmailProvider();
   }
   return new ConsoleEmailProvider();

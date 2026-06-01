@@ -18,6 +18,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://benaoumeur.vercel.app"),
+  icons: {
+    icon: "/icon.ico"
+  },
   title: {
     default:
       "Mohammed Ben Aoumeur | Full-Stack Engineer and AI Integration Specialist",
