@@ -9,7 +9,6 @@ import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import { colors } from "@/lib/design-tokens";
 import { buildAbsoluteUrl } from "@/lib/utils";
 
-
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -17,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://benaoumeur.vercel.app"),
+  metadataBase: new URL("https://benaoumeur-mohammed.vercel.app/"),
   icons: {
     icon: "/icon.ico"
   },

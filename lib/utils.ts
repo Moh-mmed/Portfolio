@@ -1,6 +1,8 @@
 import type { Project } from "@/lib/types";
 
-export function cn(...values: Array<string | false | null | undefined>): string {
+export function cn(
+  ...values: Array<string | false | null | undefined>
+): string {
   return values.filter(Boolean).join(" ");
 }
 
@@ -18,11 +20,17 @@ export function formatMonthYear(value: string | null | undefined): string {
   }).format(date);
 }
 
-export function formatDateRange(startDate: string, endDate?: string | null): string {
+export function formatDateRange(
+  startDate: string,
+  endDate?: string | null
+): string {
   return `${formatMonthYear(startDate)} - ${formatMonthYear(endDate)}`;
 }
 
-export function resolveProjectImage(project: Project, imageName?: string): string {
+export function resolveProjectImage(
+  project: Project,
+  imageName?: string
+): string {
   const image = (imageName ?? project.images[0])?.trim();
 
   if (!image || image === "placeholder.jpg") {
@@ -33,12 +41,14 @@ export function resolveProjectImage(project: Project, imageName?: string): strin
 }
 
 export function resolveProjectImages(project: Project): string[] {
-  return project.images.map((imageName) => resolveProjectImage(project, imageName));
+  return project.images.map((imageName) =>
+    resolveProjectImage(project, imageName)
+  );
 }
 
 export function buildAbsoluteUrl(pathname: string): string {
   const normalizedPath = pathname.startsWith("/") ? pathname : `/${pathname}`;
-  return `https://benaoumeur.vercel.app${normalizedPath}`;
+  return `https://benaoumeur-mohammed.vercel.app${normalizedPath}`;
 }
 
 export function formatLastUpdated(date = new Date()): string {
