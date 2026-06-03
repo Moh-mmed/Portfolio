@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { AboutSection } from "@/components/sections/AboutSection";
+import { EducationTimeline } from "@/components/sections/EducationTimeline";
 import { ExperienceTimeline } from "@/components/sections/ExperienceTimeline";
 import { SkillsGrid } from "@/components/sections/SkillsGrid";
 import { Section } from "@/components/ui/Section";
-import { getAbout, getExperience, getSkills } from "@/lib/content";
+import { getAbout, getEducation, getExperience, getSkills } from "@/lib/content";
 import { buildAbsoluteUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -27,7 +28,12 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-  const [about, experience, skills] = await Promise.all([getAbout(), getExperience(), getSkills()]);
+  const [about, education, experience, skills] = await Promise.all([
+    getAbout(),
+    getEducation(),
+    getExperience(),
+    getSkills()
+  ]);
 
   return (
     <>
@@ -36,6 +42,9 @@ export default async function AboutPage() {
       </Section>
       <Section className="pt-0">
         <ExperienceTimeline experience={experience} />
+      </Section>
+      <Section className="pt-0">
+        <EducationTimeline education={education} />
       </Section>
       <Section className="pt-0">
         <SkillsGrid skills={skills} />

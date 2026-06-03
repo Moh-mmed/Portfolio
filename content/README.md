@@ -7,6 +7,7 @@ these files to change public content without editing React components.
 
 - `content/projects/*.json`: individual professional projects
 - `content/experience.json`: work history timeline
+- `content/education.json`: academic history timeline
 - `content/skills.json`: categorized skills
 - `content/about.md`: about page frontmatter plus markdown body
 
@@ -84,6 +85,24 @@ Optional fields:
 - `logo`
 
 `startDate` and `endDate` use `YYYY-MM`.
+
+## Education schema
+
+Required fields:
+
+- `institution`
+- `degree`
+- `location`
+- `startDate`
+- `endDate`
+
+Optional fields:
+
+- `logo`
+- `highlights`
+
+`startDate` and `endDate` use `YYYY-MM`.
+Education logos are loaded from `public/images/institutions/`.
 
 ## Skills schema
 

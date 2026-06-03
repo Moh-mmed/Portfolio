@@ -1,10 +1,11 @@
 import { PortfolioHome } from "@/components/sections/PortfolioHome";
-import { getAbout, getExperience, getFeaturedProjects, getSkills } from "@/lib/content";
+import { getAbout, getEducation, getExperience, getFeaturedProjects, getSkills } from "@/lib/content";
 import { buildAbsoluteUrl } from "@/lib/utils";
 
 export default async function HomePage() {
-  const [about, experience, skills, projects] = await Promise.all([
+  const [about, education, experience, skills, projects] = await Promise.all([
     getAbout(),
+    getEducation(),
     getExperience(),
     getSkills(),
     getFeaturedProjects()
@@ -26,7 +27,11 @@ export default async function HomePage() {
           "@type": "PostalAddress",
           addressLocality: "Algiers",
           addressCountry: "Algeria"
-        }
+        },
+        alumniOf: education.map((entry) => ({
+          "@type": "CollegeOrUniversity",
+          name: entry.institution
+        }))
       },
       {
         "@type": "WebSite",
@@ -38,7 +43,13 @@ export default async function HomePage() {
 
   return (
     <>
-      <PortfolioHome about={about} experience={experience} projects={projects} skills={skills} />
+      <PortfolioHome
+        about={about}
+        education={education}
+        experience={experience}
+        projects={projects}
+        skills={skills}
+      />
       <script
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         type="application/ld+json"

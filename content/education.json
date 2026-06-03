@@ -1,0 +1,24 @@
+[
+  {
+    "institution": "Üsküdar University",
+    "degree": "Bachelor of Computer Engineering",
+    "location": "Istanbul, Türkiye",
+    "startDate": "2019-09",
+    "endDate": "2023-06",
+    "logo": "uskudar_university.jpeg",
+    "highlights": [
+      "Studied software engineering foundations, computer systems, algorithms, and practical application development."
+    ]
+  },
+  {
+    "institution": "University of Algiers 3",
+    "degree": "Bachelor of Finance and Accounting",
+    "location": "Algiers, Algeria",
+    "startDate": "2016-09",
+    "endDate": "2019-07",
+    "logo": "university_of_algiers_3.jpeg",
+    "highlights": [
+      "Built a finance and accounting foundation that supports product thinking, analytical problem solving, and business context."
+    ]
+  }
+]

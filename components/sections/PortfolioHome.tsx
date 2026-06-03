@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useAnimate } from "framer-motion";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ContactForm } from "@/components/sections/ContactForm";
+import { EducationTimeline } from "@/components/sections/EducationTimeline";
 import { ExperienceTimeline } from "@/components/sections/ExperienceTimeline";
 import { ProjectGrid } from "@/components/sections/ProjectGrid";
 import { ProjectSlider } from "@/components/sections/ProjectSlider";
@@ -19,14 +20,28 @@ import {
 } from "@/components/ui/SocialIcons";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { useScrollSpy } from "@/lib/use-scroll-spy";
-import type { AboutContent, Experience, Project, Skills } from "@/lib/types";
+import type {
+  AboutContent,
+  Education,
+  Experience,
+  Project,
+  Skills
+} from "@/lib/types";
 import { cn } from "@/lib/utils";
 
-const sectionIds = ["about", "experience", "projects", "skills", "contact"];
+const sectionIds = [
+  "about",
+  "experience",
+  "education",
+  "projects",
+  "skills",
+  "contact"
+];
 
 const navLinks = [
   { href: "#about", label: "About", id: "about" },
   { href: "#experience", label: "Experience", id: "experience" },
+  { href: "#education", label: "Education", id: "education" },
   { href: "#projects", label: "Projects", id: "projects" },
   { href: "#skills", label: "Skills", id: "skills" },
   { href: "#contact", label: "Contact", id: "contact" }
@@ -43,6 +58,7 @@ const socialLinks = [
 
 interface PortfolioHomeProps {
   about: AboutContent;
+  education: Education[];
   experience: Experience[];
   skills: Skills;
   projects: Project[];
@@ -50,6 +66,7 @@ interface PortfolioHomeProps {
 
 export function PortfolioHome({
   about,
+  education,
   experience,
   skills,
   projects
@@ -254,6 +271,13 @@ export function PortfolioHome({
             <SectionDivider />
 
             <AnimateIn delay={0.1} variant="fade-up">
+              <section className="scroll-mt-24" id="education">
+                <EducationTimeline education={education} />
+              </section>
+            </AnimateIn>
+            <SectionDivider />
+
+            <AnimateIn delay={0.15} variant="fade-up">
               <section className="scroll-mt-24" id="projects">
                 <div className="mb-8 space-y-2">
                   <p className="text-sm font-medium uppercase tracking-[0.22em] text-muted">
@@ -277,14 +301,14 @@ export function PortfolioHome({
             </AnimateIn>
             <SectionDivider />
 
-            <AnimateIn delay={0.15} variant="fade-up">
+            <AnimateIn delay={0.2} variant="fade-up">
               <section className="scroll-mt-24" id="skills">
                 <SkillsGrid skills={skills} />
               </section>
             </AnimateIn>
             <SectionDivider />
 
-            <AnimateIn delay={0.2} variant="fade-up">
+            <AnimateIn delay={0.25} variant="fade-up">
               <section className="scroll-mt-24" id="contact">
                 <div className="mb-8 space-y-2">
                   <p className="text-sm font-medium uppercase tracking-[0.22em] text-muted">

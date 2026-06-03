@@ -40,6 +40,16 @@ export interface Experience {
   logo?: string;
 }
 
+export interface Education {
+  institution: string;
+  degree: string;
+  location: string;
+  startDate: string;
+  endDate: string;
+  logo?: string;
+  highlights?: string[];
+}
+
 export interface Skill {
   name: string;
   level: "expert" | "advanced" | "intermediate" | "beginner";

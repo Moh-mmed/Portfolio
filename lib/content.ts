@@ -3,7 +3,13 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { z } from "zod";
-import type { AboutContent, Experience, Project, Skills } from "@/lib/types";
+import type {
+  AboutContent,
+  Education,
+  Experience,
+  Project,
+  Skills
+} from "@/lib/types";
 
 const contentDir = path.join(process.cwd(), "content");
 const projectsDir = path.join(contentDir, "projects");
@@ -52,6 +58,16 @@ export const experienceSchema: z.ZodType<Experience> = z.object({
   description: z.array(z.string().min(1)).min(1),
   tech: z.array(z.string().min(1)).min(1),
   logo: z.string().min(1).optional()
+});
+
+export const educationSchema: z.ZodType<Education> = z.object({
+  institution: z.string().min(1),
+  degree: z.string().min(1),
+  location: z.string().min(1),
+  startDate: z.string().regex(/^\d{4}-\d{2}$/),
+  endDate: z.string().regex(/^\d{4}-\d{2}$/),
+  logo: z.string().min(1).optional(),
+  highlights: z.array(z.string().min(1)).optional()
 });
 
 export const skillsSchema: z.ZodType<Skills> = z.object({
@@ -151,6 +167,21 @@ export const getExperience = cache(async (): Promise<Experience[]> => {
 
   try {
     return z.array(experienceSchema).parse(raw);
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      throw formatZodError(filePath, error);
+    }
+
+    throw error;
+  }
+});
+
+export const getEducation = cache(async (): Promise<Education[]> => {
+  const filePath = path.join(contentDir, "education.json");
+  const raw = await readJsonFile(filePath);
+
+  try {
+    return z.array(educationSchema).parse(raw);
   } catch (error) {
     if (error instanceof z.ZodError) {
       throw formatZodError(filePath, error);
