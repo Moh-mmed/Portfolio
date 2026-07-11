@@ -1,0 +1,38 @@
+{
+  "slug": "sana-shop",
+  "title": "Sana Shop",
+  "tagline": "A Next.js e-commerce store with product filtering, cart flows, payments, blogs, and admin content management.",
+  "visible": true,
+  "featured": false,
+  "order": 6,
+  "category": "ecommerce",
+  "difficulty": "difficult",
+  "tech": [
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "MongoDB",
+    "Mongoose"
+  ],
+  "role": "Full-Stack Developer",
+  "timeline": "08 - 2023",
+  "description": "Sana-Shop is an e-commerce website built using Next.js with TypeScript, Tailwind CSS, Mongoose, and supporting libraries. The website provides a shopping experience where users can browse products, filter them, add products to a cart, make payments after logging in, and read shopping-related blog content.\n\nThe admin panel allows the admin to manage website content, including products and user accounts through CRUD operations. It also supports order, blog, and order-status management.",
+  "images": [
+    "cover.jpg",
+    "thumbnail-1.png",
+    "thumbnail-2.png",
+    "thumbnail-3.png",
+    "thumbnail-4.png",
+    "thumbnail-5.png",
+    "thumbnail-6.png",
+    "thumbnail-7.png",
+    "thumbnail-8.png",
+    "thumbnail-9.png",
+    "thumbnail-10.png",
+    "thumbnail-11.png"
+  ],
+  "links": {
+    "live": "https://sanashop.vercel.app/",
+    "github": "https://github.com/Moh-mmed/sana-shop"
+  }
+}

@@ -5,7 +5,7 @@ these files to change public content without editing React components.
 
 ## Files
 
-- `content/projects/*.json`: individual professional projects
+- `content/projects/*.json`: individual project entries
 - `content/experience.json`: work history timeline
 - `content/education.json`: academic history timeline
 - `content/skills.json`: categorized skills
@@ -21,22 +21,20 @@ Required fields:
 - `featured`
 - `order`
 - `category`
+- `difficulty` (optional)
 - `tech`
 - `role`
 - `timeline`
 - `description` (Markdown)
-- `problem` (Markdown)
-- `solution` (Markdown)
-- `impact` (string array, minimum 2 items)
 - `images`
 
 Optional fields:
 
 - `company`
-- `architecture` (Markdown)
+- `visible`
 - `links.live`
 - `links.github`
-- `links.caseStudy`
+- `links.other`
 
 Example:
 
@@ -48,14 +46,22 @@ Example:
   "featured": true,
   "order": 1,
   "category": "ai",
+  "difficulty": "difficult",
   "tech": ["Next.js", "TypeScript", "Node.js"],
   "role": "Full-Stack Developer",
   "timeline": "2024",
   "description": "Long-form project overview written in Markdown.",
-  "problem": "Problem statement written in Markdown.",
-  "solution": "Solution narrative written in Markdown.",
-  "impact": ["Outcome 1", "Outcome 2"],
-  "images": ["placeholder.jpg"]
+  "images": ["placeholder.jpg"],
+  "links": {
+    "live": "https://example.com",
+    "github": "https://github.com/example/project",
+    "other": [
+      {
+        "title": "API docs",
+        "url": "https://example.com/docs"
+      }
+    ]
+  }
 }
 ```
 
@@ -64,7 +70,6 @@ Common mistakes:
 - Filename and `slug` do not match
 - `category` is not one of the allowed values
 - `tech` is empty
-- Tutorial projects are added to public listings
 - A missing project image is referenced without falling back to `placeholder.jpg`
 
 ## Experience schema

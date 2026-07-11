@@ -1,0 +1,30 @@
+{
+  "slug": "chatli-app",
+  "title": "Chatli App",
+  "tagline": "A real-time chat application with room creation, room joining, and Socket.IO messaging.",
+  "visible": true,
+  "featured": false,
+  "order": 5,
+  "category": "web",
+  "difficulty": "difficult",
+  "tech": [
+    "Node.js",
+    "Express",
+    "Socket.IO",
+    "JavaScript",
+    "HTML",
+    "CSS"
+  ],
+  "role": "Full-Stack Developer",
+  "timeline": "05 - 2022",
+  "description": "Chatli App is a simple chat application built with Node.js and Socket.IO. The app allows users to create chat rooms and join existing ones, where they can exchange messages in real time.\n\nIt includes server-side and client-side code, plus a basic UI for the chat interface.",
+  "images": [
+    "cover.jpg",
+    "thumbnail-1.jpg",
+    "thumbnail-2.jpg"
+  ],
+  "links": {
+    "live": "https://chatli.onrender.com/",
+    "github": "https://github.com/Moh-mmed/node-chat-app"
+  }
+}

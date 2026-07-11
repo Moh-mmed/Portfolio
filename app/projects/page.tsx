@@ -7,20 +7,20 @@ import { buildAbsoluteUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Curated professional projects from Mohammed Ben Aoumeur across product, AI, and ecommerce work.",
+  description: "Projects from Mohammed Ben Aoumeur across product, AI, ecommerce, dashboards, and earlier portfolio work.",
   alternates: {
     canonical: buildAbsoluteUrl("/projects")
   },
   openGraph: {
     title: "Projects | Mohammed Ben Aoumeur",
-    description: "Curated professional projects from Mohammed Ben Aoumeur across product, AI, and ecommerce work.",
+    description: "Projects from Mohammed Ben Aoumeur across product, AI, ecommerce, dashboards, and earlier portfolio work.",
     url: buildAbsoluteUrl("/projects"),
     images: ["/images/og-image.jpg"]
   },
   twitter: {
     card: "summary_large_image",
     title: "Projects | Mohammed Ben Aoumeur",
-    description: "Curated professional projects from Mohammed Ben Aoumeur across product, AI, and ecommerce work.",
+    description: "Projects from Mohammed Ben Aoumeur across product, AI, ecommerce, dashboards, and earlier portfolio work.",
     images: ["/images/og-image.jpg"]
   }
 };
@@ -36,8 +36,8 @@ export default async function ProjectsPage() {
           Selected work built for real users and real teams
         </h1>
         <p className="max-w-2xl text-lg leading-8 text-muted">
-          This phase intentionally filters out tutorial work and keeps the public project list
-          focused on professional delivery.
+          A fuller archive of shipped client work, experiments, and earlier portfolio projects
+          with demos, source links, and supporting screenshots.
         </p>
       </AnimateIn>
       <ProjectGrid cardHeadingTag="h2" projects={projects} />

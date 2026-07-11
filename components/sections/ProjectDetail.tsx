@@ -47,7 +47,10 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
 
         <AnimateIn className="space-y-6" variant="fade-left">
           <div className="space-y-4">
-            <Badge>{project.category}</Badge>
+            <div className="flex flex-wrap gap-2">
+              <Badge>{project.category}</Badge>
+              {project.difficulty ? <Badge>{project.difficulty}</Badge> : null}
+            </div>
             <h1 className="text-4xl font-semibold tracking-tight text-text">{project.title}</h1>
             <p className="text-lg leading-8 text-muted">{project.tagline}</p>
           </div>
@@ -89,7 +92,21 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
               </span>
               Back to projects
             </Button>
-            {project.links?.live ? <Button href={project.links.live}>Live</Button> : null}
+            {project.links?.live ? (
+              <Button href={project.links.live} rel="noreferrer" target="_blank">
+                Live
+              </Button>
+            ) : null}
+            {project.links?.github ? (
+              <Button href={project.links.github} rel="noreferrer" target="_blank" variant="outline">
+                GitHub
+              </Button>
+            ) : null}
+            {project.links?.other?.map((link) => (
+              <Button href={link.url} key={link.url} rel="noreferrer" target="_blank" variant="outline">
+                {link.title}
+              </Button>
+            ))}
           </div>
         </AnimateIn>
       </div>

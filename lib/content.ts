@@ -16,7 +16,16 @@ const projectsDir = path.join(contentDir, "projects");
 
 const projectLinksSchema = z
   .object({
-    live: z.string().url().optional()
+    live: z.string().url().optional(),
+    github: z.string().url().optional(),
+    other: z
+      .array(
+        z.object({
+          title: z.string().min(1),
+          url: z.string().url()
+        })
+      )
+      .optional()
   })
   .optional();
 
@@ -29,6 +38,7 @@ export const projectSchema: z.ZodType<Project, z.ZodTypeDef, unknown> =
     featured: z.boolean(),
     order: z.number().int().nonnegative(),
     category: z.enum(["web", "mobile", "ai", "ecommerce", "saas"]),
+    difficulty: z.enum(["easy", "medium", "difficult"]).optional(),
     tech: z.array(z.string().min(1)).min(1),
     role: z.string().min(1),
     company: z.string().min(1).optional(),

@@ -1,0 +1,28 @@
+{
+  "slug": "todo-app",
+  "title": "Todo App",
+  "tagline": "A React and Firebase todo list with user authentication and user-specific task lists.",
+  "visible": true,
+  "featured": false,
+  "order": 10,
+  "category": "web",
+  "difficulty": "easy",
+  "tech": [
+    "React",
+    "Firebase",
+    "JavaScript",
+    "CSS"
+  ],
+  "role": "Front-End Developer",
+  "timeline": "03 - 2022",
+  "description": "A small todo list application built with React.js and Firebase. It allows users to sign up, log in, and log out.\n\nTodos are displayed according to creation time and user, so each user can manage their own todo list.",
+  "images": [
+    "cover.jpg",
+    "thumbnail-1.jpg",
+    "thumbnail-2.jpg"
+  ],
+  "links": {
+    "live": "https://vigorous-mirzakhani-200784.netlify.app/",
+    "github": "https://github.com/Moh-mmed/todo-list"
+  }
+}

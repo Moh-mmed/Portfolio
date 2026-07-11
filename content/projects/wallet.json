@@ -1,0 +1,28 @@
+{
+  "slug": "wallet",
+  "title": "Wallet",
+  "tagline": "A personal finance tracker for recording income, expenses, and spending categories.",
+  "visible": true,
+  "featured": false,
+  "order": 8,
+  "category": "web",
+  "difficulty": "medium",
+  "tech": [
+    "Next.js",
+    "React",
+    "JavaScript",
+    "CSS"
+  ],
+  "role": "Full-Stack Developer",
+  "timeline": "09 - 2022",
+  "description": "Wallet is a Next.js application for tracking incomes and outcomes, adding and removing expenses, and assigning expenses to categories.",
+  "images": [
+    "cover.jpg",
+    "thumbnail-1.jpg",
+    "thumbnail-2.jpg"
+  ],
+  "links": {
+    "live": "https://my-wallet-bice.vercel.app/",
+    "github": "https://github.com/Moh-mmed/my-wallet"
+  }
+}

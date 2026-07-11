@@ -1,0 +1,40 @@
+{
+  "slug": "natours-web-app",
+  "title": "Natours Web App",
+  "tagline": "Tour-booking API and web app with authentication, authorization, payments, and API documentation.",
+  "visible": true,
+  "featured": false,
+  "order": 4,
+  "category": "web",
+  "difficulty": "difficult",
+  "tech": [
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Mongoose",
+    "Stripe",
+    "Pug"
+  ],
+  "role": "Full-Stack Developer",
+  "timeline": "03 - 2023",
+  "description": "A complete RESTful API web application for booking tours using Node.js, Express, MongoDB, and Mongoose.\n\nThe project includes CRUD operations with Mongoose, authentication, authorization, password resets, transactional emails, and Stripe payments.",
+  "images": [
+    "cover.jpg",
+    "thumbnail-1.png",
+    "thumbnail-2.png",
+    "thumbnail-3.png",
+    "thumbnail-4.png",
+    "thumbnail-5.png",
+    "thumbnail-6.png"
+  ],
+  "links": {
+    "live": "https://natours-to8v.onrender.com",
+    "github": "https://github.com/Moh-mmed/natours",
+    "other": [
+      {
+        "title": "Natours API Endpoint",
+        "url": "https://documenter.getpostman.com/view/14382404/UyxdLpLp"
+      }
+    ]
+  }
+}

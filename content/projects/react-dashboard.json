@@ -1,0 +1,27 @@
+{
+  "slug": "react-dashboard",
+  "title": "React Dashboard",
+  "tagline": "A responsive admin dashboard interface with tables, charts, forms, and Material UI styling.",
+  "visible": true,
+  "featured": false,
+  "order": 9,
+  "category": "saas",
+  "difficulty": "easy",
+  "tech": [
+    "React",
+    "Material UI",
+    "JavaScript",
+    "Charts"
+  ],
+  "role": "Front-End Developer",
+  "timeline": "05 - 2022",
+  "description": "The React admin dashboard is a sleek dashboard interface built with React and Material UI. It offers useful features for managing data and visualizing analytics, including data tables, charts, and forms.\n\nThe dashboard is responsive, so it can adapt to different screen sizes and devices.",
+  "images": [
+    "cover.jpg",
+    "thumbnail-1.jpg"
+  ],
+  "links": {
+    "live": "https://astonishing-phoenix-7d2e98.netlify.app/",
+    "github": "https://github.com/Moh-mmed/admin-dashboard"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "weather-me",
+  "title": "Weather Me",
+  "tagline": "A weather forecast and air-quality application for searching conditions by location.",
+  "visible": true,
+  "featured": false,
+  "order": 7,
+  "category": "web",
+  "difficulty": "medium",
+  "tech": [
+    "React",
+    "React Router",
+    "JavaScript",
+    "Weather API",
+    "CSS"
+  ],
+  "role": "Front-End Developer",
+  "timeline": "01 - 2021",
+  "description": "Weather Me is an application built with React and React Router for displaying weather forecasts and air quality for any location, including predicted weather for the following days.",
+  "images": [
+    "cover.png",
+    "thumbnail-1.jpg"
+  ],
+  "links": {
+    "live": "https://blissful-brattain-aad41e.netlify.app",
+    "github": "https://github.com/Moh-mmed/Weather-App"
+  }
+}

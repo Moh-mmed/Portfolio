@@ -1,0 +1,31 @@
+{
+  "slug": "hms",
+  "title": "Hospital Management System",
+  "tagline": "A Next.js hospital appointment platform with patient signup, doctor dashboards, and MongoDB-backed scheduling.",
+  "visible": true,
+  "featured": false,
+  "order": 11,
+  "category": "web",
+  "difficulty": "difficult",
+  "tech": [
+    "Next.js",
+    "React",
+    "MongoDB",
+    "Mongoose",
+    "NextAuth.js",
+    "Tailwind CSS",
+    "Material UI",
+    "Axios"
+  ],
+  "role": "Full-Stack Developer",
+  "timeline": "04 - 2023",
+  "description": "Hospital Management System is a full-stack appointment-management app built with Next.js, React, MongoDB, Mongoose, and NextAuth.js.\n\nThe app supports patient signup, role-aware navigation for patients and doctors, appointment booking by city, hospital, branch, doctor, and date, plus doctor dashboards for viewing and cancelling appointments. Its API layer handles authentication, user creation, appointment creation, doctor appointment lookup, notifications, and lookup endpoints for hospitals, branches, doctors, and existing appointment times.",
+  "images": [
+    "homepage.png",
+    "about.png"
+  ],
+  "links": {
+    "live": "https://hms-beryl.vercel.app/",
+    "github": "https://github.com/Moh-mmed/hms"
+  }
+}

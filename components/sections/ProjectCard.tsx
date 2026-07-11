@@ -34,6 +34,7 @@ export function ProjectCard({
         <div className="space-y-3">
           <div className="flex flex-wrap gap-2">
             <Badge className="transition-all duration-300 group-hover:bg-accent group-hover:text-bg">{project.category}</Badge>
+            {project.difficulty ? <Badge>{project.difficulty}</Badge> : null}
             {project.featured ? <Badge className="bg-text text-bg">Featured</Badge> : null}
           </div>
           <div>
