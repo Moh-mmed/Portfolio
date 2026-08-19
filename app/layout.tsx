@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "Mohammed Ben Aoumeur Portfolio",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/image.png",
         width: 1200,
         height: 630,
         alt: "Mohammed Ben Aoumeur portfolio"
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: "Mohammed Ben Aoumeur | Full-Stack Engineer",
     description:
       "Software engineer specializing in full-stack development, backend systems, and AI integration.",
-    images: ["/images/og-image.jpg"]
+    images: ["/images/image.png"]
   }
 };
 

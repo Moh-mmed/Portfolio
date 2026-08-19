@@ -14,21 +14,24 @@ import { getResumeLastUpdated } from "@/lib/resume";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Direct contact options for Mohammed Ben Aoumeur, including email, GitHub, and LinkedIn.",
+  description:
+    "Direct contact options for Mohammed Ben Aoumeur, including email, GitHub, and LinkedIn.",
   alternates: {
     canonical: buildAbsoluteUrl("/contact")
   },
   openGraph: {
     title: "Contact | Mohammed Ben Aoumeur",
-    description: "Direct contact options for Mohammed Ben Aoumeur, including email, GitHub, and LinkedIn.",
+    description:
+      "Direct contact options for Mohammed Ben Aoumeur, including email, GitHub, and LinkedIn.",
     url: buildAbsoluteUrl("/contact"),
-    images: ["/images/og-image.jpg"]
+    images: ["/images/image.png"]
   },
   twitter: {
     card: "summary_large_image",
     title: "Contact | Mohammed Ben Aoumeur",
-    description: "Direct contact options for Mohammed Ben Aoumeur, including email, GitHub, and LinkedIn.",
-    images: ["/images/og-image.jpg"]
+    description:
+      "Direct contact options for Mohammed Ben Aoumeur, including email, GitHub, and LinkedIn.",
+    images: ["/images/image.png"]
   }
 };
 
@@ -126,7 +129,10 @@ export default async function ContactPage() {
           </Card>
         </AnimateIn>
 
-        <AnimateIn className="grid gap-4 lg:grid-cols-3 xl:gap-5" variant="stagger-children">
+        <AnimateIn
+          className="grid gap-4 lg:grid-cols-3 xl:gap-5"
+          variant="stagger-children"
+        >
           {contactMethods.map((method) => (
             <AnimateInItem key={method.label}>
               <a

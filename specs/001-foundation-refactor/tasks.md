@@ -158,7 +158,7 @@ images render with stable sizing, and run browser diagnostics and Lighthouse.
 [X] T061 [US3] Implement sitemap generation for public routes in `app/sitemap.ts`
 [X] T062 [US3] Implement robots policy for public crawling in `app/robots.ts`
 [X] T063 [US3] Add responsive headshot image asset in `public/images/headshot.jpg`
-[X] T064 [US3] Add OpenGraph image asset in `public/images/og-image.jpg`
+[X] T064 [US3] Add OpenGraph image asset in `public/images/image.png`
 [X] T065 [US3] Verify every production image uses Next.js Image with explicit sizing in `components/sections/ProjectCard.tsx`
 [X] T066 [US3] Verify mobile navigation, text wrapping, and footer stacking styles in `app/globals.css`
 
@@ -199,10 +199,11 @@ considered complete.
 [X] T073 Run linting and resolve reported issues in `package.json`
 [X] T074 Run TypeScript typecheck and resolve reported issues in `tsconfig.json`
 [X] T075 Run production build and resolve build or content validation failures in `lib/content.ts`
+
 - [ ] T076 Run Playwright e2e suite and resolve failures in `tests/e2e/responsive.spec.ts`
 - [ ] T077 Run accessibility suite and resolve failures in `tests/accessibility/a11y.spec.ts`
 - [ ] T078 Run Lighthouse audits and resolve failures below 95 Performance, 95 Accessibility, 95 Best Practices, or 100 SEO in `tests/performance/lighthouse.config.cjs`
-[X] T079 Verify no incomplete implementation markers, hardcoded portfolio copy, or tutorial project references remain in `app/page.tsx`
+      [X] T079 Verify no incomplete implementation markers, hardcoded portfolio copy, or tutorial project references remain in `app/page.tsx`
 - [ ] T080 Verify `/speckit.analyze` passes after implementation updates in `specs/001-foundation-refactor/tasks.md`
 
 ---

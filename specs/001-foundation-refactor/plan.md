@@ -64,7 +64,7 @@ and legacy project content are migration inputs, not target architecture.
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+_GATE: Must pass before Phase 0 research. Re-check after Phase 1 design._
 
 - [x] `spec.md` remains technology-agnostic and contains no frameworks,
       libraries, component names, architecture patterns, or file paths.
@@ -153,7 +153,7 @@ public/
 └── images/
     ├── companies/
     ├── headshot.jpg
-    ├── og-image.jpg
+    ├── image.png
     ├── placeholder.jpg
     └── projects/
         ├── kidooz/
