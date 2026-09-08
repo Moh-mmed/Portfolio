@@ -3,10 +3,7 @@
   "title": "Hospital Management System",
   "tagline": "A Next.js hospital appointment platform with patient signup, doctor dashboards, and MongoDB-backed scheduling.",
   "visible": true,
-  "featured": false,
   "order": 11,
-  "category": "web",
-  "difficulty": "difficult",
   "tech": [
     "Next.js",
     "React",

@@ -3,9 +3,7 @@
   "title": "lakeSai",
   "tagline": "Unify literature, data, and design tools into one transparent AI platform—accelerating discovery and empowering teams for trustworthy breakthroughs.",
   "visible": true,
-  "featured": true,
   "order": 1,
-  "category": "ai",
   "tech": [
     "Python(Django)",
     "LangChain",

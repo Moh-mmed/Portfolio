@@ -3,10 +3,7 @@
   "title": "Sana Shop",
   "tagline": "A Next.js e-commerce store with product filtering, cart flows, payments, blogs, and admin content management.",
   "visible": true,
-  "featured": false,
   "order": 6,
-  "category": "ecommerce",
-  "difficulty": "difficult",
   "tech": [
     "Next.js",
     "TypeScript",

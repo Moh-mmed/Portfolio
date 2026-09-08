@@ -1,5 +1,3 @@
-export type ProjectCategory = "web" | "mobile" | "ai" | "ecommerce" | "saas";
-
 export interface ProjectLinks {
   live?: string;
   github?: string;
@@ -14,10 +12,7 @@ export interface Project {
   title: string;
   tagline: string;
   visible: boolean;
-  featured: boolean;
   order: number;
-  category: ProjectCategory;
-  difficulty?: "easy" | "medium" | "difficult";
   tech: string[];
   role: string;
   company?: string;

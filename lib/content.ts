@@ -35,10 +35,7 @@ export const projectSchema: z.ZodType<Project, z.ZodTypeDef, unknown> =
     title: z.string().min(1),
     tagline: z.string().min(1),
     visible: z.boolean().optional().default(true),
-    featured: z.boolean(),
     order: z.number().int().nonnegative(),
-    category: z.enum(["web", "mobile", "ai", "ecommerce", "saas"]),
-    difficulty: z.enum(["easy", "medium", "difficult"]).optional(),
     tech: z.array(z.string().min(1)).min(1),
     role: z.string().min(1),
     company: z.string().min(1).optional(),
@@ -157,11 +154,6 @@ export const getAllProjects = cache(async (): Promise<Project[]> => {
 
     return left.order - right.order;
   });
-});
-
-export const getFeaturedProjects = cache(async (): Promise<Project[]> => {
-  const projects = await getAllProjects();
-  return projects.filter((project) => project.featured);
 });
 
 export const getProjectBySlug = cache(

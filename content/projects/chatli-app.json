@@ -3,10 +3,7 @@
   "title": "Chatli App",
   "tagline": "A real-time chat application with room creation, room joining, and Socket.IO messaging.",
   "visible": true,
-  "featured": false,
   "order": 5,
-  "category": "web",
-  "difficulty": "difficult",
   "tech": [
     "Node.js",
     "Express",

@@ -3,10 +3,7 @@
   "title": "Todo App",
   "tagline": "A React and Firebase todo list with user authentication and user-specific task lists.",
   "visible": true,
-  "featured": false,
   "order": 10,
-  "category": "web",
-  "difficulty": "easy",
   "tech": [
     "React",
     "Firebase",

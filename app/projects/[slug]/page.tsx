@@ -60,7 +60,6 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
     description: project.description,
     url: buildAbsoluteUrl(`/projects/${project.slug}`),
     image: buildAbsoluteUrl(resolveProjectImage(project)),
-    genre: project.category,
     keywords: project.tech.join(", ")
   };
 

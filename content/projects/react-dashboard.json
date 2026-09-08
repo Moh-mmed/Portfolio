@@ -3,10 +3,7 @@
   "title": "React Dashboard",
   "tagline": "A responsive admin dashboard interface with tables, charts, forms, and Material UI styling.",
   "visible": true,
-  "featured": false,
   "order": 9,
-  "category": "saas",
-  "difficulty": "easy",
   "tech": [
     "React",
     "Material UI",

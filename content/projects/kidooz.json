@@ -3,9 +3,7 @@
   "title": "kidooz",
   "tagline": "An Algerian e-commerce platform built around practical retail delivery.",
   "visible": true,
-  "featured": true,
   "order": 3,
-  "category": "ecommerce",
   "tech": [
     "SvelteKit",
     "TypeScript",

@@ -3,10 +3,7 @@
   "title": "Wallet",
   "tagline": "A personal finance tracker for recording income, expenses, and spending categories.",
   "visible": true,
-  "featured": false,
   "order": 8,
-  "category": "web",
-  "difficulty": "medium",
   "tech": [
     "Next.js",
     "React",

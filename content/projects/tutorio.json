@@ -3,9 +3,7 @@
   "title": "tutorio",
   "tagline": "Company product work focused on clear user flows and maintainable delivery.",
   "visible": false,
-  "featured": true,
   "order": 2,
-  "category": "web",
   "tech": [
     "Next.js",
     "TypeScript",

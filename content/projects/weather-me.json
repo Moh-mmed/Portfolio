@@ -3,10 +3,7 @@
   "title": "Weather Me",
   "tagline": "A weather forecast and air-quality application for searching conditions by location.",
   "visible": true,
-  "featured": true,
   "order": 7,
-  "category": "web",
-  "difficulty": "medium",
   "tech": [
     "React",
     "React Router",

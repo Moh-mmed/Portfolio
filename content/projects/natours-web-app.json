@@ -3,10 +3,7 @@
   "title": "Natours Web App",
   "tagline": "Tour-booking API and web app with authentication, authorization, payments, and API documentation.",
   "visible": true,
-  "featured": false,
   "order": 4,
-  "category": "web",
-  "difficulty": "difficult",
   "tech": [
     "Node.js",
     "Express",

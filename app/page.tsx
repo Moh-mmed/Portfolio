@@ -1,5 +1,5 @@
 import { PortfolioHome } from "@/components/sections/PortfolioHome";
-import { getAbout, getEducation, getExperience, getFeaturedProjects, getSkills } from "@/lib/content";
+import { getAbout, getAllProjects, getEducation, getExperience, getSkills } from "@/lib/content";
 import { buildAbsoluteUrl } from "@/lib/utils";
 
 export default async function HomePage() {
@@ -8,7 +8,7 @@ export default async function HomePage() {
     getEducation(),
     getExperience(),
     getSkills(),
-    getFeaturedProjects()
+    getAllProjects()
   ]);
 
   const structuredData = {

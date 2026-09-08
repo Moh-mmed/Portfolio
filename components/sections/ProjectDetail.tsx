@@ -2,7 +2,6 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { ImageGallery } from "@/components/ui/ImageGallery";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import type { Project } from "@/lib/types";
@@ -47,10 +46,6 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
 
         <AnimateIn className="space-y-6" variant="fade-left">
           <div className="space-y-4">
-            <div className="flex flex-wrap gap-2">
-              <Badge>{project.category}</Badge>
-              {project.difficulty ? <Badge>{project.difficulty}</Badge> : null}
-            </div>
             <h1 className="text-4xl font-semibold tracking-tight text-text">{project.title}</h1>
             <p className="text-lg leading-8 text-muted">{project.tagline}</p>
           </div>

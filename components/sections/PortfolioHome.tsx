@@ -284,7 +284,7 @@ export function PortfolioHome({
                     Projects
                   </p>
                   <h2 className="text-3xl font-semibold tracking-tight text-text">
-                    Professional work selected for signal and delivery quality
+                    A selection of products, platforms, and experiments
                   </h2>
                 </div>
                 <div className="lg:hidden">
@@ -296,23 +296,6 @@ export function PortfolioHome({
                   ) : (
                     <ProjectGrid projects={projects} />
                   )}
-                </div>
-                <div className="mt-8 flex justify-end">
-                  <Link
-                    href="/projects"
-                    className={cn(
-                      "group inline-flex items-center gap-2 rounded-full border border-border bg-bg-alt px-4 py-2.5 text-sm font-medium text-muted shadow-sm",
-                      "transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/35 hover:text-accent hover:shadow-[0_14px_30px_-22px_rgba(13,148,136,0.95)]"
-                    )}
-                  >
-                    View all projects
-                    <span
-                      aria-hidden="true"
-                      className="transition-transform duration-300 group-hover:translate-x-0.5"
-                    >
-                      →
-                    </span>
-                  </Link>
                 </div>
               </section>
             </AnimateIn>

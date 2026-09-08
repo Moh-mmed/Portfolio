@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import type { Project } from "@/lib/types";
 import { resolveProjectImage } from "@/lib/utils";
@@ -31,18 +30,11 @@ export function ProjectCard({
         />
       </div>
       <div className="space-y-5 p-6 relative z-20">
-        <div className="space-y-3">
-          <div className="flex flex-wrap gap-2">
-            <Badge className="transition-all duration-300 group-hover:bg-accent group-hover:text-bg">{project.category}</Badge>
-            {project.difficulty ? <Badge>{project.difficulty}</Badge> : null}
-            {project.featured ? <Badge className="bg-text text-bg">Featured</Badge> : null}
-          </div>
-          <div>
-            <HeadingTag className="text-xl font-semibold tracking-tight text-text transition-colors duration-300 group-hover:text-accent">
-              {project.title}
-            </HeadingTag>
-            <p className="mt-2 text-sm leading-6 text-muted">{project.tagline}</p>
-          </div>
+        <div>
+          <HeadingTag className="text-xl font-semibold tracking-tight text-text transition-colors duration-300 group-hover:text-accent">
+            {project.title}
+          </HeadingTag>
+          <p className="mt-2 text-sm leading-6 text-muted">{project.tagline}</p>
         </div>
         
         {/* Tech pills shift toward accent styling when parent hovered */}

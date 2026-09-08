@@ -62,7 +62,7 @@ export function ProjectSlider({ projects }: ProjectSliderProps) {
 
   return (
     <section
-      aria-label="Featured projects carousel"
+      aria-label="Projects carousel"
       aria-roledescription="carousel"
       className="relative space-y-6 overflow-hidden"
       data-testid="project-slider"

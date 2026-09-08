@@ -17,7 +17,7 @@ export function ProjectGrid({
       <div className="surface rounded-[24px] p-8 text-center" data-testid="project-grid">
         <h2 className="text-2xl font-semibold tracking-tight text-text">Project curation in progress</h2>
         <p className="mt-3 text-muted">
-          The portfolio shell is ready, and featured work will appear here as soon as it is tagged.
+          The portfolio shell is ready, and projects will appear here as soon as they are added.
         </p>
       </div>
     );
