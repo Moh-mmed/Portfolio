@@ -17,3 +17,12 @@ Thumbs.db
 *.swp
 assets/img/*Zone.Identifier
 _OLD/
+
+# Local planning and AI-assistant configuration
+AGENTS.md
+CLAUDE.md
+docs/
+specs/
+.agents/
+.claude/
+.specify/
