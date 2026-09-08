@@ -18,10 +18,7 @@ Required fields:
 - `slug`
 - `title`
 - `tagline`
-- `featured`
 - `order`
-- `category`
-- `difficulty` (optional)
 - `tech`
 - `role`
 - `timeline`
@@ -43,10 +40,7 @@ Example:
   "slug": "lakesai",
   "title": "lakeSai",
   "tagline": "Operational AI tooling for a private product environment",
-  "featured": true,
   "order": 1,
-  "category": "ai",
-  "difficulty": "difficult",
   "tech": ["Next.js", "TypeScript", "Node.js"],
   "role": "Full-Stack Developer",
   "timeline": "2024",
@@ -68,7 +62,6 @@ Example:
 Common mistakes:
 
 - Filename and `slug` do not match
-- `category` is not one of the allowed values
 - `tech` is empty
 - A missing project image is referenced without falling back to `placeholder.jpg`
 
