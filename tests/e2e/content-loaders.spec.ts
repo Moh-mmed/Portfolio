@@ -4,8 +4,9 @@ import { getAllProjects, getAbout, projectSchema, skillsSchema } from "@/lib/con
 test("content loaders return the visible project archive", async () => {
   const [projects, about] = await Promise.all([getAllProjects(), getAbout()]);
 
-  expect(projects).toHaveLength(10);
+  expect(projects).toHaveLength(11);
   expect(projects.map((project) => project.slug)).toEqual([
+    "spendly",
     "lakesai",
     "kidooz",
     "natours-web-app",

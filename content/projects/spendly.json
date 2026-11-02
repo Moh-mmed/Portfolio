@@ -1,0 +1,29 @@
+{
+  "slug": "spendly",
+  "title": "Spendly",
+  "tagline": "A private, local-first Android app that makes personal finance simple and clear.",
+  "visible": true,
+  "order": 0,
+  "tech": [
+    "Flutter",
+    "Dart",
+    "Riverpod",
+    "Drift",
+    "SQLite",
+    "go_router"
+  ],
+  "role": "Mobile Developer",
+  "timeline": "October 2026",
+  "description": "Spendly is a privacy-first personal-finance app for Android. Financial data remains on-device, while income, expenses, and transfers can be recorded quickly with minimal friction.\n\nIt includes account and category management, transaction history, monthly dashboards, spending analytics, budgets, recurring transactions, and versioned JSON backup and restore. The financial layer stores money as integer minor units for accurate calculations, with Drift and SQLite providing reactive local persistence.",
+  "images": [
+    "placeholder.png",
+    "overview.png",
+    "dashboard.png",
+    "transactions.png",
+    "add-expense.png",
+    "analytics.png"
+  ],
+  "links": {
+    "github": "https://github.com/Moh-mmed/spendly"
+  }
+}
