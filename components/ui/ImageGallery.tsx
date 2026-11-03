@@ -16,7 +16,8 @@ interface ImageGalleryProps {
 export function ImageGallery({ images }: ImageGalleryProps) {
   const titleId = useId();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const activeImage = typeof activeIndex === "number" ? images[activeIndex] : null;
+  const activeImage =
+    typeof activeIndex === "number" ? images[activeIndex] : null;
   const activeImageIndex = typeof activeIndex === "number" ? activeIndex : 0;
 
   const showPrevious = () => {
@@ -83,10 +84,16 @@ export function ImageGallery({ images }: ImageGalleryProps) {
 
   return (
     <div className="space-y-5">
-      <h2 className="text-xl font-semibold tracking-tight text-text" id={titleId}>
+      <h2
+        className="text-xl font-semibold tracking-tight text-text"
+        id={titleId}
+      >
         Gallery
       </h2>
-      <div aria-labelledby={titleId} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div
+        aria-labelledby={titleId}
+        className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+      >
         {images.map((image, index) => (
           <button
             className={cn(
@@ -112,15 +119,16 @@ export function ImageGallery({ images }: ImageGalleryProps) {
       {activeImage ? (
         <div
           aria-modal="true"
-          className="fixed inset-0 z-50 grid place-items-center bg-bg/80 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex overflow-y-auto overscroll-contain bg-bg/80 p-4 backdrop-blur-sm"
+          data-lenis-prevent
           onClick={() => setActiveIndex(null)}
           role="dialog"
         >
           <div
-            className="relative w-full max-w-6xl overflow-hidden rounded-[24px] border border-border bg-bg-alt shadow-2xl"
+            className="relative m-auto w-full max-w-6xl max-h-[calc(100dvh-2rem)] overflow-y-auto rounded-[24px] border border-border bg-bg-alt shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="relative aspect-[16/10] bg-bg-hover">
+            <div className="relative h-[min(60dvh,calc((100vw-2rem)*0.625))] min-h-48 bg-bg-hover">
               <Image
                 alt={activeImage.alt}
                 className="h-full w-full object-contain"
