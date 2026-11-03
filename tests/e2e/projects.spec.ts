@@ -32,3 +32,14 @@ test("project image lightbox remains usable within the viewport", async ({ page 
   await expect(page.getByRole("button", { name: "Show next image" })).toBeVisible();
   await expect(page.getByRole("button", { name: "Close" })).toBeVisible();
 });
+
+test("project details keep the portfolio navigation shell", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/projects/spendly");
+
+  const sidebar = page.getByRole("complementary");
+  await expect(sidebar.getByText("Mohammed Ben Aoumeur")).toBeVisible();
+  await expect(sidebar.getByRole("link", { name: "Projects", exact: true })).toHaveAttribute("href", "/#projects");
+  await expect(page.getByRole("link", { name: "Back to projects" })).toHaveAttribute("href", "/#projects");
+  await expect(page.getByRole("banner")).not.toBeVisible();
+});

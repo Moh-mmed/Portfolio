@@ -81,7 +81,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <Button className="group" href="/projects" variant="outline">
+            <Button className="group" href="/#projects" variant="outline">
               <span aria-hidden="true" className="transition-transform group-hover:-translate-x-1">
                 ←
               </span>

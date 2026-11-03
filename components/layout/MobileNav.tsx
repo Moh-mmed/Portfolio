@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   DownloadIcon,
@@ -34,6 +35,7 @@ interface MobileNavProps {
 }
 
 export function MobileNav({ activeSection }: MobileNavProps) {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -134,7 +136,7 @@ export function MobileNav({ activeSection }: MobileNavProps) {
                           isActive &&
                             "bg-gradient-to-r from-accent/14 via-emerald-400/10 to-sky-400/10 text-accent ring-1 ring-accent/20"
                         )}
-                        href={link.href}
+                        href={pathname === "/" ? link.href : `/${link.href}`}
                         onClick={close}
                       >
                         <span

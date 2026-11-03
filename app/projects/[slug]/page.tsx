@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Section } from "@/components/ui/Section";
 import { getAllProjects, getProjectBySlug } from "@/lib/content";
 import { resolveProjectImage, buildAbsoluteUrl } from "@/lib/utils";
 import { ProjectDetail } from "@/components/sections/ProjectDetail";
@@ -64,12 +63,12 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   };
 
   return (
-    <Section className="bg-bg pt-14 md:pt-20">
+    <>
       <ProjectDetail project={project} />
       <script
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         type="application/ld+json"
       />
-    </Section>
+    </>
   );
 }
